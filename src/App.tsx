@@ -20,7 +20,9 @@ import {
   Building2,
   Factory,
   Truck,
-  Users
+  Users,
+  QrCode,
+  MessageCircle
 } from 'lucide-react';
 import { 
   COMPANY_INFO, 
@@ -34,6 +36,8 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
+  const [showQr, setShowQr] = useState(false);
+  const [showNavQr, setShowNavQr] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,38 +66,72 @@ export default function App() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-brand-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-serif font-bold text-xl">M</span>
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-brand-primary rounded-md flex items-center justify-center shadow-sm">
+              <span className="text-white font-serif font-bold text-xl leading-none">M</span>
             </div>
             <div className="flex flex-col">
-              <span className={`font-bold text-xl tracking-tight leading-none ${scrolled ? 'text-neutral-900' : 'text-neutral-900'}`}>
-                {COMPANY_INFO.shortName}
+              <span className={`font-bold text-xl tracking-tight leading-none text-neutral-900`}>
+                美创门业
               </span>
-              <span className={`text-[10px] font-semibold tracking-[0.2em] ${scrolled ? 'text-neutral-500' : 'text-neutral-600'}`}>
+              <span className={`text-[10px] font-medium tracking-[0.25em] text-neutral-500 mt-1`}>
                 专业 · 环保 · 定制
               </span>
             </div>
           </div>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <a 
                 key={link.name} 
                 href={link.href}
-                className="text-sm font-medium hover:text-brand-primary transition-colors"
+                className="text-[13px] font-medium text-neutral-800 hover:text-brand-primary transition-colors tracking-tight"
               >
                 {link.name}
               </a>
             ))}
-            <a 
-              href="#contact"
-              className="px-5 py-2 bg-brand-primary text-white rounded-full text-sm font-medium flex items-center gap-2 hover:bg-opacity-90 transition-all shadow-lg shadow-brand-primary/20"
-            >
-              <Phone size={16} />
-              立即咨询
-            </a>
+            <div className="relative group">
+              <a 
+                href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setShowNavQr(!showNavQr);
+                }}
+                onMouseEnter={() => setShowNavQr(true)}
+                onMouseLeave={() => setShowNavQr(false)}
+                className="ml-2 px-6 py-2.5 bg-brand-primary text-white rounded-full text-xs font-bold flex items-center gap-2 hover:brightness-110 transition-all shadow-lg shadow-brand-primary/20 cursor-pointer"
+              >
+                <MessageCircle size={14} className="fill-current" />
+                立即咨询
+              </a>
+
+              {/* QR Code Tooltip */}
+              <div className={`absolute top-full right-0 mt-4 transition-all duration-300 transform z-50 ${
+                showNavQr 
+                  ? 'opacity-100 translate-y-0 pointer-events-auto' 
+                  : 'opacity-0 translate-y-2 pointer-events-none'
+              }`}>
+                <div className="bg-white p-3 rounded-xl shadow-2xl border border-neutral-100">
+                  <div className="w-40 h-40 bg-neutral-100 rounded-lg flex items-center justify-center relative overflow-hidden">
+                    <div className="text-neutral-400 text-[10px] text-center px-4">
+                      <QrCode size={40} className="mx-auto mb-2 opacity-20" />
+                      <p>微信二维码</p>
+                    </div>
+                    <img 
+                      src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&color=4E342E&data=https://u.wechat.com/MEICHUANG_DOORS" 
+                      alt="微信二维码" 
+                      className="absolute inset-0 w-full h-full object-contain p-2"
+                    />
+                  </div>
+                  <div className="mt-2 text-center whitespace-nowrap">
+                    <p className="text-[10px] text-neutral-900 font-bold">扫一扫加我为朋友</p>
+                    <p className="text-[8px] text-neutral-400">惠州美创门业 · 官方微信</p>
+                  </div>
+                  <div className="absolute bottom-full right-8 w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-b-[6px] border-b-white"></div>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Mobile Toggle */}
@@ -130,7 +168,7 @@ export default function App() {
                   onClick={() => setIsMenuOpen(false)}
                   className="flex items-center gap-3 text-brand-primary font-bold py-2"
                 >
-                  <Phone size={20} />
+                  <MessageCircle size={20} />
                   立即咨询
                 </a>
                 <a 
@@ -164,27 +202,28 @@ export default function App() {
             transition={{ duration: 0.8 }}
             className="max-w-2xl text-white"
           >
-            <span className="inline-block px-4 py-1.5 bg-brand-primary/90 backdrop-blur rounded-sm text-xs font-bold tracking-[0.2em] mb-6">
+            <div className="inline-block px-3 py-1 bg-brand-primary text-white text-[10px] sm:text-xs font-bold leading-none mb-8 rounded-sm">
               惠州本土专业制造品牌
-            </span>
-            <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 leading-[1.2]">
+            </div>
+            <h1 className="text-6xl md:text-[88px] font-serif font-medium mb-8 leading-[1.05] tracking-tight">
               匠心造好门<br />
               <span className="text-brand-accent">品质</span>赢口碑
             </h1>
-            <p className="text-lg md:text-xl text-neutral-200 mb-10 leading-relaxed font-normal">
-              {COMPANY_INFO.positioning}<br />为家庭与工程提供更环保、更耐用、更美观的门类解决方案。
+            <p className="text-base md:text-lg text-white/90 mb-12 leading-relaxed font-normal max-w-lg">
+              惠州本土专业木门、铝木门、室内门制造与定制服务商<br />
+              <span className="opacity-80">为家庭与工程提供更环保、更耐用、更美观的门类解决方案。</span>
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-5">
               <a 
                 href="#products" 
-                className="px-8 py-4 bg-white text-neutral-900 rounded-full font-bold text-center hover:bg-neutral-100 transition-all flex items-center justify-center gap-2 group"
+                className="px-10 py-5 bg-white text-neutral-900 rounded-full font-bold text-base hover:bg-neutral-100 transition-all flex items-center justify-center gap-3 group shadow-xl"
               >
                 浏览产品
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </a>
               <a 
                 href="#contact" 
-                className="px-8 py-4 border border-white/30 backdrop-blur text-white rounded-full font-bold text-center hover:bg-white/10 transition-all"
+                className="px-10 py-5 border border-white/40 backdrop-blur-md text-white rounded-full font-bold text-base hover:bg-white/10 transition-all text-center"
               >
                 获取报价
               </a>
@@ -563,10 +602,49 @@ export default function App() {
                 {COMPANY_INFO.positioning}。立足惠州，服务全国，以匠心成就每一扇好门。
               </p>
               <div className="flex gap-4">
-                {/* Social icons placeholder */}
-                <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-primary transition-colors cursor-pointer">
-                  <Users size={18} title="微信" />
+                {/* WeChat QR Code Interaction */}
+                <div 
+                  className="relative group/qr"
+                  onMouseEnter={() => setShowQr(true)}
+                  onMouseLeave={() => setShowQr(false)}
+                  onClick={() => setShowQr(!showQr)}
+                >
+                  <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-primary transition-colors cursor-pointer">
+                    <QrCode size={18} title="微信" />
+                  </div>
+                  
+                  {/* QR Code Tooltip */}
+                  <div className={`absolute bottom-full left-1/2 -translate-x-1/2 mb-4 transition-all duration-300 transform z-50 ${
+                    showQr 
+                      ? 'opacity-100 translate-y-0 pointer-events-auto' 
+                      : 'opacity-0 translate-y-2 pointer-events-none'
+                  }`}>
+                    <div className="bg-white p-3 rounded-xl shadow-2xl border border-neutral-100">
+                      <div className="w-40 h-40 bg-neutral-100 rounded-lg flex items-center justify-center relative overflow-hidden">
+                        {/* 
+                          Note: In a real app, replace the src below with your actual QR code asset path 
+                          (e.g., /src/assets/images/wechat_qr.png)
+                        */}
+                        <div className="text-neutral-400 text-[10px] text-center px-4">
+                          <QrCode size={40} className="mx-auto mb-2 opacity-20" />
+                          <p>微信二维码</p>
+                        </div>
+                        {/* QR Code from generic provider for now */}
+                        <img 
+                          src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&color=4E342E&data=https://u.wechat.com/MEICHUANG_DOORS" 
+                          alt="微信二维码" 
+                          className="absolute inset-0 w-full h-full object-contain p-2"
+                        />
+                      </div>
+                      <div className="mt-2 text-center whitespace-nowrap">
+                        <p className="text-[10px] text-neutral-900 font-bold">扫一扫加我为朋友</p>
+                        <p className="text-[8px] text-neutral-400">惠州美创门业 · 官方微信</p>
+                      </div>
+                      <div className="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[6px] border-t-white"></div>
+                    </div>
+                  </div>
                 </div>
+
                 <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-primary transition-colors cursor-pointer">
                   <Building2 size={18} title="小红书" />
                 </div>
