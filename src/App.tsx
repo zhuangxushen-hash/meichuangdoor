@@ -88,7 +88,7 @@ export default function App() {
               </a>
             ))}
             <a 
-              href={`tel:${COMPANY_INFO.phone}`}
+              href="#contact"
               className="px-5 py-2 bg-brand-primary text-white rounded-full text-sm font-medium flex items-center gap-2 hover:bg-opacity-90 transition-all shadow-lg shadow-brand-primary/20"
             >
               <Phone size={16} />
@@ -126,11 +126,18 @@ export default function App() {
                   </a>
                 ))}
                 <a 
-                  href={`tel:${COMPANY_INFO.phone}`}
+                  href="#contact"
+                  onClick={() => setIsMenuOpen(false)}
                   className="flex items-center gap-3 text-brand-primary font-bold py-2"
                 >
                   <Phone size={20} />
-                  {COMPANY_INFO.phone}
+                  立即咨询
+                </a>
+                <a 
+                  href={`tel:${COMPANY_INFO.phone}`}
+                  className="flex items-center gap-3 text-neutral-500 font-medium py-2 text-sm italic"
+                >
+                  或直接来电: {COMPANY_INFO.phone}
                 </a>
               </div>
             </motion.div>
@@ -259,9 +266,12 @@ export default function App() {
                       </li>
                     ))}
                   </ul>
-                  <button className="w-full py-3 border border-neutral-200 rounded-lg text-sm font-bold hover:bg-neutral-50 transition-colors">
+                  <a 
+                    href="#contact"
+                    className="w-full py-3 border border-neutral-200 rounded-lg text-sm font-bold hover:bg-neutral-50 transition-colors text-center"
+                  >
                     详情咨询
-                  </button>
+                  </a>
                 </div>
               </motion.div>
             ))}
@@ -400,9 +410,6 @@ export default function App() {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span className="text-white font-bold border border-white/40 px-6 py-2 rounded-full">查看详情</span>
-              </div>
             </div>
             <div className="relative group overflow-hidden rounded-3xl aspect-square">
               <img 
@@ -411,9 +418,6 @@ export default function App() {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span className="text-white font-bold border border-white/40 px-6 py-2 rounded-full">查看详情</span>
-              </div>
             </div>
           </div>
         </div>
