@@ -663,7 +663,7 @@ export default function App() {
               <div className="space-y-4 text-xs text-neutral-400 leading-relaxed">
                 <p>统一社会信用代码：<br />{COMPANY_INFO.unifiedCode}</p>
                 <p>Copyright © {new Date().getFullYear()} {COMPANY_INFO.name}. All Rights Reserved.</p>
-                <p>粤ICP备XXXXXXXX号-1</p>
+                <p>粤ICP备2026061405号</p>
               </div>
             </div>
           </div>
