@@ -24,6 +24,7 @@ import {
   QrCode,
   MessageCircle
 } from 'lucide-react';
+import { Logo } from './components/Logo';
 import { 
   COMPANY_INFO, 
   PRODUCT_CATEGORIES, 
@@ -66,19 +67,7 @@ export default function App() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-brand-primary rounded-md flex items-center justify-center shadow-sm">
-              <span className="text-white font-serif font-bold text-xl leading-none">M</span>
-            </div>
-            <div className="flex flex-col">
-              <span className={`font-bold text-xl tracking-tight leading-none text-neutral-900`}>
-                美创门业
-              </span>
-              <span className={`text-[10px] font-medium tracking-[0.25em] text-neutral-500 mt-1`}>
-                专业 · 环保 · 定制
-              </span>
-            </div>
-          </div>
+          <Logo light={!scrolled} className="scale-90 sm:scale-100 origin-left" />
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-6">
@@ -552,36 +541,35 @@ export default function App() {
               </div>
             </div>
 
-            <div className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl relative">
-              <h4 className="text-2xl font-bold mb-8">在线预约咨询</h4>
-              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-xs font-bold uppercase tracking-widest text-neutral-500">您的称呼</label>
-                    <input type="text" placeholder="例: 张先生" className="w-full px-4 py-3 bg-neutral-50 border rounded-xl focus:ring-2 focus:ring-brand-primary focus:border-brand-primary outline-none transition-all" />
+            <div className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl relative flex flex-col items-center justify-center text-center">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-brand-primary/5 rounded-full blur-3xl -translate-y-8 translate-x-8 pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-32 h-32 bg-brand-accent/5 rounded-full blur-3xl translate-y-8 -translate-x-8 pointer-events-none" />
+              
+              <div className="relative z-10 max-w-sm flex flex-col items-center">
+                <div className="w-16 h-16 rounded-2xl bg-brand-primary/10 flex items-center justify-center mb-6 text-brand-primary">
+                  <QrCode size={32} />
+                </div>
+                <h4 className="text-2xl sm:text-3xl font-serif font-bold text-neutral-900 mb-3">官方微信咨询</h4>
+                <p className="text-sm text-neutral-500 leading-relaxed mb-8">
+                  欢迎扫描下方官方微信二维码，即可享受一对一专业专属顾问服务，获取免费定制报价与门类方案。
+                </p>
+                
+                {/* QR Code Frame */}
+                <div className="p-4 bg-white border border-neutral-100 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 relative group/card mb-6">
+                  <div className="w-48 h-48 bg-neutral-50 rounded-xl flex items-center justify-center relative overflow-hidden">
+                    <img 
+                      src="https://api.qrserver.com/v1/create-qr-code/?size=240x240&color=4E342E&data=https://u.wechat.com/MEICHUANG_DOORS" 
+                      alt="微信二维码" 
+                      className="absolute inset-0 w-full h-full object-contain p-2 group-hover/card:scale-105 transition-transform duration-300"
+                    />
                   </div>
-                  <div className="space-y-2">
-                    <label className="text-xs font-bold uppercase tracking-widest text-neutral-500">联系电话</label>
-                    <input type="tel" placeholder="13x xxxx xxxx" className="w-full px-4 py-3 bg-neutral-50 border rounded-xl focus:ring-2 focus:ring-brand-primary focus:border-brand-primary outline-none transition-all" />
-                  </div>
                 </div>
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-neutral-500">需求类型</label>
-                  <select className="w-full px-4 py-3 bg-neutral-50 border rounded-xl focus:ring-2 focus:ring-brand-primary focus:border-brand-primary outline-none appearance-none transition-all">
-                    <option>家装单套订制</option>
-                    <option>批量工程单</option>
-                    <option>加盟/渠道合作</option>
-                    <option>其他咨询</option>
-                  </select>
+
+                <div className="text-center">
+                  <p className="text-xs text-neutral-400">长按识别或打开微信扫一扫</p>
+                  <p className="text-sm text-brand-primary font-bold mt-1">惠州美创门业 · 官方微信</p>
                 </div>
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-neutral-500">详情描述</label>
-                  <textarea rows={4} placeholder="描述您的需求或尺寸信息..." className="w-full px-4 py-3 bg-neutral-50 border rounded-xl focus:ring-2 focus:ring-brand-primary focus:border-brand-primary outline-none transition-all resize-none"></textarea>
-                </div>
-                <button className="w-full py-4 bg-brand-primary text-white rounded-xl font-bold text-lg hover:bg-opacity-90 transition-all shadow-xl shadow-brand-primary/20">
-                  提交咨询
-                </button>
-              </form>
+              </div>
             </div>
           </div>
         </div>
@@ -592,12 +580,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
             <div className="col-span-1 lg:col-span-1">
-              <div className="flex items-center gap-2 mb-6">
-                <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-serif font-bold text-xl leading-none">M</span>
-                </div>
-                <span className="font-bold text-xl tracking-tight leading-none text-white">{COMPANY_INFO.shortName}</span>
-              </div>
+              <Logo light className="mb-6" />
               <p className="text-sm text-neutral-400 leading-relaxed mb-8">
                 {COMPANY_INFO.positioning}。立足惠州，服务全国，以匠心成就每一扇好门。
               </p>
