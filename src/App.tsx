@@ -30,7 +30,7 @@ import solidWoodDoorDetail from './assets/images/solid_wood_door_detail_17770149
 import aluminumWoodDoorModern from './assets/images/aluminum_wood_door_modern_1777014942577.png';
 import factoryCraftsmanship from './assets/images/factory_craftsmanship_1777014958708.png';
 import engineeringCaseDisplay from './assets/images/engineering_case_display_1777014975345.png';
-import wechatQr from './assets/images/wechat_qr.jpg';
+import wechatQr from './assets/images/wechat_qr.png';
 import { 
   COMPANY_INFO, 
   PRODUCT_CATEGORIES, 
