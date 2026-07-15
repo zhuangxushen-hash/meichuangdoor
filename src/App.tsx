@@ -25,6 +25,12 @@ import {
   MessageCircle
 } from 'lucide-react';
 import { Logo } from './components/Logo';
+import heroImage from './assets/images/hero_modern_door_1777014910177.png';
+import solidWoodDoorDetail from './assets/images/solid_wood_door_detail_1777014927673.png';
+import aluminumWoodDoorModern from './assets/images/aluminum_wood_door_modern_1777014942577.png';
+import factoryCraftsmanship from './assets/images/factory_craftsmanship_1777014958708.png';
+import engineeringCaseDisplay from './assets/images/engineering_case_display_1777014975345.png';
+import wechatQr from './assets/images/wechat_qr.png';
 import { 
   COMPANY_INFO, 
   PRODUCT_CATEGORIES, 
@@ -108,7 +114,7 @@ export default function App() {
                       <p>微信二维码</p>
                     </div>
                     <img 
-                      src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&color=4E342E&data=https://u.wechat.com/MEICHUANG_DOORS" 
+                      src={wechatQr} 
                       alt="微信二维码" 
                       className="absolute inset-0 w-full h-full object-contain p-2"
                     />
@@ -176,7 +182,7 @@ export default function App() {
       <section id="home" className="relative h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/src/assets/images/hero_modern_door_1777014910177.png" 
+            src={heroImage} 
             alt="Premium Interior Door" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
@@ -314,7 +320,7 @@ export default function App() {
             <div className="relative">
               <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl relative z-10">
                 <img 
-                  src="/src/assets/images/factory_craftsmanship_1777014958708.png" 
+                  src={factoryCraftsmanship} 
                   alt="Craftsmanship" 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
@@ -421,7 +427,7 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="lg:col-span-2 lg:row-span-2 relative group overflow-hidden rounded-3xl aspect-[16/10]">
               <img 
-                src="/src/assets/images/engineering_case_display_1777014975345.png" 
+                src={engineeringCaseDisplay} 
                 alt="Engineering Case" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
@@ -433,7 +439,7 @@ export default function App() {
             </div>
             <div className="relative group overflow-hidden rounded-3xl aspect-square">
               <img 
-                src="https://picsum.photos/seed/case1/600/600" 
+                src={solidWoodDoorDetail} 
                 alt="Resident" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
@@ -441,7 +447,7 @@ export default function App() {
             </div>
             <div className="relative group overflow-hidden rounded-3xl aspect-square">
               <img 
-                src="https://picsum.photos/seed/case2/600/600" 
+                src={factoryCraftsmanship} 
                 alt="Office" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
@@ -558,7 +564,7 @@ export default function App() {
                 <div className="p-4 bg-white border border-neutral-100 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 relative group/card mb-6">
                   <div className="w-48 h-48 bg-neutral-50 rounded-xl flex items-center justify-center relative overflow-hidden">
                     <img 
-                      src="https://api.qrserver.com/v1/create-qr-code/?size=240x240&color=4E342E&data=https://u.wechat.com/MEICHUANG_DOORS" 
+                      src={wechatQr} 
                       alt="微信二维码" 
                       className="absolute inset-0 w-full h-full object-contain p-2 group-hover/card:scale-105 transition-transform duration-300"
                     />
@@ -614,7 +620,7 @@ export default function App() {
                         </div>
                         {/* QR Code from generic provider for now */}
                         <img 
-                          src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&color=4E342E&data=https://u.wechat.com/MEICHUANG_DOORS" 
+                          src={wechatQr} 
                           alt="微信二维码" 
                           className="absolute inset-0 w-full h-full object-contain p-2"
                         />

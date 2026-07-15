@@ -3,6 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import solidWoodDoorDetail from "./assets/images/solid_wood_door_detail_1777014927673.png";
+import aluminumWoodDoorModern from "./assets/images/aluminum_wood_door_modern_1777014942577.png";
+import factoryCraftsmanship from "./assets/images/factory_craftsmanship_1777014958708.png";
+import engineeringCaseDisplay from "./assets/images/engineering_case_display_1777014975345.png";
+
 export const COMPANY_INFO = {
   name: "惠州市美创门业有限公司",
   shortName: "美创门业",
@@ -26,7 +31,7 @@ export const PRODUCT_CATEGORIES = [
     description: "选用进口橡木、胡桃木等天然原木，榫卯结构，环保PU漆，彰显高贵品质。",
     features: ["进口橡木/胡桃木/沙比利", "原木切割", "多层打磨", "环保PU漆"],
     applicable: ["别墅", "高端家装", "卧室/书房原木门"],
-    image: "/src/assets/images/solid_wood_door_detail_1777014927673.png",
+    image: solidWoodDoorDetail,
   },
   {
     id: "paint-free",
@@ -34,7 +39,7 @@ export const PRODUCT_CATEGORIES = [
     description: "E0级环保板材，即装即住，防潮抗变形，性价比之选。",
     features: ["E0级环保密度板", "实木多层板", "无漆覆膜", "即装即住"],
     applicable: ["家装室内门", "出租房", "工程批量单"],
-    image: "https://picsum.photos/seed/door2/800/600",
+    image: factoryCraftsmanship,
   },
   {
     id: "aluminum-wood",
@@ -42,7 +47,7 @@ export const PRODUCT_CATEGORIES = [
     description: "铝合金边框结合实木填充，极简轻奢，隔音耐用，现代家居首选。",
     features: ["极简轮廓", "隔音≥35dB", "防潮防蛀", "坚固耐用"],
     applicable: ["现代家装", "厨卫门", "办公隔断"],
-    image: "/src/assets/images/aluminum_wood_door_modern_1777014942577.png",
+    image: aluminumWoodDoorModern,
   },
   {
     id: "special-custom",
@@ -50,7 +55,7 @@ export const PRODUCT_CATEGORIES = [
     description: "支持尺寸、颜色、款式全方位定制，涵盖子母门、隐形门等特种门类。",
     features: ["尺寸/颜色定制", "推拉/折叠/隐形", "防火工程门", "五金升级"],
     applicable: ["异形空间", "工程项目", "个性化家居"],
-    image: "https://picsum.photos/seed/door4/800/600",
+    image: engineeringCaseDisplay,
   },
 ];
 
