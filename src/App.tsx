@@ -313,74 +313,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-24 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="relative">
-              <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl relative z-10">
-                <img 
-                  src={factoryCraftsmanship} 
-                  alt="Craftsmanship" 
-                  className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-              <div className="absolute -bottom-8 -right-8 w-64 h-64 bg-brand-primary rounded-3xl -z-0 opacity-10" />
-              <div className="absolute -top-12 -left-12 aspect-square w-48 bg-brand-accent rounded-full -z-0 opacity-10" />
-              
-              <div className="absolute bottom-8 left-8 bg-white/90 backdrop-blur p-6 rounded-2xl shadow-xl z-20 border border-white/50 hidden md:block">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center text-white">
-                    <Users size={24} />
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold">100%</div>
-                    <div className="text-[10px] uppercase text-neutral-500 font-bold tracking-widest leading-none">惠州本土生产制造</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h2 className="text-sm font-bold text-brand-primary tracking-[0.3em] mb-4">关于我们</h2>
-              <h3 className="text-4xl md:text-5xl font-serif font-bold mb-8 leading-tight">
-                二十载行业积淀<br />专注门业高端定制
-              </h3>
-              <p className="text-lg text-neutral-600 mb-8 leading-relaxed">
-                {COMPANY_INFO.name}坐落于惠州。作为粤东地区专业的门类制造服务商，我们始终秉承“匠心造好门”的理念，专注实木门、铝木门等多系列产品的研发与交付。
-              </p>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
-                <div className="space-y-4">
-                  <h5 className="font-bold border-l-2 border-brand-primary pl-4">我们的使命</h5>
-                  <p className="text-sm text-neutral-500">{COMPANY_INFO.mission}</p>
-                </div>
-                <div className="space-y-4">
-                  <h5 className="font-bold border-l-2 border-brand-accent pl-4">我们的愿景</h5>
-                  <p className="text-sm text-neutral-500">{COMPANY_INFO.vision}</p>
-                </div>
-              </div>
-
-              <div className="flex flex-wrap gap-4 pt-6 border-t font-medium">
-                <div className="flex items-center gap-2 text-sm">
-                  <ShieldCheck className="text-brand-primary" size={18} />
-                  ISO9001质管认证
-                </div>
-                <div className="flex items-center gap-2 text-sm">
-                  <ShieldCheck className="text-brand-primary" size={18} />
-                  E0级环保标准
-                </div>
-                <div className="flex items-center gap-2 text-sm">
-                  <ShieldCheck className="text-brand-primary" size={18} />
-                  门业协会会员
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Advantages */}
       <section id="advantages" className="py-24 bg-neutral-900 text-white">
         <div className="max-w-7xl mx-auto px-4 text-center mb-16">
@@ -452,6 +384,74 @@ export default function App() {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
               />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-24 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="relative">
+              <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl relative z-10">
+                <img 
+                  src={factoryCraftsmanship} 
+                  alt="Craftsmanship" 
+                  className="w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <div className="absolute -bottom-8 -right-8 w-64 h-64 bg-brand-primary rounded-3xl -z-0 opacity-10" />
+              <div className="absolute -top-12 -left-12 aspect-square w-48 bg-brand-accent rounded-full -z-0 opacity-10" />
+              
+              <div className="absolute bottom-8 left-8 bg-white/90 backdrop-blur p-6 rounded-2xl shadow-xl z-20 border border-white/50 hidden md:block">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center text-white">
+                    <Users size={24} />
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold">100%</div>
+                    <div className="text-[10px] uppercase text-neutral-500 font-bold tracking-widest leading-none">惠州本土生产制造</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h2 className="text-sm font-bold text-brand-primary tracking-[0.3em] mb-4">关于我们</h2>
+              <h3 className="text-4xl md:text-5xl font-serif font-bold mb-8 leading-tight">
+                二十载行业积淀<br />专注门业高端定制
+              </h3>
+              <p className="text-lg text-neutral-600 mb-8 leading-relaxed">
+                {COMPANY_INFO.name}坐落于惠州。作为粤东地区专业的门类制造服务商，我们始终秉承“匠心造好门”的理念，专注实木门、铝木门等多系列产品的研发与交付。
+              </p>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+                <div className="space-y-4">
+                  <h5 className="font-bold border-l-2 border-brand-primary pl-4">我们的使命</h5>
+                  <p className="text-sm text-neutral-500">{COMPANY_INFO.mission}</p>
+                </div>
+                <div className="space-y-4">
+                  <h5 className="font-bold border-l-2 border-brand-accent pl-4">我们的愿景</h5>
+                  <p className="text-sm text-neutral-500">{COMPANY_INFO.vision}</p>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-4 pt-6 border-t font-medium">
+                <div className="flex items-center gap-2 text-sm">
+                  <ShieldCheck className="text-brand-primary" size={18} />
+                  ISO9001质管认证
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <ShieldCheck className="text-brand-primary" size={18} />
+                  E0级环保标准
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <ShieldCheck className="text-brand-primary" size={18} />
+                  门业协会会员
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -663,7 +663,11 @@ export default function App() {
               <div className="space-y-4 text-xs text-neutral-400 leading-relaxed">
                 <p>统一社会信用代码：<br />{COMPANY_INFO.unifiedCode}</p>
                 <p>Copyright © {new Date().getFullYear()} {COMPANY_INFO.name}. All Rights Reserved.</p>
-                <p>粤ICP备2026061405号</p>
+                <p>
+                  <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                    粤ICP备2026061405号
+                  </a>
+                </p>
               </div>
             </div>
           </div>
