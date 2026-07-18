@@ -25,11 +25,11 @@ import {
   MessageCircle
 } from 'lucide-react';
 import { Logo } from './components/Logo';
-import heroImage from './assets/images/hero_modern_door_1777014910177.png';
-import solidWoodDoorDetail from './assets/images/solid_wood_door_detail_1777014927673.png';
-import aluminumWoodDoorModern from './assets/images/aluminum_wood_door_modern_1777014942577.png';
-import factoryCraftsmanship from './assets/images/factory_craftsmanship_1777014958708.png';
-import engineeringCaseDisplay from './assets/images/engineering_case_display_1777014975345.png';
+import heroImage from './assets/images/hero_image.png';
+import caseHotel from './assets/images/case_hotel.png';
+import caseResident from './assets/images/case_resident.png';
+import caseOffice from './assets/images/case_office.png';
+import aboutFactory from './assets/images/about_factory.png';
 import wechatQr from './assets/images/wechat_qr.png';
 import { 
   COMPANY_INFO, 
@@ -359,7 +359,7 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="lg:col-span-2 lg:row-span-2 relative group overflow-hidden rounded-3xl aspect-[16/10]">
               <img 
-                src={engineeringCaseDisplay} 
+                src={caseHotel} 
                 alt="Engineering Case" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
@@ -371,7 +371,7 @@ export default function App() {
             </div>
             <div className="relative group overflow-hidden rounded-3xl aspect-square">
               <img 
-                src={solidWoodDoorDetail} 
+                src={caseResident} 
                 alt="Resident" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
@@ -379,7 +379,7 @@ export default function App() {
             </div>
             <div className="relative group overflow-hidden rounded-3xl aspect-square">
               <img 
-                src={factoryCraftsmanship} 
+                src={caseOffice} 
                 alt="Office" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
@@ -396,7 +396,7 @@ export default function App() {
             <div className="relative">
               <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl relative z-10">
                 <img 
-                  src={factoryCraftsmanship} 
+                  src={aboutFactory} 
                   alt="Craftsmanship" 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
