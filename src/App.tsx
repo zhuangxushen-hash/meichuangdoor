@@ -664,7 +664,7 @@ export default function App() {
                 <p>统一社会信用代码：<br />{COMPANY_INFO.unifiedCode}</p>
                 <p>Copyright © {new Date().getFullYear()} {COMPANY_INFO.name}. All Rights Reserved.</p>
                 <p>
-                  <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                  <a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                     粤ICP备2026061405号
                   </a>
                 </p>
