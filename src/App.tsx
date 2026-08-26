@@ -26,10 +26,10 @@ import {
 } from 'lucide-react';
 import { Logo } from './components/Logo';
 import heroImage from './assets/images/hero_image.png';
-import caseHotel from './assets/images/case_hotel.png';
-import caseResident from './assets/images/case_resident.png';
-import caseOffice from './assets/images/case_office.png';
-import aboutFactory from './assets/images/about_factory.png';
+import caseHotel from './assets/images/case_hotel.jpg';
+import caseResident from './assets/images/case_resident.jpg';
+import caseOffice from './assets/images/case_office.jpg';
+import aboutFactory from './assets/images/about_factory.jpg';
 import wechatQr from './assets/images/wechat_qr.png';
 import { 
   COMPANY_INFO, 

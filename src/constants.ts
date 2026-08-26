@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import productSolidWood from "./assets/images/product_solid_wood.png";
-import productPaintFree from "./assets/images/product_paint_free.png";
-import productAluminumWood from "./assets/images/product_aluminum_wood.png";
-import productSpecialCustom from "./assets/images/product_special_custom.png";
+import productSolidWood from "./assets/images/product_solid_wood.jpg";
+import productPaintFree from "./assets/images/product_paint_free.jpg";
+import productAluminumWood from "./assets/images/product_aluminum_wood.jpg";
+import productSpecialCustom from "./assets/images/product_special_custom.jpg";
 
 export const COMPANY_INFO = {
   name: "惠州市美创门业有限公司",
