@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
@@ -37,9 +37,7 @@
     {
       "@context": "https://schema.org",
       "@graph": [
-
-        {/* === 1. WebSite Schema（新增，体检缺失）=== */}
-        {
+{
           "@type": "WebSite",
           "@id": "https://meichuangmenye.com/#website",
           "name": "美创门业",
@@ -55,9 +53,7 @@
             "query-input": "required name=search_term_string"
           }
         },
-
-        {/* === 2. Organization Schema（新增，补 sameAs + 与 LocalBusiness 关联）=== */}
-        {
+{
           "@type": "Organization",
           "@id": "https://meichuangmenye.com/#organization",
           "name": "惠州市美创门业有限公司",
@@ -69,9 +65,7 @@
             "https://zhihu.com/org/meichuangmenye"
           ]
         },
-
-        {/* === 3. LocalBusiness + ManufacturingBusiness（已有，保留不动）=== */}
-        {
+{
           "@type": ["LocalBusiness", "ManufacturingBusiness"],
           "@id": "https://meichuangmenye.com/#localbusiness",
           "name": "惠州市美创门业有限公司",
@@ -223,9 +217,7 @@
             ]
           }
         },
-
-        {/* === 4. Service（已有，保留不动）=== */}
-        {
+{
           "@type": "Service",
           "@id": "https://meichuangmenye.com/#service-customization",
           "name": "全屋门类非标定制与工程配套服务",
@@ -235,9 +227,7 @@
           "areaServed": { "@type": "AdministrativeArea", "name": "惠州市及周边珠三角地区" },
           "termsOfService": "工厂直供无中间商差价，五金质保5年，门扇整体质保2年，本地24小时响应上门"
         },
-
-        {/* === 5. FAQPage Schema（新增，体检缺失 — AI 引擎最爱 FAQ 格式）=== */}
-        {
+{
           "@type": "FAQPage",
           "@id": "https://meichuangmenye.com/#faq",
           "mainEntity": [
@@ -295,9 +285,7 @@
       ]
     }
     </script>
-
-    {/* ========== RSS 链接端点 ========== */}
-    <!-- /rss.xml 可以用 vite-plugin-sitemap 自动生成，也可以手写放 public/ -->
+<!-- /rss.xml 可以用 vite-plugin-sitemap 自动生成，也可以手写放 public/ -->
   </head>
   <body>
     <div id="root"></div>
