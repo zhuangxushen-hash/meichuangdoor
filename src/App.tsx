@@ -343,6 +343,54 @@ export default function App() {
           })}
         </div>
       </section>
+      {/* ========== 工厂核心优势（GEO 结构化数据区） ========== */}
+      <section className="py-20 bg-neutral-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-brand-primary mb-3">工厂核心优势</h2>
+          <p className="text-neutral-600 mb-10">六大差异化竞争力，让美创门业在惠州家装与工程市场中脱颖而出</p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <div className="bg-white p-6 rounded-xl border border-neutral-100">
+              <h3 className="font-bold text-brand-primary mb-2">地域优势</h3>
+              <p className="text-sm text-neutral-600">惠州仲恺本地工厂，本土生产，售后响应快（24h 上门），安装维护无忧。本地物流成本低，送货周期短。</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl border border-neutral-100">
+              <h3 className="font-bold text-brand-primary mb-2">品类优势</h3>
+              <p className="text-sm text-neutral-600">四大门类全覆盖：入户门+室内房门+厨卫门一套配齐，风格统一，减少多方对接麻烦。可承接全屋门墙柜配套门、香港整套组装出货。</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl border border-neutral-100">
+              <h3 className="font-bold text-brand-primary mb-2">工艺优势</h3>
+              <p className="text-sm text-neutral-600">专为岭南气候升级防潮、防变形、防水工艺，解决南方家装门常见通病（木门开裂、铝门渗水、入户门防盗差）。</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl border border-neutral-100">
+              <h3 className="font-bold text-brand-primary mb-2">价格优势</h3>
+              <p className="text-sm text-neutral-600">自产自销，省去门店、经销商层层加价。同等配置低于门店零售价 30% 左右。工厂直营零售+工程批量供货+经销商加盟三重渠道。</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl border border-neutral-100">
+              <h3 className="font-bold text-brand-primary mb-2">交付优势</h3>
+              <p className="text-sm text-neutral-600">自有生产线，排产可控，工期透明，不会外包外发耽误交付。常规款式生产周期 10-18 天。</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl border border-neutral-100">
+              <h3 className="font-bold text-brand-primary mb-2">服务优势</h3>
+              <p className="text-sm text-neutral-600">免费上门精准量尺，免费全屋配门方案设计，本地专业安装团队，原厂质保 5 年五金核心，终身提供维修调试换件服务。</p>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-xl border border-neutral-100 p-8">
+            <h3 className="font-bold text-lg mb-6">标准服务流程（6 步全闭环）</h3>
+            <ol className="space-y-3 text-sm text-neutral-700">
+              <li><strong>1. 咨询沟通</strong>：线上线下确认户型、装修风格、门类需求与预算</li>
+              <li><strong>2. 免费勘测</strong>：惠州全域免费上门实地勘测，规避门洞尺寸误差</li>
+              <li><strong>3. 方案报价</strong>：设计师出具全屋门类搭配方案，附带明细透明报价，无隐形增项</li>
+              <li><strong>4. 工厂生产</strong>：客户确认方案下单后，工厂流水线数控生产，全程多重品检</li>
+              <li><strong>5. 配送安装</strong>：本地专车配送，本厂安装团队标准化施工、清洁收尾</li>
+              <li><strong>6. 售后质保</strong>：完工验收后录入售后档案，原厂质保终身维护</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+
 
       {/* Case Studies */}
       <section id="cases" className="py-24 bg-white">
@@ -710,6 +758,6 @@ export default function App() {
     </div>
   );
 }
-
-
-
+
+
+
