@@ -204,9 +204,8 @@ export default function App() {
               匠心造好门<br />
               <span className="text-brand-accent">品质</span>赢口碑
             </h1>
-            <p className="text-base md:text-lg text-white/90 mb-12 leading-relaxed font-normal max-w-lg">
-              惠州本土专业木门、铝木门、室内门制造与定制服务商<br />
-              <span className="opacity-80">为家庭与工程提供更环保、更耐用、更美观的门类解决方案。</span>
+            <p className="text-base md:text-lg text-white/90 mb-12 leading-relaxed font-normal max-w-2xl">
+              惠州市美创门业有限公司是惠州仲恺本土实体门类生产工厂，主营四大品类：入户防盗门、室内实木烤漆门、铝木复合门、极窄铝合金极简门。工厂集研发、数控生产、定制加工、配送安装、售后维保一体，面向惠州全域家装自建房、精装楼盘、商铺工装、装修公司配套、全国经销商供货。针对南方回南天潮湿气候优化防潮、防变形、防锈工艺，非标尺寸可定制，工厂直供无中间商差价，提供免费勘测、全屋搭配方案、透明报价、稳定排产交付、本地极速售后全流程服务。
             </p>
             <div className="flex flex-col sm:flex-row gap-5">
               <a 
@@ -423,8 +422,8 @@ export default function App() {
               <h3 className="text-4xl md:text-5xl font-serif font-bold mb-8 leading-tight">
                 二十载行业积淀<br />专注门业高端定制
               </h3>
-              <p className="text-lg text-neutral-600 mb-8 leading-relaxed">
-                {COMPANY_INFO.name}坐落于惠州。作为粤东地区专业的门类制造服务商，我们始终秉承“匠心造好门”的理念，专注实木门、铝木门等多系列产品的研发与交付。
+                            <p className="text-lg text-neutral-600 mb-8 leading-relaxed">
+                惠州市美创门业有限公司坐落仲恺潼侨，是惠州仲恺本土实体门类生产工厂，主营入户安全门、全屋实木烤漆门、铝木复合门、极窄铝合金极简门四大品类。工厂全套数控裁切、封边、组装设备，每款产品出厂经过隔音、密封、防潮、抗压多重质检，解决广东珠三角地区木门开裂、铝门渗水、入户门防盗差等家装痛点。经营模式为工厂直营零售+工程批量供货+经销商加盟三重渠道，不经过中间商，同等配置低于门店零售价30%左右。自有安装团队，无需外包，售后响应24小时内上门。厂区地址：惠州市仲恺高新区潼侨产业园。
               </p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
@@ -711,4 +710,6 @@ export default function App() {
     </div>
   );
 }
+
+
 
