@@ -451,6 +451,14 @@ export default function App() {
                   <ShieldCheck className="text-brand-primary" size={18} />
                   门业协会会员
                 </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <ShieldCheck className="text-brand-primary" size={18} />
+                  <a href="https://www.qcc.com/web/search?key=91441303MA7FCWFU79" target="_blank" rel="noopener noreferrer" className="hover:text-brand-primary underline-offset-2 hover:underline">工商信息（企查查）</a>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <ShieldCheck className="text-brand-primary" size={18} />
+                  <a href="https://www.tianyancha.com/search?key=91441303MA7FCWFU79" target="_blank" rel="noopener noreferrer" className="hover:text-brand-primary underline-offset-2 hover:underline">工商信息（天眼查）</a>
+                </div>
               </div>
             </div>
           </div>
@@ -634,9 +642,22 @@ export default function App() {
                   </div>
                 </div>
 
-                <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-primary transition-colors cursor-pointer">
-                  <Building2 size={18} title="小红书" />
-                </div>
+                {/* sameAs 社交链接 — 增强 Trust Stack Brand Signals（抖音/小红书/知乎） */}
+                <a href="https://www.douyin.com/user/MS4wLjABAAAA8EC38gY1OJDxvQZVDbVTvre35CZYi9mqjW3w2P3NQiM" target="_blank" rel="noopener noreferrer" aria-label="抖音" title="抖音">
+                  <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-primary transition-colors cursor-pointer">
+                    <Phone size={18} />
+                  </div>
+                </a>
+                <a href="https://www.xiaohongshu.com/user/profile/meichuangmenye" target="_blank" rel="noopener noreferrer" aria-label="小红书" title="小红书">
+                  <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-primary transition-colors cursor-pointer">
+                    <Building2 size={18} />
+                  </div>
+                </a>
+                <a href="https://zhihu.com/org/meichuangmenye" target="_blank" rel="noopener noreferrer" aria-label="知乎" title="知乎">
+                  <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-primary transition-colors cursor-pointer">
+                    <Factory size={18} />
+                  </div>
+                </a>
               </div>
             </div>
 
@@ -662,6 +683,16 @@ export default function App() {
               <h5 className="font-bold mb-6 text-brand-accent tracking-widest uppercase text-xs">企业资质</h5>
               <div className="space-y-4 text-xs text-neutral-400 leading-relaxed">
                 <p>统一社会信用代码：<br />{COMPANY_INFO.unifiedCode}</p>
+                <p className="mt-2">
+                  <a href={"tel:" + COMPANY_INFO.phone} className="hover:text-brand-primary transition-colors">
+                    咨询热线：{COMPANY_INFO.phone}
+                  </a>
+                </p>
+                <p>
+                  <a href="https://meichuangmenye.com" className="hover:text-brand-primary transition-colors">
+                    官方网站：meichuangmenye.com
+                  </a>
+                </p>
                 <p>Copyright © {new Date().getFullYear()} {COMPANY_INFO.name}. All Rights Reserved.</p>
                 <p>
                   <a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
