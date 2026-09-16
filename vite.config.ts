@@ -2,10 +2,10 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig, loadEnv} from 'vite';
-// 注意：EdgeOne Pages 上 vite-plugin-prerender 无法运行
-// 因为它依赖 Puppeteer（需要下载 Chromium），而 EdgeOne 的 serverless
-// 构建环境没有浏览器，内存有限，网络也受限。
-// 我们改用 React 官方 SSR API（纯 Node.js），零浏览器依赖，100% 兼容。
+
+// EdgeOne Pages / 腾讯云边缘平台 100% 兼容配置
+// SSR 构建用 React renderToString，纯 Node.js，零浏览器依赖
+// motion/react 等浏览器专用模块通过 resolve.alias 替换为 stub
 
 export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
@@ -16,11 +16,15 @@ export default defineConfig(({mode}) => {
     ],
 
     // ========== SSR 构建配置 ==========
-    // 用 vite build --ssr 生成 SSR bundle
-    // 然后 scripts/ssr-merge.mjs 把 SSR 输出塞进 dist/index.html
     ssr: {
-      // motion (framer-motion v12+) 在 SSR 下需要正常解析
-      noExternal: ['motion'],
+      // 所有 SSR 环境下可能用到浏览器 API 的包都标记为 noExternal
+      // 确保 Vite 会把它们打进 SSR bundle 而不是尝试 require
+      noExternal: [
+        'motion',
+        'motion/react',
+        '@motion/react',
+        'lucide-react',
+      ],
     },
 
     define: {
