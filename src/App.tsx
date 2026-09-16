@@ -59,7 +59,7 @@ export default function App() {
     { name: '产品中心', href: '#products' },
     { name: '核心优势', href: '#advantages' },
     { name: '工程案例', href: '#cases' },
-    { name: '关于我们', href: '#about' },
+    { name: '关于我们', href: '/about.html' },
     { name: '常见问题', href: '#faq' },
     { name: '联系我们', href: '#contact' },
   ];
@@ -300,10 +300,10 @@ export default function App() {
                     ))}
                   </ul>
                   <a 
-                    href="#contact"
+                    href={`/products/${category.id}.html`}
                     className="w-full py-3 border border-neutral-200 rounded-lg text-sm font-bold hover:bg-neutral-50 transition-colors text-center"
                   >
-                    详情咨询
+                    查看详情
                   </a>
                 </div>
               </motion.div>
