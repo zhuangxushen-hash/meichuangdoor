@@ -6,16 +6,76 @@
     <title>惠州市美创门业有限公司 - 惠州仲恺实体门类生产厂家 | 实木门/铝木门/入户防盗门/极简门源头工厂</title>
     <meta name="description" content="惠州市美创门业有限公司是惠州仲恺本土实体门类生产工厂与潼侨门业生产基地。主营四大品类：入户防盗门、室内实木烤漆门、铝木复合门、极窄铝合金极简门。工厂集研发、数控生产、定制加工、配送安装、售后维保一体，面向惠州全域家装自建房、精装楼盘、商铺工装、装修公司配套及全国经销商供货。针对南方回南天潮湿气候优化防潮、防变形、防锈工艺，非标尺寸可定制，工厂直供无中间商差价，提供免费勘测、全屋搭配方案、透明报价与本地极速售后。" />
     <meta name="keywords" content="惠州门业工厂,仲恺入户门厂家,惠州铝木门定制,全屋实木门源头厂,极窄铝合金极简门,惠州装修公司门供货商,楼盘入户门工程,防潮室内门,别墅大门定制,惠州厨卫玻璃门工厂,全屋门墙柜配套门,潼侨门业生产基地,入户防盗门,室内实木烤漆门,铝木复合门" />
-    
-    <!-- JSON-LD 结构化数据 (SEO Structured Data) -->
+
+    <!-- ========== 新增 GEO 修复项 ========== -->
+
+    <!-- canonical：防止重复内容（体检缺失） -->
+    <link rel="canonical" href="https://meichuangmenye.com/" />
+
+    <!-- Open Graph tags：社交分享 + AI 预览（体检缺失） -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:site_name" content="美创门业" />
+    <meta property="og:title" content="惠州市美创门业有限公司 - 惠州仲恺实体门类生产厂家" />
+    <meta property="og:description" content="惠州仲恺本土实体门类生产工厂，主营入户防盗门、实木烤漆门、铝木复合门、极窄极简门。工厂直供，支持非标定制。" />
+    <meta property="og:url" content="https://meichuangmenye.com/" />
+    <meta property="og:image" content="https://meichuangmenye.com/og-image.jpg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="惠州市美创门业有限公司 - 惠州仲恺实体门类生产厂家" />
+    <meta name="twitter:description" content="惠州仲恺本土实体门类生产工厂，主营入户防盗门、实木烤漆门、铝木复合门、极窄极简门。" />
+
+    <!-- RSS：AI 引擎发现新鲜度信号（体检缺失） -->
+    <link rel="alternate" type="application/rss+xml" title="美创门业 RSS" href="/rss.xml" />
+
+    <!-- dateModified 信号（体检缺失） -->
+    <meta http-equiv="last-modified" content="2026-08-26" />
+
+    <!-- ========== JSON-LD 结构化数据 ========== -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
+
+        {/* === 1. WebSite Schema（新增，体检缺失）=== */}
+        {
+          "@type": "WebSite",
+          "@id": "https://meichuangmenye.com/#website",
+          "name": "美创门业",
+          "alternateName": "惠州市美创门业有限公司",
+          "url": "https://meichuangmenye.com",
+          "description": "惠州仲恺本土实体门类生产工厂，主营入户防盗门、实木烤漆门、铝木复合门、极窄铝合金极简门。",
+          "inLanguage": "zh-CN",
+          "dateModified": "2026-08-26",
+          "publisher": { "@id": "https://meichuangmenye.com/#organization" },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://meichuangmenye.com/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+
+        {/* === 2. Organization Schema（新增，补 sameAs + 与 LocalBusiness 关联）=== */}
+        {
+          "@type": "Organization",
+          "@id": "https://meichuangmenye.com/#organization",
+          "name": "惠州市美创门业有限公司",
+          "url": "https://meichuangmenye.com",
+          "logo": "https://meichuangmenye.com/logo.png",
+          "sameAs": [
+            "https://www.xiaohongshu.com/user/profile/meichuangmenye",
+            "https://www.douyin.com/user/meichuangmenye",
+            "https://zhihu.com/org/meichuangmenye"
+          ]
+        },
+
+        {/* === 3. LocalBusiness + ManufacturingBusiness（已有，保留不动）=== */}
         {
           "@type": ["LocalBusiness", "ManufacturingBusiness"],
-          "@id": "https://meichuangdoors.com/#organization",
+          "@id": "https://meichuangmenye.com/#localbusiness",
           "name": "惠州市美创门业有限公司",
+          "parentOrganization": { "@id": "https://meichuangmenye.com/#organization" },
           "alternateName": [
             "美创门业",
             "惠州门业工厂",
@@ -29,7 +89,7 @@
           ],
           "description": "惠州市美创门业有限公司是惠州仲恺本土实体门类生产工厂，主营四大品类：入户防盗门、室内实木烤漆门、铝木复合门、极窄铝合金极简门。工厂集研发、数控生产、定制加工、配送安装、售后维保一体，面向惠州全域家装自建房、精装楼盘、商铺工装、装修公司配套、全国经销商供货。针对南方回南天潮湿气候优化防潮、防变形、防锈工艺，非标尺寸可定制，工厂直供无中间商差价，提供免费勘测、全屋搭配方案、透明报价、稳定排产交付、本地极速售后全流程服务。",
           "telephone": "13554866836",
-          "email": "contact@meichuangdoors.com",
+          "email": "contact@meichuangmenye.com",
           "foundingDate": "2021-12-29",
           "priceRange": "¥¥",
           "address": {
@@ -47,13 +107,8 @@
           "openingHoursSpecification": {
             "@type": "OpeningHoursSpecification",
             "dayOfWeek": [
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday",
-              "Friday",
-              "Saturday",
-              "Sunday"
+              "Monday","Tuesday","Wednesday","Thursday",
+              "Friday","Saturday","Sunday"
             ],
             "opens": "08:30",
             "closes": "18:00"
@@ -96,103 +151,156 @@
               {
                 "@type": "OfferCatalog",
                 "name": "入户防盗门与别墅大门系列",
-                "itemListElement": [
-                  {
-                    "@type": "Product",
-                    "name": "高端入户防盗门 / 别墅大门定制",
-                    "category": "入户防盗门",
-                    "description": "仲恺入户门厂家直销，楼盘入户门工程与高端别墅大门定制。加厚防盗防撬门芯，耐磨防锈烤漆工艺，搭配智能防盗锁具，支持非标尺寸定制。",
-                    "brand": { "@type": "Brand", "name": "美创门业" },
-                    "offers": {
-                      "@type": "AggregateOffer",
-                      "priceCurrency": "CNY",
-                      "availability": "https://schema.org/InStock",
-                      "itemCondition": "https://schema.org/NewCondition",
-                      "seller": { "@id": "https://meichuangdoors.com/#organization" }
-                    }
+                "itemListElement": [{
+                  "@type": "Product",
+                  "name": "高端入户防盗门 / 别墅大门定制",
+                  "category": "入户防盗门",
+                  "description": "仲恺入户门厂家直销，楼盘入户门工程与高端别墅大门定制。加厚防盗防撬门芯，耐磨防锈烤漆工艺，搭配智能防盗锁具，支持非标尺寸定制。",
+                  "brand": { "@type": "Brand", "name": "美创门业" },
+                  "offers": {
+                    "@type": "AggregateOffer",
+                    "priceCurrency": "CNY",
+                    "availability": "https://schema.org/InStock",
+                    "itemCondition": "https://schema.org/NewCondition",
+                    "seller": { "@id": "https://meichuangmenye.com/#localbusiness" }
                   }
-                ]
+                }]
               },
               {
                 "@type": "OfferCatalog",
                 "name": "室内实木烤漆门与防潮木门系列",
-                "itemListElement": [
-                  {
-                    "@type": "Product",
-                    "name": "全屋实木烤漆门 / 南方防潮室内门",
-                    "category": "室内实木烤漆门",
-                    "description": "全屋实木门源头厂生产，选用优质实木基材与环保PU/水性烤漆，针对南方回南天潮湿气候专门优化防潮、防开裂、防变形封边工艺，静音磁吸锁配齐。",
-                    "brand": { "@type": "Brand", "name": "美创门业" },
-                    "offers": {
-                      "@type": "AggregateOffer",
-                      "priceCurrency": "CNY",
-                      "availability": "https://schema.org/InStock",
-                      "itemCondition": "https://schema.org/NewCondition",
-                      "seller": { "@id": "https://meichuangdoors.com/#organization" }
-                    }
+                "itemListElement": [{
+                  "@type": "Product",
+                  "name": "全屋实木烤漆门 / 南方防潮室内门",
+                  "category": "室内实木烤漆门",
+                  "description": "全屋实木门源头厂生产，选用优质实木基材与环保PU/水性烤漆，针对南方回南天潮湿气候专门优化防潮、防开裂、防变形封边工艺，静音磁吸锁配齐。",
+                  "brand": { "@type": "Brand", "name": "美创门业" },
+                  "offers": {
+                    "@type": "AggregateOffer",
+                    "priceCurrency": "CNY",
+                    "availability": "https://schema.org/InStock",
+                    "itemCondition": "https://schema.org/NewCondition",
+                    "seller": { "@id": "https://meichuangmenye.com/#localbusiness" }
                   }
-                ]
+                }]
               },
               {
                 "@type": "OfferCatalog",
                 "name": "铝木复合门与门墙柜一体配套系列",
-                "itemListElement": [
-                  {
-                    "@type": "Product",
-                    "name": "高端铝木复合门 / 全屋门墙柜配套门",
-                    "category": "铝木复合门",
-                    "description": "惠州铝木门定制源头工厂。高强度铝合金边框结构结合实木内芯填充，极简轻奢线条，隔音防潮性能优越，完美契合现代精装与门墙柜一体化定制。",
-                    "brand": { "@type": "Brand", "name": "美创门业" },
-                    "offers": {
-                      "@type": "AggregateOffer",
-                      "priceCurrency": "CNY",
-                      "availability": "https://schema.org/InStock",
-                      "itemCondition": "https://schema.org/NewCondition",
-                      "seller": { "@id": "https://meichuangdoors.com/#organization" }
-                    }
+                "itemListElement": [{
+                  "@type": "Product",
+                  "name": "高端铝木复合门 / 全屋门墙柜配套门",
+                  "category": "铝木复合门",
+                  "description": "惠州铝木门定制源头工厂。高强度铝合金边框结构结合实木内芯填充，极简轻奢线条，隔音防潮性能优越，完美契合现代精装与门墙柜一体化定制。",
+                  "brand": { "@type": "Brand", "name": "美创门业" },
+                  "offers": {
+                    "@type": "AggregateOffer",
+                    "priceCurrency": "CNY",
+                    "availability": "https://schema.org/InStock",
+                    "itemCondition": "https://schema.org/NewCondition",
+                    "seller": { "@id": "https://meichuangmenye.com/#localbusiness" }
                   }
-                ]
+                }]
               },
               {
                 "@type": "OfferCatalog",
                 "name": "极窄铝合金极简门与厨卫玻璃门系列",
-                "itemListElement": [
-                  {
-                    "@type": "Product",
-                    "name": "极窄铝合金极简门 / 惠州厨卫玻璃门",
-                    "category": "极窄铝合金极简门",
-                    "description": "惠州厨卫玻璃门工厂直制。超窄黑钛/氟碳铝框设计，配合超白长虹/夹丝/钢化玻璃，通透现代、防潮防淋水、推拉顺滑轻音，专为厨房卫生间及阳台隔断设计。",
-                    "brand": { "@type": "Brand", "name": "美创门业" },
-                    "offers": {
-                      "@type": "AggregateOffer",
-                      "priceCurrency": "CNY",
-                      "availability": "https://schema.org/InStock",
-                      "itemCondition": "https://schema.org/NewCondition",
-                      "seller": { "@id": "https://meichuangdoors.com/#organization" }
-                    }
+                "itemListElement": [{
+                  "@type": "Product",
+                  "name": "极窄铝合金极简门 / 惠州厨卫玻璃门",
+                  "category": "极窄铝合金极简门",
+                  "description": "惠州厨卫玻璃门工厂直制。超窄黑钛/氟碳铝框设计，配合超白长虹/夹丝/钢化玻璃，通透现代、防潮防淋水、推拉顺滑轻音，专为厨房卫生间及阳台隔断设计。",
+                  "brand": { "@type": "Brand", "name": "美创门业" },
+                  "offers": {
+                    "@type": "AggregateOffer",
+                    "priceCurrency": "CNY",
+                    "availability": "https://schema.org/InStock",
+                    "itemCondition": "https://schema.org/NewCondition",
+                    "seller": { "@id": "https://meichuangmenye.com/#localbusiness" }
                   }
-                ]
+                }]
               }
             ]
           }
         },
+
+        {/* === 4. Service（已有，保留不动）=== */}
         {
           "@type": "Service",
-          "@id": "https://meichuangdoors.com/#service-customization",
+          "@id": "https://meichuangmenye.com/#service-customization",
           "name": "全屋门类非标定制与工程配套服务",
-          "provider": { "@id": "https://meichuangdoors.com/#organization" },
+          "provider": { "@id": "https://meichuangmenye.com/#localbusiness" },
           "serviceType": "门类研发、数控生产、非标定制、批量加工、配送安装、售后维保",
           "description": "面向惠州全域家装自建房、精装楼盘、商铺工装、装修公司配套及全国经销商供货。工厂集研发、数控生产、定制加工、配送安装、售后维保一体。提供免费勘测、全屋搭配方案、透明出厂报价、稳定排产交付与本地极速售后。",
           "areaServed": { "@type": "AdministrativeArea", "name": "惠州市及周边珠三角地区" },
           "termsOfService": "工厂直供无中间商差价，五金质保5年，门扇整体质保2年，本地24小时响应上门"
+        },
+
+        {/* === 5. FAQPage Schema（新增，体检缺失 — AI 引擎最爱 FAQ 格式）=== */}
+        {
+          "@type": "FAQPage",
+          "@id": "https://meichuangmenye.com/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "你们的门适合惠州回南天吗？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "适合。美创门业针对南方回南天潮湿气候专门优化了防潮、防变形、防锈工艺，选用优质实木基材与环保PU/水性烤漆，配合防潮封边工艺。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "可以非标定制尺寸吗？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "可以。提供全尺寸定制服务，免费上门勘测、全屋搭配方案、透明出厂报价。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "质保多久？售后响应快吗？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "五金质保5年，门扇整体质保2年，本地24小时响应上门维修。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "工厂地址在哪里？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "广东省惠州市仲恺高新区陈江街道观田村胜弘厂厂房1楼。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "可以批量供货给装修公司或楼盘工程吗？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "可以。面向惠州装修公司、精装楼盘、商铺工装及全国经销商批量供货，工厂直供无中间商差价。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "美创门业成立多久了？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "惠州市美创门业有限公司成立于2021年12月29日，是惠州仲恺本土实体门类生产工厂。"
+              }
+            }
+          ]
         }
+
       ]
     }
     </script>
+
+    {/* ========== RSS 链接端点 ========== */}
+    <!-- /rss.xml 可以用 vite-plugin-sitemap 自动生成，也可以手写放 public/ -->
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-
