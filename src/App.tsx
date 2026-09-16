@@ -76,7 +76,7 @@ export default function App() {
           <Logo light={!scrolled} className="scale-90 sm:scale-100 origin-left" />
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="md:flex items-center gap-6 block">
             {navLinks.map((link) => (
               <a 
                 key={link.name} 
@@ -405,7 +405,7 @@ export default function App() {
               <div className="absolute -bottom-8 -right-8 w-64 h-64 bg-brand-primary rounded-3xl -z-0 opacity-10" />
               <div className="absolute -top-12 -left-12 aspect-square w-48 bg-brand-accent rounded-full -z-0 opacity-10" />
               
-              <div className="absolute bottom-8 left-8 bg-white/90 backdrop-blur p-6 rounded-2xl shadow-xl z-20 border border-white/50 hidden md:block">
+              <div className="absolute bottom-8 left-8 bg-white/90 backdrop-blur p-6 rounded-2xl shadow-xl z-20 border border-white/50 md:block">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center text-white">
                     <Users size={24} />
@@ -711,3 +711,4 @@ export default function App() {
     </div>
   );
 }
+
