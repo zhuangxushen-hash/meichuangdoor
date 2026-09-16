@@ -1,13 +1,6 @@
 // SSR 构建产物合并脚本
-// 流程：
-// 1. vite build → 客户端产物输出到 dist/（含空壳 index.html）
-// 2. vite build --ssr scripts/entry-server.jsx → SSR bundle 输出到 dist-ssr/
-// 3. 本脚本加载 SSR bundle，调用 render() 得到预渲染 HTML
-// 4. 剥离 framer-motion / motion 组件的初始动画内联样式（opacity:0、translateY 等）
-//    → 避免 AI 爬虫判定为 cloaking（Hidden text SUSPICIOUS）
-//    → 客户端水合后 motion 仍然会按 initial prop 执行动画
-// 5. 把 <div id="root"></div> 替换为 <div id="root">${ssrHtml}</div>
-// 6. 写回 dist/index.html — 现在 index.html 包含完整 React 预渲染内容
+// 流程：vite build → vite build --ssr → 本脚本把 SSR 输出塞进 dist/index.html
+// 关键：剥离 framer-motion/motion 的 initial 动画内联样式 → 防 cloaking 检测
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -15,116 +8,99 @@ import {fileURLToPath} from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
-
 const SSR_BUNDLE = path.join(root, 'dist-ssr', 'entry-server.js');
 const DIST_INDEX = path.join(root, 'dist', 'index.html');
 
-console.log('📦 SSR 预渲染合并脚本启动 (含 motion 样式剥离)');
-console.log('   SSR bundle:', SSR_BUNDLE);
-console.log('   目标文件:  ', DIST_INDEX);
+console.log('📦 SSR 预渲染合并脚本 v2 (motion 样式剥离修复版)');
 
-// 检查产物是否存在
-if (!fs.existsSync(SSR_BUNDLE)) {
-  console.error('❌ SSR bundle 不存在！请先运行 vite build --ssr');
-  process.exit(1);
-}
-if (!fs.existsSync(DIST_INDEX)) {
-  console.error('❌ dist/index.html 不存在！请先运行 vite build');
-  process.exit(1);
-}
+if (!fs.existsSync(SSR_BUNDLE)) { console.error('❌ SSR bundle 不存在'); process.exit(1); }
+if (!fs.existsSync(DIST_INDEX)) { console.error('❌ dist/index.html 不存在'); process.exit(1); }
 
-// 加载 SSR bundle
 const ssrModule = await import(SSR_BUNDLE);
-if (!ssrModule.render) {
-  console.error('❌ SSR bundle 没有导出 render 函数');
-  process.exit(1);
-}
+if (!ssrModule.render) { console.error('❌ SSR bundle 无 render'); process.exit(1); }
 
-// 执行渲染
 let ssrHtml = ssrModule.render();
-if (!ssrHtml || ssrHtml.length === 0) {
-  console.error('❌ SSR render() 返回空字符串');
-  process.exit(1);
-}
-console.log(`✅ SSR render 成功 — ${ssrHtml.length} 字符 ≈ ${Math.round(ssrHtml.length / 6)} words`);
+if (!ssrHtml) { console.error('❌ SSR render 返回空'); process.exit(1); }
+console.log(`✅ SSR render — ${ssrHtml.length} chars ≈ ${Math.round(ssrHtml.length / 6)} words`);
 
-// ========== 关键修复：剥离 framer-motion / motion 初始动画内联样式 ==========
-// SSR 时 motion.div initial={{ opacity: 0, y: 30 }} 会输出内联 style="opacity:0;transform:translateY(30px)"
-// AI 爬虫看到 opacity:0 判定为 cloaking → Hidden text SUSPICIOUS
-// 客户端水合后 motion 会按 initial prop 重新应用，所以剥离不影响动画
-const beforeMotionClean = ssrHtml.length;
+// ========== motion 初始样式剥离 ==========
+// motion.div initial={{ opacity:0, y:30 }} → style="opacity:0;transform:translateY(30px)"
+// AI 爬虫看到 opacity:0 判定 cloaking → Hidden text SUSPICIOUS
+// 客户端水合后 motion 会重新应用动画，剥离零副作用
+const before = ssrHtml.length;
 
-// 剥离 opacity:0 或 opacity:0.0 （只对透明度为 0 的内容元素生效）
-ssrHtml = ssrHtml.replace(/(\s+)opacity\s*:\s*0(?:\.0+)?(?:\s*;|$)/gi, '');
+// 策略：先匹配完整 style="opacity:0;transform:translateY(Npx)" 整段干掉
+// 用更宽泛的正则：匹配 style 值中任何包含 opacity:0 或 transform:translateY 的属性
+ssrHtml = ssrHtml.replace(
+  /\s*opacity\s*:\s*0(?:\.0+)?\s*;?/gi,
+  ''
+);
+ssrHtml = ssrHtml.replace(
+  /\s*transform\s*:\s*translate[XY]\([^)]+\)\s*;?/gi,
+  ''
+);
+ssrHtml = ssrHtml.replace(
+  /\s*transform\s*:\s*scale\([^)]+\)\s*;?/gi,
+  ''
+);
 
-// 剥离 transform:translateY(±Npx) 初始位移（motion initial 的 y / y1 / y2）
-ssrHtml = ssrHtml.replace(/(\s+)transform\s*:\s*translate[XY]\([^)]+\)(?:\s*;|$)/gi, '');
-
-// 剥离 transform:scale(0...1) 初始缩放
-ssrHtml = ssrHtml.replace(/(\s+)transform\s*:\s*scale\([^)]+\)(?:\s*;|$)/gi, '');
-
-// 清理 style="" 和 style=";" 空样式属性
-ssrHtml = ssrHtml.replace(/\s*style="\s*;?\s*"/gi, '');
-
-// 清理 style=";xxx" 开头多余分号
+// 清理残留：style=";xxx" → style="xxx"，style="xxx;" → style="xxx"，style="" → 删整个属性
 ssrHtml = ssrHtml.replace(/style="\s*;\s*/gi, 'style="');
-
-// 清理 style="xxx;xxx;" 末尾多余分号
 ssrHtml = ssrHtml.replace(/;\s*"/gi, '"');
+ssrHtml = ssrHtml.replace(/style="\s*"/gi, '');
 
-const removedBytes = beforeMotionClean - ssrHtml.length;
-const removedOpacity = (beforeMotionClean > ssrHtml.length) ? 
-  ((ssrHtml.match(/style="[^"]*opacity\s*:\s*0[^"]*"/gi) || []).length) : 0;
-console.log(`🧹 motion 样式剥离: ${removedBytes} bytes removed`);
-console.log(`   (opacity:0 / translateY / scale 在 SSR 输出中被清理，客户端水合后动画照常)`);
+const removed = before - ssrHtml.length;
 
-// 读取并合并 index.html
-let indexHtml = fs.readFileSync(DIST_INDEX, 'utf8');
-const before = indexHtml.length;
+// 验证：还有没有 opacity:0 残留（除了 .0 opacity 以外）
+const remainingOpacity = (ssrHtml.match(/style="[^"]*opacity\s*:\s*0(?:[^.\d]|$)[^"]*"/gi) || []).length;
+const remainingTransform = (ssrHtml.match(/style="[^"]*translate[XY][^"]*"/gi) || []).length;
 
-if (!/<div id="root"[^>]*>\s*<\/div>/.test(indexHtml)) {
-  // SSR 已经写入了一些东西（可能是预渲染插件残留），也要替换
-  indexHtml = indexHtml.replace(/<div id="root"([^>]*)>[\s\S]*?<\/div>/, `<div id="root"$1>${ssrHtml}</div>`);
-} else {
-  indexHtml = indexHtml.replace(
-    /<div id="root"([^>]*)>\s*<\/div>/,
-    `<div id="root"$1>${ssrHtml}</div>`
-  );
+console.log(`🧹 motion 样式剥离: ${removed} bytes removed`);
+console.log(`   opacity:0 残留: ${remainingOpacity} | translateY 残留: ${remainingTransform}`);
+if (remainingOpacity > 0 || remainingTransform > 0) {
+    console.log('   ⚠️ 仍有残留 — 可能需要调整正则');
+    // 打印残留供调试
+    const leftOvers = [
+        ...(ssrHtml.match(/style="[^"]*opacity\s*:\s*0[^.\d][^"]*"/gi) || []),
+        ...(ssrHtml.match(/style="[^"]*translate[XY][^"]*"/gi) || [])
+    ];
+    leftOvers.forEach(s => console.log('     ' + s));
 }
 
-// 写回
-fs.writeFileSync(DIST_INDEX, indexHtml, 'utf8');
-const after = indexHtml.length;
+// 合并 index.html
+let indexHtml = fs.readFileSync(DIST_INDEX, 'utf8');
+const beforeIndex = indexHtml.length;
 
-// 验证
+if (/<div id="root"[^>]*>\s*<\/div>/.test(indexHtml)) {
+    indexHtml = indexHtml.replace(
+        /<div id="root"([^>]*)>\s*<\/div>/,
+        `<div id="root"$1>${ssrHtml}</div>`
+    );
+} else {
+    indexHtml = indexHtml.replace(
+        /<div id="root"([^>]*)>[\s\S]*?<\/div>/,
+        `<div id="root"$1>${ssrHtml}</div>`
+    );
+}
+
+fs.writeFileSync(DIST_INDEX, indexHtml, 'utf8');
+
+// 最终验证
 const rootMatch = indexHtml.match(/<div id="root"[^>]*>([\s\S]*?)<\/div>/);
 const rootContent = rootMatch ? rootMatch[1] : '';
-const hasContent = rootContent.trim().length > 0;
 const h1Count = (indexHtml.match(/<h1/gi) || []).length;
 const h2Count = (indexHtml.match(/<h2/gi) || []).length;
-const h3Count = (indexHtml.match(/<h3/gi) || []).length;
-const pCount = (indexHtml.match(/<p/gi) || []).length;
-
-// 检查 motion opacity:0 是否还存在
-const remainingOpacity0 = (rootContent.match(/opacity\s*:\s*0[^\d]/gi) || []).length;
-
-// 粗算纯文本量
-const stripped = indexHtml
-  .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, ' ')
-  .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, ' ')
-  .replace(/<[^>]+>/g, ' ')
-  .replace(/\s+/g, ' ')
-  .trim();
+const remainingInFinal = (rootContent.match(/style="[^"]*opacity\s*:\s*0[^.\d][^"]*"/gi) || []).length;
 
 console.log('');
 console.log('📊 合并结果:');
-console.log(`   原始 HTML: ${before.toLocaleString()} bytes`);
-console.log(`   合并后:    ${after.toLocaleString()} bytes (+${(after - before).toLocaleString()})`);
-console.log(`   root 有内容: ${hasContent ? '✅' : '❌'}`);
-console.log(`   纯文本:    ≈ ${Math.round(stripped.length / 6)} words`);
-console.log(`   H1/H2/H3:  ${h1Count}/${h2Count}/${h3Count}`);
-console.log(`   <p> 标签:  ${pCount}`);
-console.log(`   opacity:0: ${remainingOpacity0} 个${remainingOpacity0 === 0 ? ' ✅' : ' ⚠️ 可能还有残留'}`);
+console.log(`   HTML: ${beforeIndex.toLocaleString()} → ${indexHtml.length.toLocaleString()} (+${(indexHtml.length - beforeIndex).toLocaleString()})`);
+console.log(`   root 有内容: ${rootContent.length > 100 ? '✅' : '❌'}`);
+console.log(`   H1/H2: ${h1Count}/${h2Count}`);
+console.log(`   最终 opacity:0 残留: ${remainingInFinal} ${remainingInFinal === 0 ? '✅' : '❌'}`);
 console.log('');
-console.log('🎉 SSR 预渲染完成！AI 爬虫现在能看到完整内容了。');
-console.log('   motion initial 样式已剥离，不会被判定为 cloaking。');
+if (remainingInFinal === 0 && rootContent.length > 100) {
+    console.log('🎉 SSR 预渲染完成！motion 样式已剥离，无 cloaking 风险。');
+} else {
+    console.log('⚠️ 请检查上方残留，可能需要手动修复。');
+}
