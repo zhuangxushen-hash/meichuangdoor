@@ -1,0 +1,114 @@
+# ========================================
+# robots.txt — 美创门业
+# 位置: /public/robots.txt（Vite 构建时会原样复制到根目录）
+# 创建: 2026-09-16
+# 对照 GEO 体检修复：放行全部 28 个 AI 爬虫
+# ========================================
+
+# --- AI 爬虫（核心修复，体检时全部"未配置"）---
+
+# OpenAI (ChatGPT / GPT-4o)
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic (Claude)
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+
+# Google (Gemini / AI Overviews)
+User-agent: Google-Extended
+Allow: /
+User-agent: Google-CloudVertexBot
+Allow: /
+
+# 字节跳动（豆包 / 抖音 / 头条）
+User-agent: Bytespider
+Allow: /
+
+# Common Crawl（豆包/百度/阿里通吃）
+User-agent: CCBot
+Allow: /
+
+# 百度（文心一言）
+User-agent: YouBot
+Allow: /
+
+# 华为（盘古）
+User-agent: PetalBot
+Allow: /
+
+# xAI（Grok）
+User-agent: xAI-Bot
+Allow: /
+
+# Meta
+User-agent: meta-externalagent
+Allow: /
+User-agent: Meta-ExternalFetcher
+Allow: /
+User-agent: facebookexternalhit
+Allow: /
+
+# Amazon
+User-agent: Amazonbot
+Allow: /
+
+# AI2 Labs
+User-agent: AI2Bot
+Allow: /
+User-agent: AI2Bot-Dolma
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+
+# DuckDuckGo
+User-agent: DuckAssistBot
+Allow: /
+
+# Apple
+User-agent: Applebot
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+
+# --- 传统搜索引擎爬虫 ---
+User-agent: Googlebot
+Allow: /
+User-agent: Bingbot
+Allow: /
+User-agent: Baiduspider
+Allow: /
+User-agent: 360Spider
+Allow: /
+User-agent: YandexBot
+Allow: /
+
+# --- 全站默认 ---
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Disallow: /backend/
+Disallow: /login/
+Disallow: /*?*
+
+# --- Sitemap ---
+Sitemap: https://meichuangmenye.com/sitemap.xml
+Sitemap: https://meichuangmenye.com/llms.txt
