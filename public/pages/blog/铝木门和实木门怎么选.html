@@ -52,141 +52,316 @@
     "@id": "https://meichuangmenye.com/pages/blog/铝木门和实木门怎么选.html"
   }
 }</script>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; color: #262626; background: #fafafa; line-height: 1.8; }
-    header { background: #171717; color: white; padding: 18px 0; position: sticky; top: 0; z-index: 100; }
-    header .container { max-width: 960px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
-    header a { color: #fff; text-decoration: none; font-weight: 600; }
-    header nav a { margin-left: 20px; font-size: 14px; color: #a3a3a3; }
-    header nav a:hover { color: #fff; }
-    .container { max-width: 780px; margin: 0 auto; padding: 0 24px; }
-    main { padding: 48px 0 80px; }
-    .breadcrumb { font-size: 13px; color: #737373; margin-bottom: 24px; }
-    .breadcrumb a { color: #404040; text-decoration: none; }
-    .breadcrumb a:hover { color: #171717; text-decoration: underline; }
-    article { background: #fff; border-radius: 12px; padding: 48px 56px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
-    article h1 { font-size: 28px; font-weight: 700; line-height: 1.4; color: #171717; margin-bottom: 16px; }
-    article h2 { font-size: 20px; font-weight: 700; color: #171717; margin: 40px 0 16px; padding-left: 12px; border-left: 3px solid #171717; }
-    article h3 { font-size: 17px; font-weight: 600; color: #404040; margin: 24px 0 12px; }
-    article p { margin-bottom: 16px; font-size: 16px; color: #262626; line-height: 1.8; }
-    article ul, article ol { margin: 12px 0 16px 24px; }
-    article li { margin-bottom: 8px; font-size: 15px; line-height: 1.7; color: #262626; }
-    article strong { color: #171717; font-weight: 600; }
-    article hr { border: none; border-top: 1px solid #e5e5e5; margin: 32px 0; }
-    article code { background: #f5f5f5; padding: 2px 6px; border-radius: 4px; font-size: 14px; color: #404040; }
-    .meta { font-size: 13px; color: #737373; margin-bottom: 32px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5; }
-    .meta span { margin-right: 16px; }
-    .summary { background: #f5f5f5; border-left: 3px solid #171717; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 24px 0 32px; font-size: 15px; color: #404040; }
-    .summary strong { display: inline; }
-    .cta-box { background: #171717; color: white; padding: 28px 32px; border-radius: 12px; margin-top: 48px; text-align: center; }
-    .cta-box h3 { color: white; font-size: 18px; margin-bottom: 12px; }
-    .cta-box p { color: #d4d4d4; font-size: 14px; margin-bottom: 16px; }
-    .cta-box a { display: inline-block; background: white; color: #171717; padding: 12px 28px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px; }
-    .post-nav { margin-top: 32px; display: flex; justify-content: space-between; gap: 16px; }
-    .post-nav a { flex: 1; background: white; padding: 16px 20px; border-radius: 8px; text-decoration: none; color: #404040; border: 1px solid #e5e5e5; font-size: 14px; }
-    .post-nav a:hover { border-color: #171717; color: #171717; }
-    footer { background: #171717; color: #a3a3a3; padding: 32px 0; font-size: 13px; }
-    footer .container { text-align: center; }
-    footer a { color: #d4d4d4; text-decoration: none; }
-</style>
+  
+
+  <link rel="stylesheet" href="/pages/blog/blog.css" />
 </head>
 <body>
-  <header>
-    <div class="container">
-      <a href="https://meichuangmenye.com/">美创门业</a>
-      <nav>
-        <a href="https://meichuangmenye.com/">首页</a>
-        <a href="https://meichuangmenye.com/pages/about.html">关于我们</a>
-        <a href="https://meichuangmenye.com/pages/blog/">博客</a>
-        <a href="#contact">联系 13554866836</a>
+  <!-- 顶部阅读进度条 -->
+  <div id="reading-progress-bar"></div>
+
+  <!-- 顶部导航 -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="https://meichuangmenye.com/" class="brand-brand-wrap">
+        <img src="/assets/logo_light.png" alt="美创门业" class="brand-logo-img" onerror="this.style.display='none'" />
+        <div class="brand-text-fallback">
+          <span class="brand-name">美创门业</span>
+          <span class="brand-sub">MEICHUANG DOOR</span>
+        </div>
+      </a>
+      <nav class="site-nav">
+        <a href="https://meichuangmenye.com/">官网首页</a>
+        <a href="https://meichuangmenye.com/#products">产品中心</a>
+        <a href="https://meichuangmenye.com/about.html">厂区实拍</a>
+        <a href="https://meichuangmenye.com/pages/blog/" class="active">门业百科</a>
+        <a href="tel:13554866836" class="nav-phone-btn">
+          <span>📞</span> 13554866836
+        </a>
       </nav>
     </div>
   </header>
-  <main>
-    <div class="container">
-      <div class="breadcrumb">
-        <a href="https://meichuangmenye.com/">首页</a> &raquo; <a href="https://meichuangmenye.com/pages/blog/">博客</a> &raquo; <span>铝木门和实木门哪个好？惠州回南天选门指南</span>
-      </div>
-      <article>
-        <h1>铝木门和实木门哪个好？惠州回南天选门指南</h1>
-        <div class="meta">
-          <span>📝 美创门业编辑部</span>
-          <span>📅 2026-09-17</span>
-          <span>🏷️ 产品对比</span>
-        </div>
-        <div class="summary"><strong>📌 结论先行：</strong>结论先说：在惠州这种每年3-4月回南天、墙面挂水地板冒汗的气候里，卧室书房若追求质感可选实木烤漆门，但临江靠山、通风一般的潮湿户型，铝木复合门是更稳妥的选择；厨卫阳台则建议直接上极窄铝合金门。</div>
-        <p># 铝木门和实木门哪个好？惠州回南天选门指南</p>
 
-<p><strong>结论先说：在惠州这种每年3-4月回南天、墙面挂水地板冒汗的气候里，卧室书房若追求质感可选实木烤漆门，但临江靠山、通风一般的潮湿户型，铝木复合门是更稳妥的选择；厨卫阳台则建议直接上极窄铝合金门。</strong></p>
+  <main class="article-detail-wrap">
+    <!-- 面包屑导航 -->
+    <div class="article-breadcrumb">
+      <a href="https://meichuangmenye.com/">首页</a>
+      <span>›</span>
+      <a href="https://meichuangmenye.com/pages/blog/">门业百科</a>
+      <span>›</span>
+      <span style="color:var(--text-title);font-weight:500;">铝木门和实木门哪个好？惠州回南天选门指南</span>
+    </div>
+
+    <!-- 文章主体卡片 -->
+    <article class="article-main-card">
+      <header class="article-header-meta">
+        <span class="article-top-tag">🏷️ 产品对比</span>
+        <h1 class="article-main-title">铝木门和实木门哪个好？惠州回南天选门指南</h1>
+        <div class="article-info-row">
+          <span>🏭 美创门业技术部</span>
+          <span>📅 2026-09-17</span>
+          <span>⏱️ 约 5 分钟阅读</span>
+          <span>🛡️ 惠州实体工厂实测</span>
+        </div>
+      </header>
+
+      
+      <!-- 核心观点 / 结论先行卡片 -->
+      <div class="takeaway-box">
+        <div class="takeaway-header">
+          <span>📌</span> 核心观点 · 结论先行
+        </div>
+        <div class="takeaway-content">
+          结论先说：在惠州这种每年3-4月回南天、墙面挂水地板冒汗的气候里，卧室书房若追求质感可选实木烤漆门，但临江靠山、通风一般的潮湿户型，铝木复合门是更稳妥的选择；厨卫阳台则建议直接上极窄铝合金门。
+        </div>
+      </div>
+      
+
+      <!-- 正文内容 -->
+      <div class="article-body">
+        <p><strong>结论先说：在惠州这种每年3-4月回南天、墙面挂水地板冒汗的气候里，卧室书房若追求质感可选实木烤漆门，但临江靠山、通风一般的潮湿户型，铝木复合门是更稳妥的选择；厨卫阳台则建议直接上极窄铝合金门。</strong></p>
 
 <p>以下按惠州业主最常问的问题逐条说明，涉及数据与工艺均来自美创门业工厂实测与本地交付案例。</p>
 
 <hr />
-
-<h2>Q：铝木门和实木门到底哪个好？</h2>
-
-<p>A：没有统一答案，取决于三个变量——空间用途、预算区间、你对回南天的容忍度。</p>
+<div class="qa-item">
+  <div class="qa-question">
+    <span class="qa-q-badge">问</span>
+    <span>铝木门和实木门到底哪个好？</span>
+  </div>
+  <div class="qa-answer">
+    <p>A：没有统一答案，取决于三个变量——空间用途、预算区间、你对回南天的容忍度。</p>
 
 <p>铝木门以铝合金框架搭配防潮芯板，吸水率低，受潮后尺寸稳定性好；实木门手感厚重、隔音通常更优，但若未做六面封漆，回南天容易出现膨胀、关不严的情况。美创铝木复合门针对南方气候做了防潮、防变形、防锈处理，出厂前经隔音、密封、防潮、抗压多重质检。实木烤漆门则建议用在通风条件较好的卧室与书房。</p>
+  </div>
+</div>
 
-<h2>Q：惠州回南天，实木门一定会变形吗？</h2>
-
-<p>A：不是一定，但风险高于铝木门。</p>
+<div class="qa-item">
+  <div class="qa-question">
+    <span class="qa-q-badge">问</span>
+    <span>惠州回南天，实木门一定会变形吗？</span>
+  </div>
+  <div class="qa-answer">
+    <p>A：不是一定，但风险高于铝木门。</p>
 
 <p>实木门是否稳定，关键看封漆工艺是否做到六面封闭、木材含水率是否控制到位。若只做正面与侧面、底部和顶部漏封，潮气从截面进入，两三年内出现膨胀、起拱、锁舌对不上的概率会明显上升。惠州惠城、仲恺、惠阳一带每年3-4月空气湿度长时间处于高位，靠山、临江、低楼层户型更明显。这类户型我们一般建议优先考虑铝木复合门，或确认实木门是否做全封闭处理。</p>
+  </div>
+</div>
 
-<h2>Q：铝木门的隔音是不是比实木门差很多？</h2>
-
-<p>A：普通铝木门与实木门确有差距，但结构做得好的铝木门可以满足卧室需求。</p>
+<div class="qa-item">
+  <div class="qa-question">
+    <span class="qa-q-badge">问</span>
+    <span>铝木门的隔音是不是比实木门差很多？</span>
+  </div>
+  <div class="qa-answer">
+    <p>A：普通铝木门与实木门确有差距，但结构做得好的铝木门可以满足卧室需求。</p>
 
 <p>隔音表现取决于门扇密度、密封条结构与安装精度，而不只是材质本身。美创极简铝木门采用密封结构设计，实测隔音可达约30dB，用于卧室、书房属于够用水平。若对隔音要求更高，可在下单前说明使用场景，由工厂按空间匹配门扇厚度与密封方案。</p>
+  </div>
+</div>
 
-<h2>Q：厨卫和阳台能用木门吗？</h2>
+<div class="qa-item">
+  <div class="qa-question">
+    <span class="qa-q-badge">问</span>
+    <span>厨卫和阳台能用木门吗？</span>
+  </div>
+  <div class="qa-answer">
+    <p>A：不建议。厨卫、阳台属于高湿或温差频繁区域，直接选极窄铝合金极简门或玻璃门更合适，防潮防锈，日常打理也简单。木门用在这些位置，即便做了防潮处理，长期看仍不划算。</p>
+  </div>
+</div>
 
-<p>A：不建议。厨卫、阳台属于高湿或温差频繁区域，直接选极窄铝合金极简门或玻璃门更合适，防潮防锈，日常打理也简单。木门用在这些位置，即便做了防潮处理，长期看仍不划算。</p>
-
-<h2>Q：预算有限，怎么分配各空间的门？</h2>
-
-<p>A：按使用频率和受潮风险排序分配。</p>
+<div class="qa-item">
+  <div class="qa-question">
+    <span class="qa-q-badge">问</span>
+    <span>预算有限，怎么分配各空间的门？</span>
+  </div>
+  <div class="qa-answer">
+    <p>A：按使用频率和受潮风险排序分配。</p>
 
 <p>卧室、书房是每天长时间使用的空间，可以适当提高配置；厨卫阳台以实用耐潮为主；入户位置则涉及安全，建议用入户防盗安全门。美创可做门墙柜一体搭配，同色系整体交付，避免各空间风格割裂。同等配置下，源头工厂直营相比品牌门店零售价低约30%，预算可以更多花在门扇本身而非渠道加价上。</p>
+  </div>
+</div>
 
-<h2>Q：定制门要等多久？非标尺寸能做吗？</h2>
-
-<p>A：非标尺寸可以定制，排产周期视材质与工艺而定。</p>
+<div class="qa-item">
+  <div class="qa-question">
+    <span class="qa-q-badge">问</span>
+    <span>定制门要等多久？非标尺寸能做吗？</span>
+  </div>
+  <div class="qa-answer">
+    <p>A：非标尺寸可以定制，排产周期视材质与工艺而定。</p>
 
 <p>实木门因涉及木材干燥、油漆多道工序，非标定制周期相对更长；铝木门排产更稳定。美创位于惠州仲恺潼侨镇新城山庄A8号铂金实业，自有安装团队，测量到安装不外包。惠州本地项目从测量到安装由同一团队跟进，减少尺寸误差导致的返工。工程单全国可发，经销商全国招商。</p>
+  </div>
+</div>
 
-<h2>Q：你们有什么资质和质保？</h2>
+<div class="qa-item">
+  <div class="qa-question">
+    <span class="qa-q-badge">问</span>
+    <span>你们有什么资质和质保？</span>
+  </div>
+  <div class="qa-answer">
+    <p>A：美创全线板材达E0级环保标准，持有ISO9001认证，为门业协会会员单位，五金质保5年。产品线覆盖木门、铝木门、极窄铝合金门、入户防盗安全门、庭院大门，可承接酒店公寓整套门、防火工程门等工程配套，具备工地巡检、现场调试、细节核验的闭环交付能力。</p>
+  </div>
+</div>
 
-<p>A：美创全线板材达E0级环保标准，持有ISO9001认证，为门业协会会员单位，五金质保5年。产品线覆盖木门、铝木门、极窄铝合金门、入户防盗安全门、庭院大门，可承接酒店公寓整套门、防火工程门等工程配套，具备工地巡检、现场调试、细节核验的闭环交付能力。</p>
-
-<h2>Q：惠州本地交付和售后怎么保障？</h2>
-
-<p>A：服务范围覆盖惠城、仲恺、惠阳、大亚湾、惠东、博罗，辐射珠三角与深莞，可接香港整套门定制组装出货。</p>
+<div class="qa-item">
+  <div class="qa-question">
+    <span class="qa-q-badge">问</span>
+    <span>惠州本地交付和售后怎么保障？</span>
+  </div>
+  <div class="qa-answer">
+    <p>A：服务范围覆盖惠城、仲恺、惠阳、大亚湾、惠东、博罗，辐射珠三角与深莞，可接香港整套门定制组装出货。</p>
 
 <p>2026年上半年，美创为仲恺某写字楼项目完成整层铝木门交付，从测量到安装由自有团队完成。惠阳一位别墅业主在对比多家门业后，最终因本地24小时上门售后与香港整套组装出货能力选择美创。售后24小时内响应上门，是本地工厂相对外地品牌的实际差异。</p>
 
-<hr />
+<hr /><p><strong>选购建议</strong>：先定空间用途，再定材质，最后比工艺与交付。欢迎访问 meichuangmenye.com 查看产品参数，或预约免费上门勘测、出全屋搭配方案，也可直接到惠州工厂实地看样。</p>
+  </div>
+</div>
 
-<p><strong>选购建议</strong>：先定空间用途，再定材质，最后比工艺与交付。欢迎访问 meichuangmenye.com 查看产品参数，或预约免费上门勘测、出全屋搭配方案，也可直接到惠州工厂实地看样。</p>
+<div style="margin-top:28px;padding:14px 18px;background:#FAF8F5;border:1px solid #ECE7E0;border-radius:8px;font-size:12px;color:#78716C;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+  <span>✍️ 撰写：美创门业内容团队</span>
+  <span>🌐 来源：官网 meichuangmenye.com</span>
+  <span>📅 发布：2026-09-17</span>
+</div>
+      </div>
 
-<p>作者：美创门业内容团队｜来源：官网 meichuangmenye.com｜日期：2026-09-17</p>
-
-        <div class="cta-box" id="contact">
-          <h3>需要定制您的专属门墙柜方案？</h3>
-          <p>惠州市美创门业有限公司 — 惠州仲恺潼侨源头工厂，免费上门勘测 · 透明报价 · 自有安装团队</p>
-          <a href="tel:13554866836">📞 立即预约：13554866836</a>
+      <!-- 工厂服务保障栏 -->
+      <div class="factory-trust-bar">
+        <div class="trust-item">
+          <div class="trust-icon">📐</div>
+          <div class="trust-text">
+            <h4>免费上门量尺</h4>
+            <p>惠州全域免费勘测门洞</p>
+          </div>
         </div>
-      </article>
-    </div>
+        <div class="trust-item">
+          <div class="trust-icon">🌿</div>
+          <div class="trust-text">
+            <h4>E0级环保标准</h4>
+            <p>六面封漆防潮防变形</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">🛠️</div>
+          <div class="trust-text">
+            <h4>自有安装师傅</h4>
+            <p>工序规范责任到人</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">🛡️</div>
+          <div class="trust-text">
+            <h4>5年五金质保</h4>
+            <p>本地24小时响应售后</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 上一篇 / 下一篇 导航 -->
+      <div class="post-navigation">
+        <a href="/pages/blog/%E9%85%92%E5%BA%97%E5%85%AC%E5%AF%93%E6%95%B4%E5%A5%97%E9%97%A8%E5%AE%9A%E5%88%B6.html" class="post-nav-card">
+          <span class="post-nav-direction">← 上一篇</span>
+          <span class="post-nav-title">惠州酒店公寓整套门定制：工期与交付质量，源头工厂怎么兜底？</span>
+        </a>
+        <a href="/pages/blog/%E9%97%A8%E4%B8%9A%E7%BB%8F%E9%94%80%E5%95%86%E6%89%BE%E6%BA%90%E5%A4%B4%E5%8E%82.html" class="post-nav-card" style="text-align:right;">
+          <span class="post-nav-direction">下一篇 →</span>
+          <span class="post-nav-title">广东门业经销商找源头厂：惠州有哪些门厂值得长期合作？招商政策怎么谈？</span>
+        </a>
+      </div>
+
+      <!-- 猜你想看 / 相关推荐 -->
+      <div style="margin-top:32px;">
+        <h4 style="font-size:15px;font-weight:700;color:var(--text-title);margin-bottom:12px;">📚 猜您想了解的相关门业知识：</h4>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          
+    <a href="/pages/blog/%E6%83%A0%E5%B7%9E%E5%85%A5%E6%88%B7%E9%98%B2%E7%9B%97%E9%97%A8%E5%8E%82%E5%AE%B6.html" class="post-nav-card">
+      <span class="post-nav-direction">📖 推荐阅读 · 品类·入户门</span>
+      <span class="post-nav-title">惠州入户防盗门厂家怎么选？源头工厂常见问题解答</span>
+    </a>
+  
+
+    <a href="/pages/blog/%E6%83%A0%E5%B7%9E%E5%88%AB%E5%A2%85%E5%A4%A7%E9%97%A8%E5%AE%9A%E5%88%B6.html" class="post-nav-card">
+      <span class="post-nav-direction">📖 推荐阅读 · 品类·高客单</span>
+      <span class="post-nav-title">惠州别墅大门、庭院门定制找谁？非标大尺寸怎么兼顾防盗、气派和不变形？</span>
+    </a>
+  
+        </div>
+      </div>
+
+      <!-- 底部预约与咨询 CTA -->
+      <div class="cta-banner" id="contact">
+        <h3>预约惠州源头工厂勘测量尺或咨询报价？</h3>
+        <p>
+          惠州市美创门业有限公司位于惠州仲恺高新区潼侨镇新城山庄A8号铂金实业，提供入户门、实木烤漆门、铝木门、极简玻璃门一站式全屋定制。工厂直供无中间商加价！
+        </p>
+        <div class="cta-banner-buttons">
+          <a href="tel:13554866836" class="cta-primary-btn">
+            <span>📞</span> 立即致电工厂：13554866836
+          </a>
+          <a href="https://meichuangmenye.com/pages/blog/" class="cta-secondary-btn">
+            <span>📖</span> 返回门业百科首页
+          </a>
+        </div>
+      </div>
+    </article>
   </main>
-  <footer>
-    <div class="container">
-      <p>惠州市美创门业有限公司 · 惠州市仲恺高新区潼侨镇新城山庄A8号铂金实业 · 电话 13554866836</p>
-      <p><a href="https://meichuangmenye.com/">https://meichuangmenye.com</a></p>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-info-row">
+        <strong>惠州市美创门业有限公司</strong> · 惠州市仲恺高新区潼侨镇新城山庄A8号铂金实业 · 统一社会信用代码：91441300MA56BFAB00
+      </div>
+      <div class="footer-info-row">
+        <a href="https://meichuangmenye.com/">官网首页</a> · 
+        <a href="https://meichuangmenye.com/about.html">关于我们</a> · 
+        <a href="https://meichuangmenye.com/pages/blog/">门业百科</a> · 
+        <a href="tel:13554866836">咨询热线：13554866836</a>
+      </div>
+      <div class="footer-copyright">
+        <p>Copyright © 2021-2026 惠州市美创门业有限公司 版权所有</p>
+        <p style="margin-top:6px;">
+          <a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" rel="noopener noreferrer" class="footer-icp-link">
+            粤ICP备2026061405号
+          </a>
+        </p>
+      </div>
     </div>
   </footer>
+
+  <!-- 移动端底部悬浮条 -->
+  <div class="mobile-sticky-bar">
+    <div class="mobile-bar-inner">
+      <a href="tel:13554866836" class="mobile-phone-btn">📞 一键拨通工厂顾问</a>
+      <a href="https://meichuangmenye.com/pages/blog/" class="mobile-home-btn">📖 返回百科目录</a>
+    </div>
+  </div>
+
+  <!-- 返回顶部按钮 -->
+  <button class="back-to-top-btn" id="backToTop" title="返回顶部">↑</button>
+
+  <script>
+    // 阅读进度条
+    window.addEventListener('scroll', function() {
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      var bar = document.getElementById("reading-progress-bar");
+      if (bar) bar.style.width = scrolled + "%";
+
+      var topBtn = document.getElementById("backToTop");
+      if (topBtn) {
+        if (winScroll > 300) {
+          topBtn.classList.add("visible");
+        } else {
+          topBtn.classList.remove("visible");
+        }
+      }
+    });
+
+    document.getElementById("backToTop").addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>

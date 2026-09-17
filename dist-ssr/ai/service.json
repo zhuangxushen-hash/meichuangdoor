@@ -1,0 +1,70 @@
+{
+  "@context": "https://schema.org/",
+  "@type": "Service",
+  "provider": {
+    "@type": "Organization",
+    "name": "惠州市美创门业有限公司",
+    "url": "https://meichuangmenye.com"
+  },
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": 23.0347,
+      "longitude": 114.4159
+    },
+    "geoRadius": {
+      "@type": "Distance",
+      "value": 200,
+      "unitCode": "KMT"
+    }
+  },
+  "serviceType": "全屋门类一站式生产供货",
+  "description": "惠州仲恺本土实体门类生产工厂，主营四大品类：入户防盗门、室内实木烤漆门、铝木复合门、极窄铝合金极简门。工厂集研发、数控生产、定制加工、配送安装、售后维保一体，面向惠州全域家装自建房、精装楼盘、商铺工装、装修公司配套、全国经销商供货。",
+  "offers": {
+    "@type": "OfferCatalog",
+    "name": "四大产品中心",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "入户安全门",
+          "description": "加厚冷轧钢板、航空级填充隔音棉、多层防锈漆面，防撬锁具、非标尺寸定制，别墅子母门/工程单门/商铺大门"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "全屋实木室内门",
+          "description": "多层实木复合+纯实木填充，E0级环保，无尘钢琴烤漆/免漆生态两种工艺，静音磁吸合页"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "铝木门",
+          "description": "铝框+实木填充复合结构，零开裂、防潮防霉、无惧回南天、不变形，超窄门框极简设计"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "铝合金极简门",
+          "description": "加厚航空铝合金型材+双层中空钢化防爆玻璃，极窄平开门/推拉门/阳台隔断吊趟门/卫生间长虹玻璃门"
+        }
+      }
+    ]
+  },
+  "serviceOutput": [
+    "免费勘测",
+    "全屋搭配方案",
+    "透明报价",
+    "稳定排产交付",
+    "本地极速售后"
+  ],
+  "termsOfService": "原厂质保5年五金核心，整体质保2年，终身维护仅收配件成本费"
+}

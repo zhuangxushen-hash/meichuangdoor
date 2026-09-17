@@ -60,6 +60,7 @@ export default function App() {
     { name: '核心优势', href: '#advantages' },
     { name: '工程案例', href: '#cases' },
     { name: '关于我们', href: '/about.html' },
+    { name: '门业百科', href: '/pages/blog/' },
     { name: '常见问题', href: '#faq' },
     { name: '联系我们', href: '#contact' },
   ];

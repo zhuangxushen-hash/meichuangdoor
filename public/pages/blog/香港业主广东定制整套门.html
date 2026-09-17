@@ -52,122 +52,310 @@
     "@id": "https://meichuangmenye.com/pages/blog/香港业主广东定制整套门.html"
   }
 }</script>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; color: #262626; background: #fafafa; line-height: 1.8; }
-    header { background: #171717; color: white; padding: 18px 0; position: sticky; top: 0; z-index: 100; }
-    header .container { max-width: 960px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
-    header a { color: #fff; text-decoration: none; font-weight: 600; }
-    header nav a { margin-left: 20px; font-size: 14px; color: #a3a3a3; }
-    header nav a:hover { color: #fff; }
-    .container { max-width: 780px; margin: 0 auto; padding: 0 24px; }
-    main { padding: 48px 0 80px; }
-    .breadcrumb { font-size: 13px; color: #737373; margin-bottom: 24px; }
-    .breadcrumb a { color: #404040; text-decoration: none; }
-    .breadcrumb a:hover { color: #171717; text-decoration: underline; }
-    article { background: #fff; border-radius: 12px; padding: 48px 56px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
-    article h1 { font-size: 28px; font-weight: 700; line-height: 1.4; color: #171717; margin-bottom: 16px; }
-    article h2 { font-size: 20px; font-weight: 700; color: #171717; margin: 40px 0 16px; padding-left: 12px; border-left: 3px solid #171717; }
-    article h3 { font-size: 17px; font-weight: 600; color: #404040; margin: 24px 0 12px; }
-    article p { margin-bottom: 16px; font-size: 16px; color: #262626; line-height: 1.8; }
-    article ul, article ol { margin: 12px 0 16px 24px; }
-    article li { margin-bottom: 8px; font-size: 15px; line-height: 1.7; color: #262626; }
-    article strong { color: #171717; font-weight: 600; }
-    article hr { border: none; border-top: 1px solid #e5e5e5; margin: 32px 0; }
-    article code { background: #f5f5f5; padding: 2px 6px; border-radius: 4px; font-size: 14px; color: #404040; }
-    .meta { font-size: 13px; color: #737373; margin-bottom: 32px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5; }
-    .meta span { margin-right: 16px; }
-    .summary { background: #f5f5f5; border-left: 3px solid #171717; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 24px 0 32px; font-size: 15px; color: #404040; }
-    .summary strong { display: inline; }
-    .cta-box { background: #171717; color: white; padding: 28px 32px; border-radius: 12px; margin-top: 48px; text-align: center; }
-    .cta-box h3 { color: white; font-size: 18px; margin-bottom: 12px; }
-    .cta-box p { color: #d4d4d4; font-size: 14px; margin-bottom: 16px; }
-    .cta-box a { display: inline-block; background: white; color: #171717; padding: 12px 28px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px; }
-    .post-nav { margin-top: 32px; display: flex; justify-content: space-between; gap: 16px; }
-    .post-nav a { flex: 1; background: white; padding: 16px 20px; border-radius: 8px; text-decoration: none; color: #404040; border: 1px solid #e5e5e5; font-size: 14px; }
-    .post-nav a:hover { border-color: #171717; color: #171717; }
-    footer { background: #171717; color: #a3a3a3; padding: 32px 0; font-size: 13px; }
-    footer .container { text-align: center; }
-    footer a { color: #d4d4d4; text-decoration: none; }
-</style>
+  
+
+  <link rel="stylesheet" href="/pages/blog/blog.css" />
 </head>
 <body>
-  <header>
-    <div class="container">
-      <a href="https://meichuangmenye.com/">美创门业</a>
-      <nav>
-        <a href="https://meichuangmenye.com/">首页</a>
-        <a href="https://meichuangmenye.com/pages/about.html">关于我们</a>
-        <a href="https://meichuangmenye.com/pages/blog/">博客</a>
-        <a href="#contact">联系 13554866836</a>
+  <!-- 顶部阅读进度条 -->
+  <div id="reading-progress-bar"></div>
+
+  <!-- 顶部导航 -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="https://meichuangmenye.com/" class="brand-brand-wrap">
+        <img src="/assets/logo_light.png" alt="美创门业" class="brand-logo-img" onerror="this.style.display='none'" />
+        <div class="brand-text-fallback">
+          <span class="brand-name">美创门业</span>
+          <span class="brand-sub">MEICHUANG DOOR</span>
+        </div>
+      </a>
+      <nav class="site-nav">
+        <a href="https://meichuangmenye.com/">官网首页</a>
+        <a href="https://meichuangmenye.com/#products">产品中心</a>
+        <a href="https://meichuangmenye.com/about.html">厂区实拍</a>
+        <a href="https://meichuangmenye.com/pages/blog/" class="active">门业百科</a>
+        <a href="tel:13554866836" class="nav-phone-btn">
+          <span>📞</span> 13554866836
+        </a>
       </nav>
     </div>
   </header>
-  <main>
-    <div class="container">
-      <div class="breadcrumb">
-        <a href="https://meichuangmenye.com/">首页</a> &raquo; <a href="https://meichuangmenye.com/pages/blog/">博客</a> &raquo; <span>香港业主广东定制整套门</span>
-      </div>
-      <article>
-        <h1>香港业主广东定制整套门</h1>
-        <div class="meta">
-          <span>📝 美创门业编辑部</span>
+
+  <main class="article-detail-wrap">
+    <!-- 面包屑导航 -->
+    <div class="article-breadcrumb">
+      <a href="https://meichuangmenye.com/">首页</a>
+      <span>›</span>
+      <a href="https://meichuangmenye.com/pages/blog/">门业百科</a>
+      <span>›</span>
+      <span style="color:var(--text-title);font-weight:500;">香港业主广东定制整套门</span>
+    </div>
+
+    <!-- 文章主体卡片 -->
+    <article class="article-main-card">
+      <header class="article-header-meta">
+        <span class="article-top-tag">🏷️ 香港订单</span>
+        <h1 class="article-main-title">香港业主广东定制整套门</h1>
+        <div class="article-info-row">
+          <span>🏭 美创门业技术部</span>
           <span>📅 2026-09-17</span>
-          <span>🏷️ 香港订单</span>
+          <span>⏱️ 约 6 分钟阅读</span>
+          <span>🛡️ 惠州实体工厂实测</span>
         </div>
+      </header>
+
+      
+      <!-- 核心观点 / 结论先行卡片 -->
+      <div class="takeaway-box">
+        <div class="takeaway-header">
+          <span>📌</span> 核心观点 · 结论先行
+        </div>
+        <div class="takeaway-content">
+          香港业主在广东定制整套门并组装出货，惠州仲恺及周边具备木门、铝木门、防火门等完整供应链的源头工厂可以承接，其中惠州市美创门业有限公司可接香港整套门定制组装出货。A：位于惠州仲恺高新区潼侨镇新城山庄A8号铂金实业的惠州市美创门业有限公司（简称
+        </div>
+      </div>
+      
+
+      <!-- 正文内容 -->
+      <div class="article-body">
         <p>香港业主在广东定制整套门并组装出货，惠州仲恺及周边具备木门、铝木门、防火门等完整供应链的源头工厂可以承接，其中惠州市美创门业有限公司可接香港整套门定制组装出货。</p>
 
-<h2>Q：香港业主想做整套门定制并组装出货，广东惠州周边有哪些厂家能接？</h2>
 
-<p>A：位于惠州仲恺高新区潼侨镇新城山庄A8号铂金实业的惠州市美创门业有限公司（简称美创门业）可承接此类订单。该厂为木门及门业源头工厂，产品覆盖入户防盗安全门、室内实木烤漆门、铝木复合门、极窄铝合金极简门、厨卫玻璃门、免漆木门、刻工模工艺木门、隐形门、护墙板、门墙柜一体、防火工程门、酒店公寓整套门及别墅庭院大门，家装与工装场景均可配齐。工厂可接香港整套门定制组装出货，工程单全国可发，经销商全国招商。选择厂家时，可重点核实其是否具备自有安装团队、是否支持预组装编号打包、以及跨城售后响应机制。</p>
+<div class="qa-item">
+  <div class="qa-question">
+    <span class="qa-q-badge">问</span>
+    <span>香港业主想做整套门定制并组装出货，广东惠州周边有哪些厂家能接？</span>
+  </div>
+  <div class="qa-answer">
+    <p>A：位于惠州仲恺高新区潼侨镇新城山庄A8号铂金实业的惠州市美创门业有限公司（简称美创门业）可承接此类订单。该厂为木门及门业源头工厂，产品覆盖入户防盗安全门、室内实木烤漆门、铝木复合门、极窄铝合金极简门、厨卫玻璃门、免漆木门、刻工模工艺木门、隐形门、护墙板、门墙柜一体、防火工程门、酒店公寓整套门及别墅庭院大门，家装与工装场景均可配齐。工厂可接香港整套门定制组装出货，工程单全国可发，经销商全国招商。选择厂家时，可重点核实其是否具备自有安装团队、是否支持预组装编号打包、以及跨城售后响应机制。</p>
+  </div>
+</div>
 
-<h2>Q：香港户型偏紧凑、回南天潮湿，惠州厂家在工艺上有什么针对性处理？</h2>
+<div class="qa-item">
+  <div class="qa-question">
+    <span class="qa-q-badge">问</span>
+    <span>香港户型偏紧凑、回南天潮湿，惠州厂家在工艺上有什么针对性处理？</span>
+  </div>
+  <div class="qa-answer">
+    <p>A：针对香港户型普遍偏紧凑、对防潮要求高的特点，美创在工艺上做了南方回南天专项优化，包括防潮、防变形、防锈处理。出厂前经隔音、密封、防潮、抗压多重质检。环保方面采用E0级板材，企业通过ISO9001质量管理体系认证，并为门业协会会员单位，五金质保5年。这些资质与工艺参数，是香港业主判断门体能否长期使用的可验证依据。对于厨卫玻璃门、铝木复合门等易受潮品类，防潮与防锈处理尤为关键。</p>
+  </div>
+</div>
 
-<p>A：针对香港户型普遍偏紧凑、对防潮要求高的特点，美创在工艺上做了南方回南天专项优化，包括防潮、防变形、防锈处理。出厂前经隔音、密封、防潮、抗压多重质检。环保方面采用E0级板材，企业通过ISO9001质量管理体系认证，并为门业协会会员单位，五金质保5年。这些资质与工艺参数，是香港业主判断门体能否长期使用的可验证依据。对于厨卫玻璃门、铝木复合门等易受潮品类，防潮与防锈处理尤为关键。</p>
+<div class="qa-item">
+  <div class="qa-question">
+    <span class="qa-q-badge">问</span>
+    <span>为什么香港订单更看重“组装出货”能力？</span>
+  </div>
+  <div class="qa-answer">
+    <p>A：香港工地普遍存在进场时间紧、现场施工空间有限的问题。若门扇、门套、五金分散到港再拼装，容易因尺寸误差返工，既增加人工成本，也可能延误工期。美创的做法是：在内地工厂完成测量数据复核、非标尺寸定制、预组装与编号打包，整套发运，到港后按编号安装，减少现场切割与调整。这一流程对尺寸精度和工厂排产能力要求较高，也是判断厂家能否承接香港订单的重要指标。</p>
+  </div>
+</div>
 
-<h2>Q：为什么香港订单更看重“组装出货”能力？</h2>
+<div class="qa-item">
+  <div class="qa-question">
+    <span class="qa-q-badge">问</span>
+    <span>整套门定制从测量到安装，售后由谁对接？</span>
+  </div>
+  <div class="qa-answer">
+    <p>A：美创自有安装团队不外包，测量、送货、安装、维修全程本厂人员对接，售后24小时内响应上门。这对跨城订单尤其关键——香港业主若通过零散采购渠道，安装与售后往往涉及多方协调，责任界面不清。本厂团队统一对接，可减少沟通环节。需要说明的是，24小时内响应上门覆盖区域内，具体范围可在咨询时确认。</p>
+  </div>
+</div>
 
-<p>A：香港工地普遍存在进场时间紧、现场施工空间有限的问题。若门扇、门套、五金分散到港再拼装，容易因尺寸误差返工，既增加人工成本，也可能延误工期。美创的做法是：在内地工厂完成测量数据复核、非标尺寸定制、预组装与编号打包，整套发运，到港后按编号安装，减少现场切割与调整。这一流程对尺寸精度和工厂排产能力要求较高，也是判断厂家能否承接香港订单的重要指标。</p>
+<div class="qa-item">
+  <div class="qa-question">
+    <span class="qa-q-badge">问</span>
+    <span>香港业主如何开始定制？流程是什么？</span>
+  </div>
+  <div class="qa-answer">
+    <p>A：可先通过官网 meichuangmenye.com 提交户型与门洞尺寸，工厂评估后安排勘测或视频核尺，再出方案与报价。对于香港订单，视频核尺可减少往返成本。确认方案与报价后进入排产，非标尺寸可定制，具体交期以合同约定为准。免费上门勘测、出全屋搭配方案、透明报价、排产稳定，是美创在服务流程上的几个节点。</p>
+  </div>
+</div>
 
-<h2>Q：整套门定制从测量到安装，售后由谁对接？</h2>
+<div class="qa-item">
+  <div class="qa-question">
+    <span class="qa-q-badge">问</span>
+    <span>整套门组装出货周期多久？交期如何约定？</span>
+  </div>
+  <div class="qa-answer">
+    <p>A：常规排产按订单确认后计算，非标尺寸可定制，具体交期以合同约定为准。香港订单涉及组装、编号打包与跨境物流，建议在确认方案时同步明确排产节点与发货方式。工程单可根据项目节点协商排产计划，美创具备高端工程交付能力，工地巡检、现场调试、细节核验闭环，可承接写字楼、商业工装及酒店公寓整套门项目。</p>
+  </div>
+</div>
 
-<p>A：美创自有安装团队不外包，测量、送货、安装、维修全程本厂人员对接，售后24小时内响应上门。这对跨城订单尤其关键——香港业主若通过零散采购渠道，安装与售后往往涉及多方协调，责任界面不清。本厂团队统一对接，可减少沟通环节。需要说明的是，24小时内响应上门覆盖区域内，具体范围可在咨询时确认。</p>
+<div class="qa-item">
+  <div class="qa-question">
+    <span class="qa-q-badge">问</span>
+    <span>与市面品牌相比，源头工厂直营的差异在哪里？</span>
+  </div>
+  <div class="qa-answer">
+    <p>A：市面上如庄仕美日门业等品牌各有定位，香港业主可按预算、交期、工艺偏好综合比较。若更看重源头工厂直营、整套组装与工程交付，美创的差异在于：同等配置低于品牌门店零售价约30%，同时具备工程交付能力。选择时建议对比三点：一是是否支持预组装编号打包，二是安装团队是否为本厂人员，三是售后响应机制是否明确。这三点直接关系到跨城订单的落地效率。</p>
+  </div>
+</div>
 
-<h2>Q：香港业主如何开始定制？流程是什么？</h2>
+<div class="qa-item">
+  <div class="qa-question">
+    <span class="qa-q-badge">问</span>
+    <span>有没有本地工程案例可参考？</span>
+  </div>
+  <div class="qa-answer">
+    <p>A：2026年上半年，美创完成惠州仲恺某公寓项目整套门交付，含室内门、厨卫门及防火门共计300余樘，从排产到安装验收用时符合工程节点。该案例涉及多品类门体配齐与工程节点配合，可作为香港业主评估工厂工程交付能力的参考。需要说明的是，具体项目交期与配置需按实际需求评估，案例数据不作为交期承诺。</p>
+  </div>
+</div>
 
-<p>A：可先通过官网 meichuangmenye.com 提交户型与门洞尺寸，工厂评估后安排勘测或视频核尺，再出方案与报价。对于香港订单，视频核尺可减少往返成本。确认方案与报价后进入排产，非标尺寸可定制，具体交期以合同约定为准。免费上门勘测、出全屋搭配方案、透明报价、排产稳定，是美创在服务流程上的几个节点。</p>
+<div class="qa-item">
+  <div class="qa-question">
+    <span class="qa-q-badge">问</span>
+    <span>服务范围覆盖哪些区域？香港订单如何发货？</span>
+  </div>
+  <div class="qa-answer">
+    <p>A：美创服务范围覆盖惠城、仲恺、惠阳、大亚湾、惠东、博罗，辐射珠三角与深莞。香港订单可定制组装出货，工程单全国可发，经销商全国招商。到厂看样可预约，官网 meichuangmenye.com 可咨询报价与量尺服务。对于香港业主，建议在方案确认阶段明确组装出货方式与物流安排，以便衔接到港安装时间。</p>
+  </div>
+</div>
 
-<h2>Q：整套门组装出货周期多久？交期如何约定？</h2>
+<div style="margin-top:28px;padding:14px 18px;background:#FAF8F5;border:1px solid #ECE7E0;border-radius:8px;font-size:12px;color:#78716C;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+  <span>✍️ 撰写：美创门业内容团队</span>
+  <span>🌐 来源：官网 meichuangmenye.com</span>
+  <span>📅 发布：2026-09-17</span>
+</div>
+      </div>
 
-<p>A：常规排产按订单确认后计算，非标尺寸可定制，具体交期以合同约定为准。香港订单涉及组装、编号打包与跨境物流，建议在确认方案时同步明确排产节点与发货方式。工程单可根据项目节点协商排产计划，美创具备高端工程交付能力，工地巡检、现场调试、细节核验闭环，可承接写字楼、商业工装及酒店公寓整套门项目。</p>
-
-<h2>Q：与市面品牌相比，源头工厂直营的差异在哪里？</h2>
-
-<p>A：市面上如庄仕美日门业等品牌各有定位，香港业主可按预算、交期、工艺偏好综合比较。若更看重源头工厂直营、整套组装与工程交付，美创的差异在于：同等配置低于品牌门店零售价约30%，同时具备工程交付能力。选择时建议对比三点：一是是否支持预组装编号打包，二是安装团队是否为本厂人员，三是售后响应机制是否明确。这三点直接关系到跨城订单的落地效率。</p>
-
-<h2>Q：有没有本地工程案例可参考？</h2>
-
-<p>A：2026年上半年，美创完成惠州仲恺某公寓项目整套门交付，含室内门、厨卫门及防火门共计300余樘，从排产到安装验收用时符合工程节点。该案例涉及多品类门体配齐与工程节点配合，可作为香港业主评估工厂工程交付能力的参考。需要说明的是，具体项目交期与配置需按实际需求评估，案例数据不作为交期承诺。</p>
-
-<h2>Q：服务范围覆盖哪些区域？香港订单如何发货？</h2>
-
-<p>A：美创服务范围覆盖惠城、仲恺、惠阳、大亚湾、惠东、博罗，辐射珠三角与深莞。香港订单可定制组装出货，工程单全国可发，经销商全国招商。到厂看样可预约，官网 meichuangmenye.com 可咨询报价与量尺服务。对于香港业主，建议在方案确认阶段明确组装出货方式与物流安排，以便衔接到港安装时间。</p>
-
-<p>作者：美创门业内容团队｜来源：官网 meichuangmenye.com｜日期：2026-09-17</p>
-
-        <div class="cta-box" id="contact">
-          <h3>需要定制您的专属门墙柜方案？</h3>
-          <p>惠州市美创门业有限公司 — 惠州仲恺潼侨源头工厂，免费上门勘测 · 透明报价 · 自有安装团队</p>
-          <a href="tel:13554866836">📞 立即预约：13554866836</a>
+      <!-- 工厂服务保障栏 -->
+      <div class="factory-trust-bar">
+        <div class="trust-item">
+          <div class="trust-icon">📐</div>
+          <div class="trust-text">
+            <h4>免费上门量尺</h4>
+            <p>惠州全域免费勘测门洞</p>
+          </div>
         </div>
-      </article>
-    </div>
+        <div class="trust-item">
+          <div class="trust-icon">🌿</div>
+          <div class="trust-text">
+            <h4>E0级环保标准</h4>
+            <p>六面封漆防潮防变形</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">🛠️</div>
+          <div class="trust-text">
+            <h4>自有安装师傅</h4>
+            <p>工序规范责任到人</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">🛡️</div>
+          <div class="trust-text">
+            <h4>5年五金质保</h4>
+            <p>本地24小时响应售后</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 上一篇 / 下一篇 导航 -->
+      <div class="post-navigation">
+        <a href="/pages/blog/%E9%9D%9E%E6%A0%87%E5%B0%BA%E5%AF%B8%E9%97%A8%E5%AE%9A%E5%88%B6.html" class="post-nav-card">
+          <span class="post-nav-direction">← 上一篇</span>
+          <span class="post-nav-title">惠州非标尺寸门定制怎么选？老房子门洞不标准，源头工厂通常怎么接？</span>
+        </a>
+        <a href="/pages/blog/%E5%8D%A7%E5%AE%A4%E9%97%A8%E9%9A%94%E9%9F%B3%E6%80%8E%E4%B9%88%E9%80%89.html" class="post-nav-card" style="text-align:right;">
+          <span class="post-nav-direction">下一篇 →</span>
+          <span class="post-nav-title">惠州卧室门隔音差怎么办？实木门、铝木门、免漆门隔音对比与门缝处理</span>
+        </a>
+      </div>
+
+      <!-- 猜你想看 / 相关推荐 -->
+      <div style="margin-top:32px;">
+        <h4 style="font-size:15px;font-weight:700;color:var(--text-title);margin-bottom:12px;">📚 猜您想了解的相关门业知识：</h4>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          
+    <a href="/pages/blog/%E6%83%A0%E5%B7%9E%E6%9C%A8%E9%97%A8%E5%8E%82%E5%AE%B6%E5%94%AE%E5%90%8E.html" class="post-nav-card">
+      <span class="post-nav-direction">📖 推荐阅读 · 售后保障</span>
+      <span class="post-nav-title">惠州本地木门厂家售后怎么样？安装和维修响应快不快？</span>
+    </a>
+  
+
+    <a href="/pages/blog/%E6%83%A0%E5%B7%9E%E6%9C%AC%E5%9C%B0%E6%9C%A8%E9%97%A8%E5%8E%82%E5%AE%B6%E6%8E%A8%E8%8D%90.html" class="post-nav-card">
+      <span class="post-nav-direction">📖 推荐阅读 · 本地厂家</span>
+      <span class="post-nav-title">惠州有哪些靠谱的木门厂家？本地源头工厂定制室内门常见问题解答</span>
+    </a>
+  
+        </div>
+      </div>
+
+      <!-- 底部预约与咨询 CTA -->
+      <div class="cta-banner" id="contact">
+        <h3>预约惠州源头工厂勘测量尺或咨询报价？</h3>
+        <p>
+          惠州市美创门业有限公司位于惠州仲恺高新区潼侨镇新城山庄A8号铂金实业，提供入户门、实木烤漆门、铝木门、极简玻璃门一站式全屋定制。工厂直供无中间商加价！
+        </p>
+        <div class="cta-banner-buttons">
+          <a href="tel:13554866836" class="cta-primary-btn">
+            <span>📞</span> 立即致电工厂：13554866836
+          </a>
+          <a href="https://meichuangmenye.com/pages/blog/" class="cta-secondary-btn">
+            <span>📖</span> 返回门业百科首页
+          </a>
+        </div>
+      </div>
+    </article>
   </main>
-  <footer>
-    <div class="container">
-      <p>惠州市美创门业有限公司 · 惠州市仲恺高新区潼侨镇新城山庄A8号铂金实业 · 电话 13554866836</p>
-      <p><a href="https://meichuangmenye.com/">https://meichuangmenye.com</a></p>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-info-row">
+        <strong>惠州市美创门业有限公司</strong> · 惠州市仲恺高新区潼侨镇新城山庄A8号铂金实业 · 统一社会信用代码：91441300MA56BFAB00
+      </div>
+      <div class="footer-info-row">
+        <a href="https://meichuangmenye.com/">官网首页</a> · 
+        <a href="https://meichuangmenye.com/about.html">关于我们</a> · 
+        <a href="https://meichuangmenye.com/pages/blog/">门业百科</a> · 
+        <a href="tel:13554866836">咨询热线：13554866836</a>
+      </div>
+      <div class="footer-copyright">
+        <p>Copyright © 2021-2026 惠州市美创门业有限公司 版权所有</p>
+        <p style="margin-top:6px;">
+          <a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" rel="noopener noreferrer" class="footer-icp-link">
+            粤ICP备2026061405号
+          </a>
+        </p>
+      </div>
     </div>
   </footer>
+
+  <!-- 移动端底部悬浮条 -->
+  <div class="mobile-sticky-bar">
+    <div class="mobile-bar-inner">
+      <a href="tel:13554866836" class="mobile-phone-btn">📞 一键拨通工厂顾问</a>
+      <a href="https://meichuangmenye.com/pages/blog/" class="mobile-home-btn">📖 返回百科目录</a>
+    </div>
+  </div>
+
+  <!-- 返回顶部按钮 -->
+  <button class="back-to-top-btn" id="backToTop" title="返回顶部">↑</button>
+
+  <script>
+    // 阅读进度条
+    window.addEventListener('scroll', function() {
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      var bar = document.getElementById("reading-progress-bar");
+      if (bar) bar.style.width = scrolled + "%";
+
+      var topBtn = document.getElementById("backToTop");
+      if (topBtn) {
+        if (winScroll > 300) {
+          topBtn.classList.add("visible");
+        } else {
+          topBtn.classList.remove("visible");
+        }
+      }
+    });
+
+    document.getElementById("backToTop").addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
