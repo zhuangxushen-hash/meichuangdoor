@@ -81,8 +81,8 @@ const featuredHtml = featuredArticles.map((art, idx) => {
 
 // Top 5 HTML
 const top5Html = top5Articles.map((art, i) => `
-  <li style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;padding-bottom:12px;border-bottom:1px dashed #EAE6DF;font-size:13px;line-height:1.5;">
-    <span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:4px;background:${i < 3 ? 'var(--brand-accent)' : '#E5E0D8'};color:${i < 3 ? '#FFFFFF' : '#57534E'};font-weight:bold;font-size:11px;flex-shrink:0;">${i + 1}</span>
+  <li style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;padding-bottom:12px;border-bottom:1px dashed #E2E8F0;font-size:13px;line-height:1.5;">
+    <span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:4px;background:${i < 3 ? 'var(--brand-accent)' : '#F1F5F9'};color:${i < 3 ? '#FFFFFF' : '#64748B'};font-weight:bold;font-size:11px;flex-shrink:0;">${i + 1}</span>
     <a href="${art.url}" style="color:var(--text-body);text-decoration:none;font-weight:500;" onmouseover="this.style.color='var(--brand-accent)'" onmouseout="this.style.color='var(--text-body)'">${art.title}</a>
   </li>
 `).join('\n');
@@ -134,7 +134,7 @@ const html = `<!doctype html>
   <header class="site-header">
     <div class="header-container">
       <a href="https://meichuangmenye.com/" class="brand-brand-wrap">
-        <img src="/assets/logo_light.png" alt="美创门业" class="brand-logo-img" onerror="this.style.display='none'" />
+        <img src="/assets/logo_dark.png" alt="美创门业" class="brand-logo-img" onerror="this.style.display='none'" />
         <div class="brand-text-fallback">
           <span class="brand-name">美创门业</span>
           <span class="brand-sub">MEICHUANG DOOR</span>

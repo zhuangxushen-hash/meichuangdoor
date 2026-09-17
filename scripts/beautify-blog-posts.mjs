@@ -146,7 +146,7 @@ articles.forEach((art, index) => {
   <header class="site-header">
     <div class="header-container">
       <a href="https://meichuangmenye.com/" class="brand-brand-wrap">
-        <img src="/assets/logo_light.png" alt="美创门业" class="brand-logo-img" onerror="this.style.display='none'" />
+        <img src="/assets/logo_dark.png" alt="美创门业" class="brand-logo-img" onerror="this.style.display='none'" />
         <div class="brand-text-fallback">
           <span class="brand-name">美创门业</span>
           <span class="brand-sub">MEICHUANG DOOR</span>
