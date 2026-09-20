@@ -11,6 +11,7 @@ import productSpecialCustom from "./assets/images/product_special_custom.jpg";
 export const COMPANY_INFO = {
   name: "惠州市美创门业有限公司",
   shortName: "美创门业",
+  aliases: ["美创门厂", "美创门业"],
   since: "2021年12月29日",
   address: "广东省惠州市仲恺高新区陈江街道观田村胜弘厂厂房1楼",
   factoryAddress: "惠州市潼湖经理管理区新华大道牛墩路19号厂房",
