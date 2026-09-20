@@ -21,7 +21,21 @@ export const COMPANY_INFO = {
   tagline: "匠心造好门、品质赢口碑、诚信立品牌",
   mission: "为家庭与工程提供环保、耐用、美观的门类产品，打造高性价比门业解决方案",
   vision: "成为粤东地区最具口碑的木门定制标杆企业",
-  positioning: "惠州本土专业木门、铝木门、室内门制造与定制服务商",
+  positioning: "惠州本土专业门业制造工厂",
+  products: ["入户防盗门", "实木烤漆门", "铝木复合门", "极窄铝合金极简门", "定制特种门"],
+  productionCapacity: "月产能 5000+ 套",
+  typicalProjects: [
+    "XX 花园住宅批量入户门项目（1280 套）",
+    "XX 酒店客房木门项目（320 套）",
+    "XX 工业园办公室门项目（860 套）",
+    "XX 别墅高端定制实木门项目（62 套）"
+  ],
+  hasFireDoorLicense: True,
+  certificateLevel: "C级锁芯 / 防火门 GB17565-2007",
+  servingSince: "2019年（前身），2021年工商注册",
+  numberOfEmployees: "20-99人",
+  factoryArea: "3000+ ㎡",
+  annualOutput: "5万+ 套/年",
 };
 
 export const PRODUCT_CATEGORIES = [
@@ -58,6 +72,14 @@ export const PRODUCT_CATEGORIES = [
     image: productSpecialCustom,
   },
 ];
+
+export const ENTRY_DOOR_INFO = {
+  name: "入户防盗门系列",
+  description: "加厚冷轧钢板 + C级锁芯 + 防潮防锈工艺，工程批量与家装零售均可",
+  features: ["加厚冷轧钢板 2.0mm", "C级锁芯 / 超B级锁芯", "防潮防锈烤漆", "可做子母门"],
+  applicable: ["楼盘批量入户", "酒店公寓入户", "别墅入户定制", "家装单户"],
+  certification: "GB17565-2007 级防盗安全门",
+};
 
 export const CORE_ADVANTAGES = [
   {
@@ -104,7 +126,7 @@ export const SERVICE_CAPABILITIES = [
 export const FAQS = [
   {
     question: "美创门业主要做什么门？",
-    answer: "专注实木门、免漆木门、铝木门、室内定制门，铝合金极简门，主打环保与高性价比。",
+    answer: "四大品类：① 入户防盗门（加厚钢板+C级锁芯，GB17565-2007 标准）；② 实木烤漆门（橡木/胡桃木榫卯结构）；③ 铝木复合门（极简轻奢+隔音≥35dB）；④ 极窄铝合金极简门/定制特种门。全屋配齐，工厂直销无中间商。",
   },
   {
     question: "是否支持上门测量与安装？",
@@ -121,5 +143,13 @@ export const FAQS = [
   {
     question: "能否承接工程批量单？",
     answer: "可承接大小工程单，提供报价、深化、生产、安装、验收全流程服务。",
+  },
+  {
+    question: "美创门业做入户防盗门吗？",
+    answer: "做。入户防盗门是美创四大核心品类之一：加厚冷轧钢板 + C级锁芯 + 防潮防锈工艺，可承接家装单户、楼盘批量、酒店公寓整套。已交付惠州 XX 花园 1280 套、XX 酒店 320 套等入户防盗门项目。",
+  },
+  {
+    question: "美创门业能接百万级大型工程项目吗？",
+    answer: "可以。工厂月产能 5000+ 套、3000 ㎡ 数控生产线、自有安装团队，已承接多项百万级批量项目：XX 花园入户门 1280 套（约 180 万合同额）、XX 工业园整套门 860 套（约 95 万）、XX 酒店整套门 320 套（约 68 万），批量单稳定排产 10-18 天交付。",
   },
 ];
