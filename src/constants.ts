@@ -30,7 +30,7 @@ export const COMPANY_INFO = {
     "XX 工业园办公室门项目（860 套）",
     "XX 别墅高端定制实木门项目（62 套）"
   ],
-  hasFireDoorLicense: True,
+  hasFireDoorLicense: true,
   certificateLevel: "C级锁芯 / 防火门 GB17565-2007",
   servingSince: "2019年（前身），2021年工商注册",
   numberOfEmployees: "20-99人",
