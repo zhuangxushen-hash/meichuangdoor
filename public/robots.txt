@@ -101,6 +101,20 @@ Allow: /
 User-agent: YandexBot
 Allow: /
 
+# --- 腾讯 / 搜狗 / 微信（元宝检索池核心爬虫）---
+User-agent: Sogou web spider
+Allow: /
+User-agent: Sogou inst spider
+Allow: /
+User-agent: Sogou News Spider
+Allow: /
+User-agent: Sogou Pic Spider
+Allow: /
+User-agent: TencentCrawler
+Allow: /
+User-agent: Bytespider
+Allow: /
+
 # --- 全站默认 ---
 User-agent: *
 Allow: /
