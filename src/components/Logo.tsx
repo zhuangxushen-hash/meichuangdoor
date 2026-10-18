@@ -19,7 +19,7 @@ export const Logo: React.FC<LogoProps> = ({ className = "", light = false }) => 
         id="brand-logo-img"
         src={light ? logoLight : logoDark} 
         alt="美创门业" 
-        className="h-[30px] w-auto object-contain transition-all duration-300"
+        className="h-8 sm:h-10 md:h-11 lg:h-12 xl:h-14 w-auto object-contain transition-all duration-300"
         referrerPolicy="no-referrer"
       />
     </div>
