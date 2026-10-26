@@ -8,20 +8,31 @@ on:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
 
       - name: Install
         run: npm ci --no-audit --no-fund || npm install --no-audit --no-fund
 
-      - name: Build SSR
+      - name: Build
         run: npm run build
 
-      - name: Push dist-ssr
+      - name: Debug
+        run: |
+          ls -la dist-ssr/
+          echo "---"
+          wc -c dist-ssr/entry-server.js
+          echo "---"
+          git status
+          echo "---"
+          git remote -v
+
+      - name: Push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git pull --rebase origin main || git reset --hard origin/main
           git add -f dist-ssr/
-          git commit -m "auto-build: 2026-10-26 20:12 UTC" || echo "no changes"
-          git push origin main --force-with-lease --force-if-includes
+          git commit -m "auto-build: 2026-10-26 20:14 UTC" || echo "skip commit"
+          git push origin HEAD:main
