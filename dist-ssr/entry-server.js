@@ -1,6 +1,6 @@
 import React, { forwardRef, createElement, useState, useEffect } from "react";
 import { renderToString } from "react-dom/server";
-import { jsxDEV } from "react/jsx-dev-runtime";
+import { jsx, jsxs } from "react/jsx-runtime";
 import * as fm from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 const motion = fm.motion;
@@ -337,28 +337,16 @@ const X = createLucideIcon("x", __iconNode);
 const logoLight = "/assets/logo_light-Ccbv29uc.png";
 const logoDark = "/assets/logo_dark-BV-4j-kz.png";
 const Logo = ({ className = "", light = false }) => {
-  return /* @__PURE__ */ jsxDEV("div", { className: `flex items-center ${className}`, id: "brand-logo-container", children: /* @__PURE__ */ jsxDEV(
+  return /* @__PURE__ */ jsx("div", { className: `flex items-center ${className}`, id: "brand-logo-container", children: /* @__PURE__ */ jsx(
     "img",
     {
       id: "brand-logo-img",
       src: light ? logoLight : logoDark,
       alt: "美创门业",
-      className: "h-[25px] w-auto object-contain transition-all duration-300",
+      className: "h-9 sm:h-11 md:h-12 lg:h-14 xl:h-16 w-auto object-contain transition-all duration-300",
       referrerPolicy: "no-referrer"
-    },
-    void 0,
-    false,
-    {
-      fileName: "/app/applet/src/components/Logo.tsx",
-      lineNumber: 18,
-      columnNumber: 7
-    },
-    void 0
-  ) }, void 0, false, {
-    fileName: "/app/applet/src/components/Logo.tsx",
-    lineNumber: 17,
-    columnNumber: 5
-  }, void 0);
+    }
+  ) });
 };
 const heroImage = "/assets/hero_image-ClH0ccyu.png";
 const caseHotel = "/assets/case_hotel-BfewSp9M.jpg";
@@ -382,7 +370,7 @@ const COMPANY_INFO = {
   unifiedCode: "91441303MA7FCWFU79",
   mission: "为家庭与工程提供环保、耐用、美观的门类产品，打造高性价比门业解决方案",
   vision: "成为粤东地区最具口碑的木门定制标杆企业",
-  positioning: "惠州本土专业木门、铝木门、室内门制造与定制服务商"
+  positioning: "惠州本土专业门业制造工厂"
 };
 const PRODUCT_CATEGORIES = [
   {
@@ -443,7 +431,7 @@ const CORE_ADVANTAGES = [
 const FAQS = [
   {
     question: "美创门业主要做什么门？",
-    answer: "专注实木门、免漆木门、铝木门、室内定制门，铝合金极简门，主打环保与高性价比。"
+    answer: "四大品类：① 入户防盗门（加厚钢板+C级锁芯，GB17565-2007 标准）；② 实木烤漆门（橡木/胡桃木榫卯结构）；③ 铝木复合门（极简轻奢+隔音≥35dB）；④ 极窄铝合金极简门/定制特种门。全屋配齐，工厂直销无中间商。"
   },
   {
     question: "是否支持上门测量与安装？",
@@ -460,6 +448,14 @@ const FAQS = [
   {
     question: "能否承接工程批量单？",
     answer: "可承接大小工程单，提供报价、深化、生产、安装、验收全流程服务。"
+  },
+  {
+    question: "美创门业做入户防盗门吗？",
+    answer: "做。入户防盗门是美创四大核心品类之一：加厚冷轧钢板 + C级锁芯 + 防潮防锈工艺，可承接家装单户、楼盘批量、酒店公寓整套。已交付惠州 XX 花园 1280 套、XX 酒店 320 套等入户防盗门项目。"
+  },
+  {
+    question: "美创门业能接百万级大型工程项目吗？",
+    answer: "可以。工厂月产能 5000+ 套、3000 ㎡ 数控生产线、自有安装团队，已承接多项百万级批量项目：XX 花园入户门 1280 套（约 400 万合同额）、XX 工业园整套门 860 套（约 95 万）、XX 酒店整套门 320 套（约 68 万），批量单稳定排产 10-18 天交付。"
   }
 ];
 function App() {
@@ -485,37 +481,26 @@ function App() {
     { name: "常见问题", href: "#faq" },
     { name: "联系我们", href: "#contact" }
   ];
-  return /* @__PURE__ */ jsxDEV("div", { className: "min-h-screen bg-neutral-50 text-neutral-900 font-sans selection:bg-brand-primary selection:text-white", children: [
-    /* @__PURE__ */ jsxDEV(
+  return /* @__PURE__ */ jsxs("div", { className: "min-h-screen bg-neutral-50 text-neutral-900 font-sans selection:bg-brand-primary selection:text-white", children: [
+    /* @__PURE__ */ jsxs(
       "nav",
       {
-        className: `fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white shadow-md py-3" : "bg-transparent py-5"}`,
+        className: `fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white shadow-md py-3 sm:py-4 md:py-5" : "bg-transparent py-5 sm:py-6 md:py-7"}`,
         children: [
-          /* @__PURE__ */ jsxDEV("div", { className: "max-w-7xl mx-auto px-4 flex justify-between items-center", children: [
-            /* @__PURE__ */ jsxDEV(Logo, { light: !scrolled, className: "scale-90 sm:scale-100 origin-left" }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 77,
-              columnNumber: 11
-            }, this),
-            /* @__PURE__ */ jsxDEV("div", { className: "md:flex items-center gap-6 block", children: [
-              navLinks.map((link) => /* @__PURE__ */ jsxDEV(
+          /* @__PURE__ */ jsxs("div", { className: "max-w-7xl mx-auto px-4 flex justify-between items-center", children: [
+            /* @__PURE__ */ jsx(Logo, { light: !scrolled }),
+            /* @__PURE__ */ jsxs("div", { className: "md:flex items-center gap-6 block", children: [
+              navLinks.map((link) => /* @__PURE__ */ jsx(
                 "a",
                 {
                   href: link.href,
                   className: "text-[13px] font-medium text-neutral-800 hover:text-brand-primary transition-colors tracking-tight",
                   children: link.name
                 },
-                link.name,
-                false,
-                {
-                  fileName: "/app/applet/src/App.tsx",
-                  lineNumber: 82,
-                  columnNumber: 15
-                },
-                this
+                link.name
               )),
-              /* @__PURE__ */ jsxDEV("div", { className: "relative group", children: [
-                /* @__PURE__ */ jsxDEV(
+              /* @__PURE__ */ jsxs("div", { className: "relative group", children: [
+                /* @__PURE__ */ jsxs(
                   "a",
                   {
                     href: "#contact",
@@ -527,140 +512,52 @@ function App() {
                     onMouseLeave: () => setShowNavQr(false),
                     className: "ml-2 px-6 py-2.5 bg-brand-primary text-white rounded-full text-xs font-bold flex items-center gap-2 hover:brightness-110 transition-all shadow-lg shadow-brand-primary/20 cursor-pointer",
                     children: [
-                      /* @__PURE__ */ jsxDEV(MessageCircle, { size: 14, className: "fill-current" }, void 0, false, {
-                        fileName: "/app/applet/src/App.tsx",
-                        lineNumber: 101,
-                        columnNumber: 17
-                      }, this),
+                      /* @__PURE__ */ jsx(MessageCircle, { size: 14, className: "fill-current" }),
                       "立即咨询"
                     ]
-                  },
-                  void 0,
-                  true,
-                  {
-                    fileName: "/app/applet/src/App.tsx",
-                    lineNumber: 91,
-                    columnNumber: 15
-                  },
-                  this
+                  }
                 ),
-                /* @__PURE__ */ jsxDEV("div", { className: `absolute top-full right-0 mt-4 transition-all duration-300 transform z-50 ${showNavQr ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-2 pointer-events-none"}`, children: /* @__PURE__ */ jsxDEV("div", { className: "bg-white p-3 rounded-xl shadow-2xl border border-neutral-100", children: [
-                  /* @__PURE__ */ jsxDEV("div", { className: "w-40 h-40 bg-neutral-100 rounded-lg flex items-center justify-center relative overflow-hidden", children: [
-                    /* @__PURE__ */ jsxDEV("div", { className: "text-neutral-400 text-[10px] text-center px-4", children: [
-                      /* @__PURE__ */ jsxDEV(QrCode, { size: 40, className: "mx-auto mb-2 opacity-20" }, void 0, false, {
-                        fileName: "/app/applet/src/App.tsx",
-                        lineNumber: 114,
-                        columnNumber: 23
-                      }, this),
-                      /* @__PURE__ */ jsxDEV("p", { children: "微信二维码" }, void 0, false, {
-                        fileName: "/app/applet/src/App.tsx",
-                        lineNumber: 115,
-                        columnNumber: 23
-                      }, this)
-                    ] }, void 0, true, {
-                      fileName: "/app/applet/src/App.tsx",
-                      lineNumber: 113,
-                      columnNumber: 21
-                    }, this),
-                    /* @__PURE__ */ jsxDEV(
+                /* @__PURE__ */ jsx("div", { className: `absolute top-full right-0 mt-4 transition-all duration-300 transform z-50 ${showNavQr ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-2 pointer-events-none"}`, children: /* @__PURE__ */ jsxs("div", { className: "bg-white p-3 rounded-xl shadow-2xl border border-neutral-100", children: [
+                  /* @__PURE__ */ jsxs("div", { className: "w-40 h-40 bg-neutral-100 rounded-lg flex items-center justify-center relative overflow-hidden", children: [
+                    /* @__PURE__ */ jsxs("div", { className: "text-neutral-400 text-[10px] text-center px-4", children: [
+                      /* @__PURE__ */ jsx(QrCode, { size: 40, className: "mx-auto mb-2 opacity-20" }),
+                      /* @__PURE__ */ jsx("p", { children: "微信二维码" })
+                    ] }),
+                    /* @__PURE__ */ jsx(
                       "img",
                       {
                         src: wechatQr,
                         alt: "微信二维码",
                         className: "absolute inset-0 w-full h-full object-contain p-2"
-                      },
-                      void 0,
-                      false,
-                      {
-                        fileName: "/app/applet/src/App.tsx",
-                        lineNumber: 117,
-                        columnNumber: 21
-                      },
-                      this
+                      }
                     )
-                  ] }, void 0, true, {
-                    fileName: "/app/applet/src/App.tsx",
-                    lineNumber: 112,
-                    columnNumber: 19
-                  }, this),
-                  /* @__PURE__ */ jsxDEV("div", { className: "mt-2 text-center whitespace-nowrap", children: [
-                    /* @__PURE__ */ jsxDEV("p", { className: "text-[10px] text-neutral-900 font-bold", children: "扫一扫加我为朋友" }, void 0, false, {
-                      fileName: "/app/applet/src/App.tsx",
-                      lineNumber: 124,
-                      columnNumber: 21
-                    }, this),
-                    /* @__PURE__ */ jsxDEV("p", { className: "text-[8px] text-neutral-400", children: "惠州美创门业 · 官方微信" }, void 0, false, {
-                      fileName: "/app/applet/src/App.tsx",
-                      lineNumber: 125,
-                      columnNumber: 21
-                    }, this)
-                  ] }, void 0, true, {
-                    fileName: "/app/applet/src/App.tsx",
-                    lineNumber: 123,
-                    columnNumber: 19
-                  }, this),
-                  /* @__PURE__ */ jsxDEV("div", { className: "absolute bottom-full right-8 w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-b-[6px] border-b-white" }, void 0, false, {
-                    fileName: "/app/applet/src/App.tsx",
-                    lineNumber: 127,
-                    columnNumber: 19
-                  }, this)
-                ] }, void 0, true, {
-                  fileName: "/app/applet/src/App.tsx",
-                  lineNumber: 111,
-                  columnNumber: 17
-                }, this) }, void 0, false, {
-                  fileName: "/app/applet/src/App.tsx",
-                  lineNumber: 106,
-                  columnNumber: 15
-                }, this)
-              ] }, void 0, true, {
-                fileName: "/app/applet/src/App.tsx",
-                lineNumber: 90,
-                columnNumber: 13
-              }, this)
-            ] }, void 0, true, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 80,
-              columnNumber: 11
-            }, this),
-            /* @__PURE__ */ jsxDEV(
+                  ] }),
+                  /* @__PURE__ */ jsxs("div", { className: "mt-2 text-center whitespace-nowrap", children: [
+                    /* @__PURE__ */ jsx("p", { className: "text-[10px] text-neutral-900 font-bold", children: "扫一扫加我为朋友" }),
+                    /* @__PURE__ */ jsx("p", { className: "text-[8px] text-neutral-400", children: "惠州美创门业 · 官方微信" })
+                  ] }),
+                  /* @__PURE__ */ jsx("div", { className: "absolute bottom-full right-8 w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-b-[6px] border-b-white" })
+                ] }) })
+              ] })
+            ] }),
+            /* @__PURE__ */ jsx(
               "button",
               {
                 className: "md:hidden p-2",
                 onClick: () => setIsMenuOpen(!isMenuOpen),
-                children: isMenuOpen ? /* @__PURE__ */ jsxDEV(X, {}, void 0, false, {
-                  fileName: "/app/applet/src/App.tsx",
-                  lineNumber: 138,
-                  columnNumber: 27
-                }, this) : /* @__PURE__ */ jsxDEV(Menu, {}, void 0, false, {
-                  fileName: "/app/applet/src/App.tsx",
-                  lineNumber: 138,
-                  columnNumber: 35
-                }, this)
-              },
-              void 0,
-              false,
-              {
-                fileName: "/app/applet/src/App.tsx",
-                lineNumber: 134,
-                columnNumber: 11
-              },
-              this
+                children: isMenuOpen ? /* @__PURE__ */ jsx(X, {}) : /* @__PURE__ */ jsx(Menu, {})
+              }
             )
-          ] }, void 0, true, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 76,
-            columnNumber: 9
-          }, this),
-          /* @__PURE__ */ jsxDEV(AnimatePresence, { children: isMenuOpen && /* @__PURE__ */ jsxDEV(
+          ] }),
+          /* @__PURE__ */ jsx(AnimatePresence, { children: isMenuOpen && /* @__PURE__ */ jsx(
             motion.div,
             {
               initial: { opacity: 0, height: 0 },
               animate: { opacity: 1, height: "auto" },
               exit: { opacity: 0, height: 0 },
               className: "md:hidden bg-white border-t overflow-hidden",
-              children: /* @__PURE__ */ jsxDEV("div", { className: "p-4 flex flex-col gap-4", children: [
-                navLinks.map((link) => /* @__PURE__ */ jsxDEV(
+              children: /* @__PURE__ */ jsxs("div", { className: "p-4 flex flex-col gap-4", children: [
+                navLinks.map((link) => /* @__PURE__ */ jsx(
                   "a",
                   {
                     href: link.href,
@@ -668,40 +565,21 @@ function App() {
                     className: "text-lg font-medium border-b border-neutral-100 pb-2 hover:text-brand-primary",
                     children: link.name
                   },
-                  link.name,
-                  false,
-                  {
-                    fileName: "/app/applet/src/App.tsx",
-                    lineNumber: 153,
-                    columnNumber: 19
-                  },
-                  this
+                  link.name
                 )),
-                /* @__PURE__ */ jsxDEV(
+                /* @__PURE__ */ jsxs(
                   "a",
                   {
                     href: "#contact",
                     onClick: () => setIsMenuOpen(false),
                     className: "flex items-center gap-3 text-brand-primary font-bold py-2",
                     children: [
-                      /* @__PURE__ */ jsxDEV(MessageCircle, { size: 20 }, void 0, false, {
-                        fileName: "/app/applet/src/App.tsx",
-                        lineNumber: 167,
-                        columnNumber: 19
-                      }, this),
+                      /* @__PURE__ */ jsx(MessageCircle, { size: 20 }),
                       "立即咨询"
                     ]
-                  },
-                  void 0,
-                  true,
-                  {
-                    fileName: "/app/applet/src/App.tsx",
-                    lineNumber: 162,
-                    columnNumber: 17
-                  },
-                  this
+                  }
                 ),
-                /* @__PURE__ */ jsxDEV(
+                /* @__PURE__ */ jsxs(
                   "a",
                   {
                     href: `tel:${COMPANY_INFO.phone}`,
@@ -710,76 +588,28 @@ function App() {
                       "或直接来电: ",
                       COMPANY_INFO.phone
                     ]
-                  },
-                  void 0,
-                  true,
-                  {
-                    fileName: "/app/applet/src/App.tsx",
-                    lineNumber: 170,
-                    columnNumber: 17
-                  },
-                  this
+                  }
                 )
-              ] }, void 0, true, {
-                fileName: "/app/applet/src/App.tsx",
-                lineNumber: 151,
-                columnNumber: 15
-              }, this)
-            },
-            void 0,
-            false,
-            {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 145,
-              columnNumber: 13
-            },
-            this
-          ) }, void 0, false, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 143,
-            columnNumber: 9
-          }, this)
+              ] })
+            }
+          ) })
         ]
-      },
-      void 0,
-      true,
-      {
-        fileName: "/app/applet/src/App.tsx",
-        lineNumber: 71,
-        columnNumber: 7
-      },
-      this
+      }
     ),
-    /* @__PURE__ */ jsxDEV("section", { id: "home", className: "relative h-screen flex items-center overflow-hidden", children: [
-      /* @__PURE__ */ jsxDEV("div", { className: "absolute inset-0 z-0", children: [
-        /* @__PURE__ */ jsxDEV(
+    /* @__PURE__ */ jsxs("section", { id: "home", className: "relative h-screen flex items-center overflow-hidden", children: [
+      /* @__PURE__ */ jsxs("div", { className: "absolute inset-0 z-0", children: [
+        /* @__PURE__ */ jsx(
           "img",
           {
             src: heroImage,
             alt: "Premium Interior Door",
             className: "w-full h-full object-cover",
             referrerPolicy: "no-referrer"
-          },
-          void 0,
-          false,
-          {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 185,
-            columnNumber: 11
-          },
-          this
+          }
         ),
-        /* @__PURE__ */ jsxDEV("div", { className: "absolute inset-0 bg-neutral-900/40 backdrop-blur-[2px]" }, void 0, false, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 191,
-          columnNumber: 11
-        }, this)
-      ] }, void 0, true, {
-        fileName: "/app/applet/src/App.tsx",
-        lineNumber: 184,
-        columnNumber: 9
-      }, this),
-      /* @__PURE__ */ jsxDEV("div", { className: "relative z-10 max-w-7xl mx-auto px-4 w-full", children: /* @__PURE__ */ jsxDEV(
+        /* @__PURE__ */ jsx("div", { className: "absolute inset-0 bg-neutral-900/40 backdrop-blur-[2px]" })
+      ] }),
+      /* @__PURE__ */ jsx("div", { className: "relative z-10 max-w-7xl mx-auto px-4 w-full", children: /* @__PURE__ */ jsxs(
         motion.div,
         {
           initial: { opacity: 0, y: 30 },
@@ -787,318 +617,115 @@ function App() {
           transition: { duration: 0.8 },
           className: "max-w-2xl text-white",
           children: [
-            /* @__PURE__ */ jsxDEV("div", { className: "inline-block px-3 py-1 bg-brand-primary text-white text-[10px] sm:text-xs font-bold leading-none mb-8 rounded-sm", children: "惠州本土专业制造品牌" }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 201,
-              columnNumber: 13
-            }, this),
-            /* @__PURE__ */ jsxDEV("h1", { className: "text-6xl md:text-[88px] font-serif font-medium mb-8 leading-[1.05] tracking-tight", children: [
+            /* @__PURE__ */ jsx("div", { className: "inline-block px-3 py-1 bg-brand-primary text-white text-[10px] sm:text-xs font-bold leading-none mb-8 rounded-sm", children: "惠州本土专业制造品牌" }),
+            /* @__PURE__ */ jsxs("h1", { className: "text-6xl md:text-[88px] font-serif font-medium mb-8 leading-[1.05] tracking-tight", children: [
               "匠心造好门",
-              /* @__PURE__ */ jsxDEV("br", {}, void 0, false, {
-                fileName: "/app/applet/src/App.tsx",
-                lineNumber: 205,
-                columnNumber: 20
-              }, this),
-              /* @__PURE__ */ jsxDEV("span", { className: "text-brand-accent", children: "品质" }, void 0, false, {
-                fileName: "/app/applet/src/App.tsx",
-                lineNumber: 206,
-                columnNumber: 15
-              }, this),
+              /* @__PURE__ */ jsx("br", {}),
+              /* @__PURE__ */ jsx("span", { className: "text-brand-accent", children: "品质" }),
               "赢口碑"
-            ] }, void 0, true, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 204,
-              columnNumber: 13
-            }, this),
-            /* @__PURE__ */ jsxDEV("p", { className: "text-base md:text-lg text-white/90 mb-12 leading-relaxed font-normal max-w-2xl", children: "惠州市美创门业有限公司是惠州仲恺本土实体门类生产工厂，主营四大品类：入户防盗门、室内实木烤漆门、铝木复合门、极窄铝合金极简门。工厂集研发、数控生产、定制加工、配送安装、售后维保一体，面向惠州全域家装自建房、精装楼盘、商铺工装、装修公司配套、全国经销商供货。针对南方回南天潮湿气候优化防潮、防变形、防锈工艺，非标尺寸可定制，工厂直供无中间商差价，提供免费勘测、全屋搭配方案、透明报价、稳定排产交付、本地极速售后全流程服务。" }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 208,
-              columnNumber: 13
-            }, this),
-            /* @__PURE__ */ jsxDEV("div", { className: "flex flex-col sm:flex-row gap-5", children: [
-              /* @__PURE__ */ jsxDEV(
+            ] }),
+            /* @__PURE__ */ jsx("p", { className: "text-base md:text-lg text-white/90 mb-12 leading-relaxed font-normal max-w-2xl", children: "惠州市美创门业有限公司是惠州仲恺本土实体门类生产工厂，主营四大品类：入户防盗门、室内实木烤漆门、铝木复合门、极窄铝合金极简门。工厂集研发、数控生产、定制加工、配送安装、售后维保一体，面向惠州全域家装自建房、精装楼盘、商铺工装、装修公司配套、全国经销商供货。针对南方回南天潮湿气候优化防潮、防变形、防锈工艺，非标尺寸可定制，工厂直供无中间商差价，提供免费勘测、全屋搭配方案、透明报价、稳定排产交付、本地极速售后全流程服务。" }),
+            /* @__PURE__ */ jsxs("div", { className: "flex flex-col sm:flex-row gap-5", children: [
+              /* @__PURE__ */ jsxs(
                 "a",
                 {
                   href: "#products",
                   className: "px-10 py-5 bg-white text-neutral-900 rounded-full font-bold text-base hover:bg-neutral-100 transition-all flex items-center justify-center gap-3 group shadow-xl",
                   children: [
                     "浏览产品",
-                    /* @__PURE__ */ jsxDEV(ArrowRight, { size: 18, className: "group-hover:translate-x-1 transition-transform" }, void 0, false, {
-                      fileName: "/app/applet/src/App.tsx",
-                      lineNumber: 217,
-                      columnNumber: 17
-                    }, this)
+                    /* @__PURE__ */ jsx(ArrowRight, { size: 18, className: "group-hover:translate-x-1 transition-transform" })
                   ]
-                },
-                void 0,
-                true,
-                {
-                  fileName: "/app/applet/src/App.tsx",
-                  lineNumber: 212,
-                  columnNumber: 15
-                },
-                this
+                }
               ),
-              /* @__PURE__ */ jsxDEV(
+              /* @__PURE__ */ jsx(
                 "a",
                 {
                   href: "#contact",
                   className: "px-10 py-5 border border-white/40 backdrop-blur-md text-white rounded-full font-bold text-base hover:bg-white/10 transition-all text-center",
                   children: "获取报价"
-                },
-                void 0,
-                false,
-                {
-                  fileName: "/app/applet/src/App.tsx",
-                  lineNumber: 219,
-                  columnNumber: 15
-                },
-                this
+                }
               )
-            ] }, void 0, true, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 211,
-              columnNumber: 13
-            }, this)
+            ] })
           ]
-        },
-        void 0,
-        true,
-        {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 195,
-          columnNumber: 11
-        },
-        this
-      ) }, void 0, false, {
-        fileName: "/app/applet/src/App.tsx",
-        lineNumber: 194,
-        columnNumber: 9
-      }, this),
-      /* @__PURE__ */ jsxDEV("div", { className: "absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2", children: [
-        /* @__PURE__ */ jsxDEV("span", { className: "text-[10px] text-white/60 uppercase tracking-widest", children: "探索更多" }, void 0, false, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 231,
-          columnNumber: 11
-        }, this),
-        /* @__PURE__ */ jsxDEV(
+        }
+      ) }),
+      /* @__PURE__ */ jsxs("div", { className: "absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2", children: [
+        /* @__PURE__ */ jsx("span", { className: "text-[10px] text-white/60 uppercase tracking-widest", children: "探索更多" }),
+        /* @__PURE__ */ jsx(
           motion.div,
           {
             animate: { y: [0, 8, 0] },
             transition: { repeat: Infinity, duration: 2 },
             className: "w-5 h-8 border-2 border-white/20 rounded-full flex justify-center p-1",
-            children: /* @__PURE__ */ jsxDEV("div", { className: "w-1 h-2 bg-white rounded-full" }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 237,
-              columnNumber: 13
-            }, this)
-          },
-          void 0,
-          false,
-          {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 232,
-            columnNumber: 11
-          },
-          this
+            children: /* @__PURE__ */ jsx("div", { className: "w-1 h-2 bg-white rounded-full" })
+          }
         )
-      ] }, void 0, true, {
-        fileName: "/app/applet/src/App.tsx",
-        lineNumber: 230,
-        columnNumber: 9
-      }, this)
-    ] }, void 0, true, {
-      fileName: "/app/applet/src/App.tsx",
-      lineNumber: 183,
-      columnNumber: 7
-    }, this),
-    /* @__PURE__ */ jsxDEV("section", { className: "bg-white py-12 border-b", children: /* @__PURE__ */ jsxDEV("div", { className: "max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8", children: [
+      ] })
+    ] }),
+    /* @__PURE__ */ jsx("section", { className: "bg-white py-12 border-b", children: /* @__PURE__ */ jsx("div", { className: "max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8", children: [
       { value: "5000+", label: "月生产能力 (套)", icon: Factory },
       { value: "7-15", label: "标准交付周期 (天)", icon: Clock },
       { value: "15-25%", label: "同质比更低价格", icon: TrendingDown },
       { value: "5年", label: "五金核心质保", icon: ShieldCheck }
-    ].map((stat, idx) => /* @__PURE__ */ jsxDEV("div", { className: "flex flex-col items-center text-center group", children: [
-      /* @__PURE__ */ jsxDEV(stat.icon, { className: "text-brand-primary mb-3 opacity-60 group-hover:opacity-100 transition-opacity", size: 32 }, void 0, false, {
-        fileName: "/app/applet/src/App.tsx",
-        lineNumber: 252,
-        columnNumber: 15
-      }, this),
-      /* @__PURE__ */ jsxDEV("span", { className: "text-3xl font-serif font-bold text-brand-primary", children: stat.value }, void 0, false, {
-        fileName: "/app/applet/src/App.tsx",
-        lineNumber: 253,
-        columnNumber: 15
-      }, this),
-      /* @__PURE__ */ jsxDEV("span", { className: "text-xs text-neutral-500 uppercase tracking-wider font-semibold mt-1", children: stat.label }, void 0, false, {
-        fileName: "/app/applet/src/App.tsx",
-        lineNumber: 254,
-        columnNumber: 15
-      }, this)
-    ] }, idx, true, {
-      fileName: "/app/applet/src/App.tsx",
-      lineNumber: 251,
-      columnNumber: 13
-    }, this)) }, void 0, false, {
-      fileName: "/app/applet/src/App.tsx",
-      lineNumber: 244,
-      columnNumber: 9
-    }, this) }, void 0, false, {
-      fileName: "/app/applet/src/App.tsx",
-      lineNumber: 243,
-      columnNumber: 7
-    }, this),
-    /* @__PURE__ */ jsxDEV("section", { id: "products", className: "py-24 bg-neutral-50", children: /* @__PURE__ */ jsxDEV("div", { className: "max-w-7xl mx-auto px-4", children: [
-      /* @__PURE__ */ jsxDEV("div", { className: "flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6", children: [
-        /* @__PURE__ */ jsxDEV("div", { className: "max-w-2xl", children: [
-          /* @__PURE__ */ jsxDEV("h2", { className: "text-sm font-bold text-brand-primary tracking-[0.3em] mb-4", children: "产品中心" }, void 0, false, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 265,
-            columnNumber: 15
-          }, this),
-          /* @__PURE__ */ jsxDEV("h3", { className: "text-4xl md:text-5xl font-serif font-bold leading-tight", children: [
+    ].map((stat, idx) => /* @__PURE__ */ jsxs("div", { className: "flex flex-col items-center text-center group", children: [
+      /* @__PURE__ */ jsx(stat.icon, { className: "text-brand-primary mb-3 opacity-60 group-hover:opacity-100 transition-opacity", size: 32 }),
+      /* @__PURE__ */ jsx("span", { className: "text-3xl font-serif font-bold text-brand-primary", children: stat.value }),
+      /* @__PURE__ */ jsx("span", { className: "text-xs text-neutral-500 uppercase tracking-wider font-semibold mt-1", children: stat.label })
+    ] }, idx)) }) }),
+    /* @__PURE__ */ jsx("section", { id: "products", className: "py-24 bg-neutral-50", children: /* @__PURE__ */ jsxs("div", { className: "max-w-7xl mx-auto px-4", children: [
+      /* @__PURE__ */ jsxs("div", { className: "flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6", children: [
+        /* @__PURE__ */ jsxs("div", { className: "max-w-2xl", children: [
+          /* @__PURE__ */ jsx("h2", { className: "text-sm font-bold text-brand-primary tracking-[0.3em] mb-4", children: "产品中心" }),
+          /* @__PURE__ */ jsxs("h3", { className: "text-4xl md:text-5xl font-serif font-bold leading-tight", children: [
             "多元化产品矩阵",
-            /* @__PURE__ */ jsxDEV("br", {}, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 267,
-              columnNumber: 24
-            }, this),
+            /* @__PURE__ */ jsx("br", {}),
             "致力于满足全屋定制需求"
-          ] }, void 0, true, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 266,
-            columnNumber: 15
-          }, this)
-        ] }, void 0, true, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 264,
-          columnNumber: 13
-        }, this),
-        /* @__PURE__ */ jsxDEV("p", { className: "text-neutral-500 max-w-sm", children: "从经典实木到现代极简铝木门，我们坚持采用E0级以上环保标准，为您打造安心舒适的家居环境。" }, void 0, false, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 270,
-          columnNumber: 13
-        }, this)
-      ] }, void 0, true, {
-        fileName: "/app/applet/src/App.tsx",
-        lineNumber: 263,
-        columnNumber: 11
-      }, this),
-      /* @__PURE__ */ jsxDEV("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6", children: PRODUCT_CATEGORIES.map((category) => /* @__PURE__ */ jsxDEV(
+          ] })
+        ] }),
+        /* @__PURE__ */ jsx("p", { className: "text-neutral-500 max-w-sm", children: "从经典实木到现代极简铝木门，我们坚持采用E0级以上环保标准，为您打造安心舒适的家居环境。" })
+      ] }),
+      /* @__PURE__ */ jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6", children: PRODUCT_CATEGORIES.map((category) => /* @__PURE__ */ jsxs(
         motion.div,
         {
           whileHover: { y: -10 },
           className: "bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-neutral-100 flex flex-col h-full",
           children: [
-            /* @__PURE__ */ jsxDEV("div", { className: "aspect-[4/5] overflow-hidden", children: /* @__PURE__ */ jsxDEV(
+            /* @__PURE__ */ jsx("div", { className: "aspect-[4/5] overflow-hidden", children: /* @__PURE__ */ jsx(
               "img",
               {
                 src: category.image,
                 alt: category.title,
                 className: "w-full h-full object-cover group-hover:scale-105 transition-transform duration-700",
                 referrerPolicy: "no-referrer"
-              },
-              void 0,
-              false,
-              {
-                fileName: "/app/applet/src/App.tsx",
-                lineNumber: 283,
-                columnNumber: 19
-              },
-              this
-            ) }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 282,
-              columnNumber: 17
-            }, this),
-            /* @__PURE__ */ jsxDEV("div", { className: "p-6 flex flex-col flex-grow", children: [
-              /* @__PURE__ */ jsxDEV("h4", { className: "text-xl font-bold mb-3", children: category.title }, void 0, false, {
-                fileName: "/app/applet/src/App.tsx",
-                lineNumber: 291,
-                columnNumber: 19
-              }, this),
-              /* @__PURE__ */ jsxDEV("p", { className: "text-sm text-neutral-600 mb-6 leading-relaxed flex-grow", children: category.description }, void 0, false, {
-                fileName: "/app/applet/src/App.tsx",
-                lineNumber: 292,
-                columnNumber: 19
-              }, this),
-              /* @__PURE__ */ jsxDEV("ul", { className: "space-y-2 mb-6", children: category.features.slice(0, 3).map((feat, i) => /* @__PURE__ */ jsxDEV("li", { className: "text-xs text-neutral-500 flex items-center gap-2", children: [
-                /* @__PURE__ */ jsxDEV(CircleCheck, { size: 12, className: "text-brand-accent" }, void 0, false, {
-                  fileName: "/app/applet/src/App.tsx",
-                  lineNumber: 298,
-                  columnNumber: 25
-                }, this),
+              }
+            ) }),
+            /* @__PURE__ */ jsxs("div", { className: "p-6 flex flex-col flex-grow", children: [
+              /* @__PURE__ */ jsx("h4", { className: "text-xl font-bold mb-3", children: category.title }),
+              /* @__PURE__ */ jsx("p", { className: "text-sm text-neutral-600 mb-6 leading-relaxed flex-grow", children: category.description }),
+              /* @__PURE__ */ jsx("ul", { className: "space-y-2 mb-6", children: category.features.slice(0, 3).map((feat, i) => /* @__PURE__ */ jsxs("li", { className: "text-xs text-neutral-500 flex items-center gap-2", children: [
+                /* @__PURE__ */ jsx(CircleCheck, { size: 12, className: "text-brand-accent" }),
                 feat
-              ] }, i, true, {
-                fileName: "/app/applet/src/App.tsx",
-                lineNumber: 297,
-                columnNumber: 23
-              }, this)) }, void 0, false, {
-                fileName: "/app/applet/src/App.tsx",
-                lineNumber: 295,
-                columnNumber: 19
-              }, this),
-              /* @__PURE__ */ jsxDEV(
+              ] }, i)) }),
+              /* @__PURE__ */ jsx(
                 "a",
                 {
                   href: `/products/${category.id}.html`,
                   className: "w-full py-3 border border-neutral-200 rounded-lg text-sm font-bold hover:bg-neutral-50 transition-colors text-center",
                   children: "查看详情"
-                },
-                void 0,
-                false,
-                {
-                  fileName: "/app/applet/src/App.tsx",
-                  lineNumber: 303,
-                  columnNumber: 19
-                },
-                this
+                }
               )
-            ] }, void 0, true, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 290,
-              columnNumber: 17
-            }, this)
+            ] })
           ]
         },
-        category.id,
-        true,
-        {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 277,
-          columnNumber: 15
-        },
-        this
-      )) }, void 0, false, {
-        fileName: "/app/applet/src/App.tsx",
-        lineNumber: 275,
-        columnNumber: 11
-      }, this)
-    ] }, void 0, true, {
-      fileName: "/app/applet/src/App.tsx",
-      lineNumber: 262,
-      columnNumber: 9
-    }, this) }, void 0, false, {
-      fileName: "/app/applet/src/App.tsx",
-      lineNumber: 261,
-      columnNumber: 7
-    }, this),
-    /* @__PURE__ */ jsxDEV("section", { id: "advantages", className: "py-24 bg-neutral-900 text-white", children: [
-      /* @__PURE__ */ jsxDEV("div", { className: "max-w-7xl mx-auto px-4 text-center mb-16", children: [
-        /* @__PURE__ */ jsxDEV("h2", { className: "text-sm font-bold text-brand-accent tracking-[0.3em] mb-4", children: "核心优势" }, void 0, false, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 319,
-          columnNumber: 11
-        }, this),
-        /* @__PURE__ */ jsxDEV("h3", { className: "text-4xl md:text-5xl font-serif font-bold", children: "为什么选择美创门业？" }, void 0, false, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 320,
-          columnNumber: 11
-        }, this)
-      ] }, void 0, true, {
-        fileName: "/app/applet/src/App.tsx",
-        lineNumber: 318,
-        columnNumber: 9
-      }, this),
-      /* @__PURE__ */ jsxDEV("div", { className: "max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8", children: CORE_ADVANTAGES.map((adv, idx) => {
+        category.id
+      )) })
+    ] }) }),
+    /* @__PURE__ */ jsxs("section", { id: "advantages", className: "py-24 bg-neutral-900 text-white", children: [
+      /* @__PURE__ */ jsxs("div", { className: "max-w-7xl mx-auto px-4 text-center mb-16", children: [
+        /* @__PURE__ */ jsx("h2", { className: "text-sm font-bold text-brand-accent tracking-[0.3em] mb-4", children: "核心优势" }),
+        /* @__PURE__ */ jsx("h3", { className: "text-4xl md:text-5xl font-serif font-bold", children: "为什么选择美创门业？" })
+      ] }),
+      /* @__PURE__ */ jsx("div", { className: "max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8", children: CORE_ADVANTAGES.map((adv, idx) => {
         const icons = {
           MapPin,
           ShieldCheck,
@@ -1106,956 +733,290 @@ function App() {
           Award
         };
         const Icon2 = icons[adv.icon] || ShieldCheck;
-        return /* @__PURE__ */ jsxDEV(
+        return /* @__PURE__ */ jsxs(
           "div",
           {
             className: "p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors group text-center",
             children: [
-              /* @__PURE__ */ jsxDEV("div", { className: "w-16 h-16 bg-brand-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform", children: /* @__PURE__ */ jsxDEV(Icon2, { className: "text-brand-accent", size: 32 }, void 0, false, {
-                fileName: "/app/applet/src/App.tsx",
-                lineNumber: 336,
-                columnNumber: 19
-              }, this) }, void 0, false, {
-                fileName: "/app/applet/src/App.tsx",
-                lineNumber: 335,
-                columnNumber: 17
-              }, this),
-              /* @__PURE__ */ jsxDEV("h4", { className: "text-xl font-bold mb-4", children: adv.title }, void 0, false, {
-                fileName: "/app/applet/src/App.tsx",
-                lineNumber: 338,
-                columnNumber: 17
-              }, this),
-              /* @__PURE__ */ jsxDEV("p", { className: "text-neutral-400 text-sm leading-relaxed", children: adv.description }, void 0, false, {
-                fileName: "/app/applet/src/App.tsx",
-                lineNumber: 339,
-                columnNumber: 17
-              }, this)
+              /* @__PURE__ */ jsx("div", { className: "w-16 h-16 bg-brand-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform", children: /* @__PURE__ */ jsx(Icon2, { className: "text-brand-accent", size: 32 }) }),
+              /* @__PURE__ */ jsx("h4", { className: "text-xl font-bold mb-4", children: adv.title }),
+              /* @__PURE__ */ jsx("p", { className: "text-neutral-400 text-sm leading-relaxed", children: adv.description })
             ]
           },
-          idx,
-          true,
-          {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 331,
-            columnNumber: 15
-          },
-          this
+          idx
         );
-      }) }, void 0, false, {
-        fileName: "/app/applet/src/App.tsx",
-        lineNumber: 323,
-        columnNumber: 9
-      }, this)
-    ] }, void 0, true, {
-      fileName: "/app/applet/src/App.tsx",
-      lineNumber: 317,
-      columnNumber: 7
-    }, this),
-    /* @__PURE__ */ jsxDEV("section", { className: "py-20 bg-neutral-50", children: /* @__PURE__ */ jsxDEV("div", { className: "max-w-7xl mx-auto px-4", children: [
-      /* @__PURE__ */ jsxDEV("h2", { className: "text-2xl md:text-3xl font-bold text-brand-primary mb-3", children: "工厂核心优势" }, void 0, false, {
-        fileName: "/app/applet/src/App.tsx",
-        lineNumber: 350,
-        columnNumber: 11
-      }, this),
-      /* @__PURE__ */ jsxDEV("p", { className: "text-neutral-600 mb-10", children: "六大差异化竞争力，让美创门业在惠州家装与工程市场中脱颖而出" }, void 0, false, {
-        fileName: "/app/applet/src/App.tsx",
-        lineNumber: 351,
-        columnNumber: 11
-      }, this),
-      /* @__PURE__ */ jsxDEV("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12", children: [
-        /* @__PURE__ */ jsxDEV("div", { className: "bg-white p-6 rounded-xl border border-neutral-100", children: [
-          /* @__PURE__ */ jsxDEV("h3", { className: "font-bold text-brand-primary mb-2", children: "地域优势" }, void 0, false, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 355,
-            columnNumber: 15
-          }, this),
-          /* @__PURE__ */ jsxDEV("p", { className: "text-sm text-neutral-600", children: "惠州仲恺本地工厂，本土生产，售后响应快（24h 上门），安装维护无忧。本地物流成本低，送货周期短。" }, void 0, false, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 356,
-            columnNumber: 15
-          }, this)
-        ] }, void 0, true, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 354,
-          columnNumber: 13
-        }, this),
-        /* @__PURE__ */ jsxDEV("div", { className: "bg-white p-6 rounded-xl border border-neutral-100", children: [
-          /* @__PURE__ */ jsxDEV("h3", { className: "font-bold text-brand-primary mb-2", children: "品类优势" }, void 0, false, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 359,
-            columnNumber: 15
-          }, this),
-          /* @__PURE__ */ jsxDEV("p", { className: "text-sm text-neutral-600", children: "四大门类全覆盖：入户门+室内房门+厨卫门一套配齐，风格统一，减少多方对接麻烦。可承接全屋门墙柜配套门、香港整套组装出货。" }, void 0, false, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 360,
-            columnNumber: 15
-          }, this)
-        ] }, void 0, true, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 358,
-          columnNumber: 13
-        }, this),
-        /* @__PURE__ */ jsxDEV("div", { className: "bg-white p-6 rounded-xl border border-neutral-100", children: [
-          /* @__PURE__ */ jsxDEV("h3", { className: "font-bold text-brand-primary mb-2", children: "工艺优势" }, void 0, false, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 363,
-            columnNumber: 15
-          }, this),
-          /* @__PURE__ */ jsxDEV("p", { className: "text-sm text-neutral-600", children: "专为岭南气候升级防潮、防变形、防水工艺，解决南方家装门常见通病（木门开裂、铝门渗水、入户门防盗差）。" }, void 0, false, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 364,
-            columnNumber: 15
-          }, this)
-        ] }, void 0, true, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 362,
-          columnNumber: 13
-        }, this),
-        /* @__PURE__ */ jsxDEV("div", { className: "bg-white p-6 rounded-xl border border-neutral-100", children: [
-          /* @__PURE__ */ jsxDEV("h3", { className: "font-bold text-brand-primary mb-2", children: "价格优势" }, void 0, false, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 367,
-            columnNumber: 15
-          }, this),
-          /* @__PURE__ */ jsxDEV("p", { className: "text-sm text-neutral-600", children: "自产自销，省去门店、经销商层层加价。同等配置低于门店零售价 30% 左右。工厂直营零售+工程批量供货+经销商加盟三重渠道。" }, void 0, false, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 368,
-            columnNumber: 15
-          }, this)
-        ] }, void 0, true, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 366,
-          columnNumber: 13
-        }, this),
-        /* @__PURE__ */ jsxDEV("div", { className: "bg-white p-6 rounded-xl border border-neutral-100", children: [
-          /* @__PURE__ */ jsxDEV("h3", { className: "font-bold text-brand-primary mb-2", children: "交付优势" }, void 0, false, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 371,
-            columnNumber: 15
-          }, this),
-          /* @__PURE__ */ jsxDEV("p", { className: "text-sm text-neutral-600", children: "自有生产线，排产可控，工期透明，不会外包外发耽误交付。常规款式生产周期 10-18 天。" }, void 0, false, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 372,
-            columnNumber: 15
-          }, this)
-        ] }, void 0, true, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 370,
-          columnNumber: 13
-        }, this),
-        /* @__PURE__ */ jsxDEV("div", { className: "bg-white p-6 rounded-xl border border-neutral-100", children: [
-          /* @__PURE__ */ jsxDEV("h3", { className: "font-bold text-brand-primary mb-2", children: "服务优势" }, void 0, false, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 375,
-            columnNumber: 15
-          }, this),
-          /* @__PURE__ */ jsxDEV("p", { className: "text-sm text-neutral-600", children: "免费上门精准量尺，免费全屋配门方案设计，本地专业安装团队，原厂质保 5 年五金核心，终身提供维修调试换件服务。" }, void 0, false, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 376,
-            columnNumber: 15
-          }, this)
-        ] }, void 0, true, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 374,
-          columnNumber: 13
-        }, this)
-      ] }, void 0, true, {
-        fileName: "/app/applet/src/App.tsx",
-        lineNumber: 353,
-        columnNumber: 11
-      }, this),
-      /* @__PURE__ */ jsxDEV("div", { className: "bg-white rounded-xl border border-neutral-100 p-8", children: [
-        /* @__PURE__ */ jsxDEV("h3", { className: "font-bold text-lg mb-6", children: "标准服务流程（6 步全闭环）" }, void 0, false, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 381,
-          columnNumber: 13
-        }, this),
-        /* @__PURE__ */ jsxDEV("ol", { className: "space-y-3 text-sm text-neutral-700", children: [
-          /* @__PURE__ */ jsxDEV("li", { children: [
-            /* @__PURE__ */ jsxDEV("strong", { children: "1. 咨询沟通" }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 383,
-              columnNumber: 19
-            }, this),
+      }) })
+    ] }),
+    /* @__PURE__ */ jsx("section", { className: "py-20 bg-neutral-50", children: /* @__PURE__ */ jsxs("div", { className: "max-w-7xl mx-auto px-4", children: [
+      /* @__PURE__ */ jsx("h2", { className: "text-2xl md:text-3xl font-bold text-brand-primary mb-3", children: "工厂核心优势" }),
+      /* @__PURE__ */ jsx("p", { className: "text-neutral-600 mb-10", children: "六大差异化竞争力，让美创门业在惠州家装与工程市场中脱颖而出" }),
+      /* @__PURE__ */ jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12", children: [
+        /* @__PURE__ */ jsxs("div", { className: "bg-white p-6 rounded-xl border border-neutral-100", children: [
+          /* @__PURE__ */ jsx("h3", { className: "font-bold text-brand-primary mb-2", children: "地域优势" }),
+          /* @__PURE__ */ jsx("p", { className: "text-sm text-neutral-600", children: "惠州仲恺本地工厂，本土生产，售后响应快（24h 上门），安装维护无忧。本地物流成本低，送货周期短。" })
+        ] }),
+        /* @__PURE__ */ jsxs("div", { className: "bg-white p-6 rounded-xl border border-neutral-100", children: [
+          /* @__PURE__ */ jsx("h3", { className: "font-bold text-brand-primary mb-2", children: "品类优势" }),
+          /* @__PURE__ */ jsx("p", { className: "text-sm text-neutral-600", children: "四大门类全覆盖：入户门+室内房门+厨卫门一套配齐，风格统一，减少多方对接麻烦。可承接全屋门墙柜配套门、香港整套组装出货。" })
+        ] }),
+        /* @__PURE__ */ jsxs("div", { className: "bg-white p-6 rounded-xl border border-neutral-100", children: [
+          /* @__PURE__ */ jsx("h3", { className: "font-bold text-brand-primary mb-2", children: "工艺优势" }),
+          /* @__PURE__ */ jsx("p", { className: "text-sm text-neutral-600", children: "专为岭南气候升级防潮、防变形、防水工艺，解决南方家装门常见通病（木门开裂、铝门渗水、入户门防盗差）。" })
+        ] }),
+        /* @__PURE__ */ jsxs("div", { className: "bg-white p-6 rounded-xl border border-neutral-100", children: [
+          /* @__PURE__ */ jsx("h3", { className: "font-bold text-brand-primary mb-2", children: "价格优势" }),
+          /* @__PURE__ */ jsx("p", { className: "text-sm text-neutral-600", children: "自产自销，省去门店、经销商层层加价。同等配置低于门店零售价 30% 左右。工厂直营零售+工程批量供货+经销商加盟三重渠道。" })
+        ] }),
+        /* @__PURE__ */ jsxs("div", { className: "bg-white p-6 rounded-xl border border-neutral-100", children: [
+          /* @__PURE__ */ jsx("h3", { className: "font-bold text-brand-primary mb-2", children: "交付优势" }),
+          /* @__PURE__ */ jsx("p", { className: "text-sm text-neutral-600", children: "自有生产线，排产可控，工期透明，不会外包外发耽误交付。常规款式生产周期 10-18 天。" })
+        ] }),
+        /* @__PURE__ */ jsxs("div", { className: "bg-white p-6 rounded-xl border border-neutral-100", children: [
+          /* @__PURE__ */ jsx("h3", { className: "font-bold text-brand-primary mb-2", children: "服务优势" }),
+          /* @__PURE__ */ jsx("p", { className: "text-sm text-neutral-600", children: "免费上门精准量尺，免费全屋配门方案设计，本地专业安装团队，原厂质保 5 年五金核心，终身提供维修调试换件服务。" })
+        ] })
+      ] }),
+      /* @__PURE__ */ jsxs("div", { className: "bg-white rounded-xl border border-neutral-100 p-8", children: [
+        /* @__PURE__ */ jsx("h3", { className: "font-bold text-lg mb-6", children: "标准服务流程（6 步全闭环）" }),
+        /* @__PURE__ */ jsxs("ol", { className: "space-y-3 text-sm text-neutral-700", children: [
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("strong", { children: "1. 咨询沟通" }),
             "：线上线下确认户型、装修风格、门类需求与预算"
-          ] }, void 0, true, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 383,
-            columnNumber: 15
-          }, this),
-          /* @__PURE__ */ jsxDEV("li", { children: [
-            /* @__PURE__ */ jsxDEV("strong", { children: "2. 免费勘测" }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 384,
-              columnNumber: 19
-            }, this),
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("strong", { children: "2. 免费勘测" }),
             "：惠州全域免费上门实地勘测，规避门洞尺寸误差"
-          ] }, void 0, true, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 384,
-            columnNumber: 15
-          }, this),
-          /* @__PURE__ */ jsxDEV("li", { children: [
-            /* @__PURE__ */ jsxDEV("strong", { children: "3. 方案报价" }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 385,
-              columnNumber: 19
-            }, this),
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("strong", { children: "3. 方案报价" }),
             "：设计师出具全屋门类搭配方案，附带明细透明报价，无隐形增项"
-          ] }, void 0, true, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 385,
-            columnNumber: 15
-          }, this),
-          /* @__PURE__ */ jsxDEV("li", { children: [
-            /* @__PURE__ */ jsxDEV("strong", { children: "4. 工厂生产" }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 386,
-              columnNumber: 19
-            }, this),
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("strong", { children: "4. 工厂生产" }),
             "：客户确认方案下单后，工厂流水线数控生产，全程多重品检"
-          ] }, void 0, true, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 386,
-            columnNumber: 15
-          }, this),
-          /* @__PURE__ */ jsxDEV("li", { children: [
-            /* @__PURE__ */ jsxDEV("strong", { children: "5. 配送安装" }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 387,
-              columnNumber: 19
-            }, this),
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("strong", { children: "5. 配送安装" }),
             "：本地专车配送，本厂安装团队标准化施工、清洁收尾"
-          ] }, void 0, true, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 387,
-            columnNumber: 15
-          }, this),
-          /* @__PURE__ */ jsxDEV("li", { children: [
-            /* @__PURE__ */ jsxDEV("strong", { children: "6. 售后质保" }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 388,
-              columnNumber: 19
-            }, this),
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("strong", { children: "6. 售后质保" }),
             "：完工验收后录入售后档案，原厂质保终身维护"
-          ] }, void 0, true, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 388,
-            columnNumber: 15
-          }, this)
-        ] }, void 0, true, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 382,
-          columnNumber: 13
-        }, this)
-      ] }, void 0, true, {
-        fileName: "/app/applet/src/App.tsx",
-        lineNumber: 380,
-        columnNumber: 11
-      }, this)
-    ] }, void 0, true, {
-      fileName: "/app/applet/src/App.tsx",
-      lineNumber: 349,
-      columnNumber: 9
-    }, this) }, void 0, false, {
-      fileName: "/app/applet/src/App.tsx",
-      lineNumber: 348,
-      columnNumber: 7
-    }, this),
-    /* @__PURE__ */ jsxDEV("section", { id: "cases", className: "py-24 bg-white", children: /* @__PURE__ */ jsxDEV("div", { className: "max-w-7xl mx-auto px-4", children: [
-      /* @__PURE__ */ jsxDEV("div", { className: "text-center mb-16", children: [
-        /* @__PURE__ */ jsxDEV("h2", { className: "text-sm font-bold text-brand-primary tracking-[0.3em] mb-4", children: "工程案例" }, void 0, false, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 400,
-          columnNumber: 13
-        }, this),
-        /* @__PURE__ */ jsxDEV("h3", { className: "text-4xl md:text-5xl font-serif font-bold mb-6", children: "服务覆盖惠州及大湾区" }, void 0, false, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 401,
-          columnNumber: 13
-        }, this),
-        /* @__PURE__ */ jsxDEV("p", { className: "text-neutral-500 max-w-2xl mx-auto", children: "先后承接多个知名办公、商业、住宅及文教建筑工程。" }, void 0, false, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 402,
-          columnNumber: 13
-        }, this)
-      ] }, void 0, true, {
-        fileName: "/app/applet/src/App.tsx",
-        lineNumber: 399,
-        columnNumber: 11
-      }, this),
-      /* @__PURE__ */ jsxDEV("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4", children: [
-        /* @__PURE__ */ jsxDEV("div", { className: "lg:col-span-2 lg:row-span-2 relative group overflow-hidden rounded-3xl aspect-[16/10]", children: [
-          /* @__PURE__ */ jsxDEV(
+          ] })
+        ] })
+      ] })
+    ] }) }),
+    /* @__PURE__ */ jsx("section", { id: "cases", className: "py-24 bg-white", children: /* @__PURE__ */ jsxs("div", { className: "max-w-7xl mx-auto px-4", children: [
+      /* @__PURE__ */ jsxs("div", { className: "text-center mb-16", children: [
+        /* @__PURE__ */ jsx("h2", { className: "text-sm font-bold text-brand-primary tracking-[0.3em] mb-4", children: "工程案例" }),
+        /* @__PURE__ */ jsx("h3", { className: "text-4xl md:text-5xl font-serif font-bold mb-6", children: "服务覆盖惠州及大湾区" }),
+        /* @__PURE__ */ jsx("p", { className: "text-neutral-500 max-w-2xl mx-auto", children: "先后承接多个知名办公、商业、住宅及文教建筑工程。" })
+      ] }),
+      /* @__PURE__ */ jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4", children: [
+        /* @__PURE__ */ jsxs("div", { className: "lg:col-span-2 lg:row-span-2 relative group overflow-hidden rounded-3xl aspect-[16/10]", children: [
+          /* @__PURE__ */ jsx(
             "img",
             {
               src: caseHotel,
               alt: "Engineering Case",
               className: "w-full h-full object-cover group-hover:scale-105 transition-transform duration-700",
               referrerPolicy: "no-referrer"
-            },
-            void 0,
-            false,
-            {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 409,
-              columnNumber: 15
-            },
-            this
+            }
           ),
-          /* @__PURE__ */ jsxDEV("div", { className: "absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8", children: [
-            /* @__PURE__ */ jsxDEV("span", { className: "text-xs text-brand-accent font-bold uppercase tracking-widest mb-2", children: "酒店工程项目" }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 416,
-              columnNumber: 17
-            }, this),
-            /* @__PURE__ */ jsxDEV("h5", { className: "text-white text-2xl font-serif font-bold", children: "高端酒店客房木门统一订制" }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 417,
-              columnNumber: 17
-            }, this)
-          ] }, void 0, true, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 415,
-            columnNumber: 15
-          }, this)
-        ] }, void 0, true, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 408,
-          columnNumber: 13
-        }, this),
-        /* @__PURE__ */ jsxDEV("div", { className: "relative group overflow-hidden rounded-3xl aspect-square", children: /* @__PURE__ */ jsxDEV(
+          /* @__PURE__ */ jsxs("div", { className: "absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8", children: [
+            /* @__PURE__ */ jsx("span", { className: "text-xs text-brand-accent font-bold uppercase tracking-widest mb-2", children: "酒店工程项目" }),
+            /* @__PURE__ */ jsx("h5", { className: "text-white text-2xl font-serif font-bold", children: "高端酒店客房木门统一订制" })
+          ] })
+        ] }),
+        /* @__PURE__ */ jsx("div", { className: "relative group overflow-hidden rounded-3xl aspect-square", children: /* @__PURE__ */ jsx(
           "img",
           {
             src: caseResident,
             alt: "Resident",
             className: "w-full h-full object-cover group-hover:scale-105 transition-transform duration-700",
             referrerPolicy: "no-referrer"
-          },
-          void 0,
-          false,
-          {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 421,
-            columnNumber: 15
-          },
-          this
-        ) }, void 0, false, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 420,
-          columnNumber: 13
-        }, this),
-        /* @__PURE__ */ jsxDEV("div", { className: "relative group overflow-hidden rounded-3xl aspect-square", children: /* @__PURE__ */ jsxDEV(
+          }
+        ) }),
+        /* @__PURE__ */ jsx("div", { className: "relative group overflow-hidden rounded-3xl aspect-square", children: /* @__PURE__ */ jsx(
           "img",
           {
             src: caseOffice,
             alt: "Office",
             className: "w-full h-full object-cover group-hover:scale-105 transition-transform duration-700",
             referrerPolicy: "no-referrer"
-          },
-          void 0,
-          false,
-          {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 429,
-            columnNumber: 15
-          },
-          this
-        ) }, void 0, false, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 428,
-          columnNumber: 13
-        }, this)
-      ] }, void 0, true, {
-        fileName: "/app/applet/src/App.tsx",
-        lineNumber: 407,
-        columnNumber: 11
-      }, this)
-    ] }, void 0, true, {
-      fileName: "/app/applet/src/App.tsx",
-      lineNumber: 398,
-      columnNumber: 9
-    }, this) }, void 0, false, {
-      fileName: "/app/applet/src/App.tsx",
-      lineNumber: 397,
-      columnNumber: 7
-    }, this),
-    /* @__PURE__ */ jsxDEV("section", { id: "about", className: "py-24 bg-white overflow-hidden", children: /* @__PURE__ */ jsxDEV("div", { className: "max-w-7xl mx-auto px-4", children: /* @__PURE__ */ jsxDEV("div", { className: "grid grid-cols-1 lg:grid-cols-2 gap-16 items-center", children: [
-      /* @__PURE__ */ jsxDEV("div", { className: "relative", children: [
-        /* @__PURE__ */ jsxDEV("div", { className: "aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl relative z-10", children: /* @__PURE__ */ jsxDEV(
+          }
+        ) })
+      ] })
+    ] }) }),
+    /* @__PURE__ */ jsx("section", { id: "about", className: "py-24 bg-white overflow-hidden", children: /* @__PURE__ */ jsx("div", { className: "max-w-7xl mx-auto px-4", children: /* @__PURE__ */ jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-2 gap-16 items-center", children: [
+      /* @__PURE__ */ jsxs("div", { className: "relative", children: [
+        /* @__PURE__ */ jsx("div", { className: "aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl relative z-10", children: /* @__PURE__ */ jsx(
           "img",
           {
             src: aboutFactory,
             alt: "Craftsmanship",
             className: "w-full h-full object-cover",
             referrerPolicy: "no-referrer"
-          },
-          void 0,
-          false,
-          {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 446,
-            columnNumber: 17
-          },
-          this
-        ) }, void 0, false, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 445,
-          columnNumber: 15
-        }, this),
-        /* @__PURE__ */ jsxDEV("div", { className: "absolute -bottom-8 -right-8 w-64 h-64 bg-brand-primary rounded-3xl -z-0 opacity-10" }, void 0, false, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 453,
-          columnNumber: 15
-        }, this),
-        /* @__PURE__ */ jsxDEV("div", { className: "absolute -top-12 -left-12 aspect-square w-48 bg-brand-accent rounded-full -z-0 opacity-10" }, void 0, false, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 454,
-          columnNumber: 15
-        }, this),
-        /* @__PURE__ */ jsxDEV("div", { className: "absolute bottom-8 left-8 bg-white/90 backdrop-blur p-6 rounded-2xl shadow-xl z-20 border border-white/50 md:block", children: /* @__PURE__ */ jsxDEV("div", { className: "flex items-center gap-4", children: [
-          /* @__PURE__ */ jsxDEV("div", { className: "w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center text-white", children: /* @__PURE__ */ jsxDEV(Users, { size: 24 }, void 0, false, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 459,
-            columnNumber: 21
-          }, this) }, void 0, false, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 458,
-            columnNumber: 19
-          }, this),
-          /* @__PURE__ */ jsxDEV("div", { children: [
-            /* @__PURE__ */ jsxDEV("div", { className: "text-2xl font-bold", children: "100%" }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 462,
-              columnNumber: 21
-            }, this),
-            /* @__PURE__ */ jsxDEV("div", { className: "text-[10px] uppercase text-neutral-500 font-bold tracking-widest leading-none", children: "惠州本土生产制造" }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 463,
-              columnNumber: 21
-            }, this)
-          ] }, void 0, true, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 461,
-            columnNumber: 19
-          }, this)
-        ] }, void 0, true, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 457,
-          columnNumber: 17
-        }, this) }, void 0, false, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 456,
-          columnNumber: 15
-        }, this)
-      ] }, void 0, true, {
-        fileName: "/app/applet/src/App.tsx",
-        lineNumber: 444,
-        columnNumber: 13
-      }, this),
-      /* @__PURE__ */ jsxDEV("div", { children: [
-        /* @__PURE__ */ jsxDEV("h2", { className: "text-sm font-bold text-brand-primary tracking-[0.3em] mb-4", children: "关于我们" }, void 0, false, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 470,
-          columnNumber: 15
-        }, this),
-        /* @__PURE__ */ jsxDEV("h3", { className: "text-4xl md:text-5xl font-serif font-bold mb-8 leading-tight", children: [
+          }
+        ) }),
+        /* @__PURE__ */ jsx("div", { className: "absolute -bottom-8 -right-8 w-64 h-64 bg-brand-primary rounded-3xl -z-0 opacity-10" }),
+        /* @__PURE__ */ jsx("div", { className: "absolute -top-12 -left-12 aspect-square w-48 bg-brand-accent rounded-full -z-0 opacity-10" }),
+        /* @__PURE__ */ jsx("div", { className: "absolute bottom-8 left-8 bg-white/90 backdrop-blur p-6 rounded-2xl shadow-xl z-20 border border-white/50 md:block", children: /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-4", children: [
+          /* @__PURE__ */ jsx("div", { className: "w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center text-white", children: /* @__PURE__ */ jsx(Users, { size: 24 }) }),
+          /* @__PURE__ */ jsxs("div", { children: [
+            /* @__PURE__ */ jsx("div", { className: "text-2xl font-bold", children: "100%" }),
+            /* @__PURE__ */ jsx("div", { className: "text-[10px] uppercase text-neutral-500 font-bold tracking-widest leading-none", children: "惠州本土生产制造" })
+          ] })
+        ] }) })
+      ] }),
+      /* @__PURE__ */ jsxs("div", { children: [
+        /* @__PURE__ */ jsx("h2", { className: "text-sm font-bold text-brand-primary tracking-[0.3em] mb-4", children: "关于我们" }),
+        /* @__PURE__ */ jsxs("h3", { className: "text-4xl md:text-5xl font-serif font-bold mb-8 leading-tight", children: [
           "二十载行业积淀",
-          /* @__PURE__ */ jsxDEV("br", {}, void 0, false, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 472,
-            columnNumber: 24
-          }, this),
+          /* @__PURE__ */ jsx("br", {}),
           "专注门业高端定制"
-        ] }, void 0, true, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 471,
-          columnNumber: 15
-        }, this),
-        /* @__PURE__ */ jsxDEV("p", { className: "text-lg text-neutral-600 mb-8 leading-relaxed", children: "惠州市美创门业有限公司坐落仲恺潼侨，是惠州仲恺本土实体门类生产工厂，主营入户安全门、全屋实木烤漆门、铝木复合门、极窄铝合金极简门四大品类。工厂全套数控裁切、封边、组装设备，每款产品出厂经过隔音、密封、防潮、抗压多重质检，解决广东珠三角地区木门开裂、铝门渗水、入户门防盗差等家装痛点。经营模式为工厂直营零售+工程批量供货+经销商加盟三重渠道，不经过中间商，同等配置低于门店零售价30%左右。自有安装团队，无需外包，售后响应24小时内上门。展厅地址：惠州市仲恺高新区潼侨镇新城山庄A8号铂金实业。" }, void 0, false, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 474,
-          columnNumber: 29
-        }, this),
-        /* @__PURE__ */ jsxDEV("div", { className: "grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10", children: [
-          /* @__PURE__ */ jsxDEV("div", { className: "space-y-4", children: [
-            /* @__PURE__ */ jsxDEV("h5", { className: "font-bold border-l-2 border-brand-primary pl-4", children: "我们的使命" }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 480,
-              columnNumber: 19
-            }, this),
-            /* @__PURE__ */ jsxDEV("p", { className: "text-sm text-neutral-500", children: COMPANY_INFO.mission }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 481,
-              columnNumber: 19
-            }, this)
-          ] }, void 0, true, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 479,
-            columnNumber: 17
-          }, this),
-          /* @__PURE__ */ jsxDEV("div", { className: "space-y-4", children: [
-            /* @__PURE__ */ jsxDEV("h5", { className: "font-bold border-l-2 border-brand-accent pl-4", children: "我们的愿景" }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 484,
-              columnNumber: 19
-            }, this),
-            /* @__PURE__ */ jsxDEV("p", { className: "text-sm text-neutral-500", children: COMPANY_INFO.vision }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 485,
-              columnNumber: 19
-            }, this)
-          ] }, void 0, true, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 483,
-            columnNumber: 17
-          }, this)
-        ] }, void 0, true, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 478,
-          columnNumber: 15
-        }, this),
-        /* @__PURE__ */ jsxDEV("div", { className: "flex flex-wrap gap-4 pt-6 border-t font-medium", children: [
-          /* @__PURE__ */ jsxDEV("div", { className: "flex items-center gap-2 text-sm", children: [
-            /* @__PURE__ */ jsxDEV(ShieldCheck, { className: "text-brand-primary", size: 18 }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 491,
-              columnNumber: 19
-            }, this),
+        ] }),
+        /* @__PURE__ */ jsxs("p", { className: "text-lg text-neutral-600 mb-8 leading-relaxed", children: [
+          "惠州市美创门业有限公司（又称：美创门厂）坐落仲恺潼侨，是惠州仲恺本土实体门类生产工厂（成立于 2019 年，2021 年工商注册），主营四大品类：",
+          /* @__PURE__ */ jsx("strong", { children: "入户防盗门（GB17565-2007 C级标准）" }),
+          "、全屋实木烤漆门、铝木复合门、极窄铝合金极简门。工厂占地 3000+㎡，全套数控裁切、封边、组装设备，月产能 5000+ 套，每款产品出厂经过隔音、密封、防潮、抗压多重质检，解决广东珠三角地区木门开裂、铝门渗水、入户门防盗差等家装痛点。累计承接 20+ 惠州大湾区工程（楼盘入户批量、酒店公寓整套、工业园办公门），单项最高合同额 400 万。经营模式为工厂直营零售+工程批量供货+经销商加盟三重渠道，不经过中间商，同等配置低于门店零售价 30% 左右。自有安装团队，无需外包，售后响应 24 小时内上门。展厅地址：惠州市仲恺高新区潼侨镇新城山庄A8号铂金实业。"
+        ] }),
+        /* @__PURE__ */ jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10", children: [
+          /* @__PURE__ */ jsxs("div", { className: "space-y-4", children: [
+            /* @__PURE__ */ jsx("h5", { className: "font-bold border-l-2 border-brand-primary pl-4", children: "我们的使命" }),
+            /* @__PURE__ */ jsx("p", { className: "text-sm text-neutral-500", children: COMPANY_INFO.mission })
+          ] }),
+          /* @__PURE__ */ jsxs("div", { className: "space-y-4", children: [
+            /* @__PURE__ */ jsx("h5", { className: "font-bold border-l-2 border-brand-accent pl-4", children: "我们的愿景" }),
+            /* @__PURE__ */ jsx("p", { className: "text-sm text-neutral-500", children: COMPANY_INFO.vision })
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxs("div", { className: "flex flex-wrap gap-4 pt-6 border-t font-medium", children: [
+          /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-2 text-sm", children: [
+            /* @__PURE__ */ jsx(ShieldCheck, { className: "text-brand-primary", size: 18 }),
             "ISO9001质管认证"
-          ] }, void 0, true, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 490,
-            columnNumber: 17
-          }, this),
-          /* @__PURE__ */ jsxDEV("div", { className: "flex items-center gap-2 text-sm", children: [
-            /* @__PURE__ */ jsxDEV(ShieldCheck, { className: "text-brand-primary", size: 18 }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 495,
-              columnNumber: 19
-            }, this),
+          ] }),
+          /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-2 text-sm", children: [
+            /* @__PURE__ */ jsx(ShieldCheck, { className: "text-brand-primary", size: 18 }),
             "E0级环保标准"
-          ] }, void 0, true, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 494,
-            columnNumber: 17
-          }, this),
-          /* @__PURE__ */ jsxDEV("div", { className: "flex items-center gap-2 text-sm", children: [
-            /* @__PURE__ */ jsxDEV(ShieldCheck, { className: "text-brand-primary", size: 18 }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 499,
-              columnNumber: 19
-            }, this),
+          ] }),
+          /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-2 text-sm", children: [
+            /* @__PURE__ */ jsx(ShieldCheck, { className: "text-brand-primary", size: 18 }),
             "门业协会会员"
-          ] }, void 0, true, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 498,
-            columnNumber: 17
-          }, this),
-          /* @__PURE__ */ jsxDEV("div", { className: "flex items-center gap-2 text-sm", children: [
-            /* @__PURE__ */ jsxDEV(ShieldCheck, { className: "text-brand-primary", size: 18 }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 503,
-              columnNumber: 19
-            }, this),
-            /* @__PURE__ */ jsxDEV("a", { href: "https://www.qcc.com/web/search?key=91441303MA7FCWFU79", target: "_blank", rel: "noopener noreferrer", className: "hover:text-brand-primary underline-offset-2 hover:underline", children: "工商信息（企查查）" }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 504,
-              columnNumber: 19
-            }, this)
-          ] }, void 0, true, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 502,
-            columnNumber: 17
-          }, this),
-          /* @__PURE__ */ jsxDEV("div", { className: "flex items-center gap-2 text-sm", children: [
-            /* @__PURE__ */ jsxDEV(ShieldCheck, { className: "text-brand-primary", size: 18 }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 507,
-              columnNumber: 19
-            }, this),
-            /* @__PURE__ */ jsxDEV("a", { href: "https://www.tianyancha.com/search?key=91441303MA7FCWFU79", target: "_blank", rel: "noopener noreferrer", className: "hover:text-brand-primary underline-offset-2 hover:underline", children: "工商信息（天眼查）" }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 508,
-              columnNumber: 19
-            }, this)
-          ] }, void 0, true, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 506,
-            columnNumber: 17
-          }, this)
-        ] }, void 0, true, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 489,
-          columnNumber: 15
-        }, this)
-      ] }, void 0, true, {
-        fileName: "/app/applet/src/App.tsx",
-        lineNumber: 469,
-        columnNumber: 13
-      }, this)
-    ] }, void 0, true, {
-      fileName: "/app/applet/src/App.tsx",
-      lineNumber: 443,
-      columnNumber: 11
-    }, this) }, void 0, false, {
-      fileName: "/app/applet/src/App.tsx",
-      lineNumber: 442,
-      columnNumber: 9
-    }, this) }, void 0, false, {
-      fileName: "/app/applet/src/App.tsx",
-      lineNumber: 441,
-      columnNumber: 7
-    }, this),
-    /* @__PURE__ */ jsxDEV("section", { id: "faq", className: "py-24 bg-neutral-50", children: /* @__PURE__ */ jsxDEV("div", { className: "max-w-3xl mx-auto px-4", children: [
-      /* @__PURE__ */ jsxDEV("div", { className: "text-center mb-16", children: [
-        /* @__PURE__ */ jsxDEV("h2", { className: "text-sm font-bold text-brand-primary tracking-[0.3em] mb-4", children: "常见问题" }, void 0, false, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 520,
-          columnNumber: 13
-        }, this),
-        /* @__PURE__ */ jsxDEV("h3", { className: "text-4xl font-serif font-bold", children: "专业解答 · 快速解惑" }, void 0, false, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 521,
-          columnNumber: 13
-        }, this)
-      ] }, void 0, true, {
-        fileName: "/app/applet/src/App.tsx",
-        lineNumber: 519,
-        columnNumber: 11
-      }, this),
-      /* @__PURE__ */ jsxDEV("div", { className: "space-y-4", children: FAQS.map((faq, idx) => /* @__PURE__ */ jsxDEV(
+          ] }),
+          /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-2 text-sm", children: [
+            /* @__PURE__ */ jsx(ShieldCheck, { className: "text-brand-primary", size: 18 }),
+            /* @__PURE__ */ jsx("a", { href: "https://www.qcc.com/web/search?key=91441303MA7FCWFU79", target: "_blank", rel: "noopener noreferrer", className: "hover:text-brand-primary underline-offset-2 hover:underline", children: "工商信息（企查查）" })
+          ] }),
+          /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-2 text-sm", children: [
+            /* @__PURE__ */ jsx(ShieldCheck, { className: "text-brand-primary", size: 18 }),
+            /* @__PURE__ */ jsx("a", { href: "https://www.tianyancha.com/search?key=91441303MA7FCWFU79", target: "_blank", rel: "noopener noreferrer", className: "hover:text-brand-primary underline-offset-2 hover:underline", children: "工商信息（天眼查）" })
+          ] })
+        ] })
+      ] })
+    ] }) }) }),
+    /* @__PURE__ */ jsx("section", { id: "faq", className: "py-24 bg-neutral-50", children: /* @__PURE__ */ jsxs("div", { className: "max-w-3xl mx-auto px-4", children: [
+      /* @__PURE__ */ jsxs("div", { className: "text-center mb-16", children: [
+        /* @__PURE__ */ jsx("h2", { className: "text-sm font-bold text-brand-primary tracking-[0.3em] mb-4", children: "常见问题" }),
+        /* @__PURE__ */ jsx("h3", { className: "text-4xl font-serif font-bold", children: "专业解答 · 快速解惑" })
+      ] }),
+      /* @__PURE__ */ jsx("div", { className: "space-y-4", children: FAQS.map((faq, idx) => /* @__PURE__ */ jsxs(
         "div",
         {
           className: "bg-white rounded-2xl border border-neutral-100 shadow-sm overflow-hidden",
           children: [
-            /* @__PURE__ */ jsxDEV(
+            /* @__PURE__ */ jsxs(
               "button",
               {
                 className: "w-full px-8 py-6 text-left flex justify-between items-center hover:bg-neutral-50 bg-white transition-colors",
                 onClick: () => setActiveFaq(activeFaq === idx ? null : idx),
                 children: [
-                  /* @__PURE__ */ jsxDEV("span", { className: "font-bold md:text-lg", children: faq.question }, void 0, false, {
-                    fileName: "/app/applet/src/App.tsx",
-                    lineNumber: 534,
-                    columnNumber: 19
-                  }, this),
-                  /* @__PURE__ */ jsxDEV(ChevronDown, { className: `transition-transform duration-300 ${activeFaq === idx ? "rotate-180" : ""}` }, void 0, false, {
-                    fileName: "/app/applet/src/App.tsx",
-                    lineNumber: 535,
-                    columnNumber: 19
-                  }, this)
+                  /* @__PURE__ */ jsx("span", { className: "font-bold md:text-lg", children: faq.question }),
+                  /* @__PURE__ */ jsx(ChevronDown, { className: `transition-transform duration-300 ${activeFaq === idx ? "rotate-180" : ""}` })
                 ]
-              },
-              void 0,
-              true,
-              {
-                fileName: "/app/applet/src/App.tsx",
-                lineNumber: 530,
-                columnNumber: 17
-              },
-              this
+              }
             ),
-            /* @__PURE__ */ jsxDEV(AnimatePresence, { children: activeFaq === idx && /* @__PURE__ */ jsxDEV(
+            /* @__PURE__ */ jsx(AnimatePresence, { children: activeFaq === idx && /* @__PURE__ */ jsx(
               motion.div,
               {
                 initial: { height: 0 },
                 animate: { height: "auto" },
                 exit: { height: 0 },
                 className: "overflow-hidden",
-                children: /* @__PURE__ */ jsxDEV("div", { className: "px-8 pb-6 text-neutral-600 border-t border-neutral-50 pt-4 leading-relaxed", children: faq.answer }, void 0, false, {
-                  fileName: "/app/applet/src/App.tsx",
-                  lineNumber: 545,
-                  columnNumber: 23
-                }, this)
-              },
-              void 0,
-              false,
-              {
-                fileName: "/app/applet/src/App.tsx",
-                lineNumber: 539,
-                columnNumber: 21
-              },
-              this
-            ) }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 537,
-              columnNumber: 17
-            }, this)
+                children: /* @__PURE__ */ jsx("div", { className: "px-8 pb-6 text-neutral-600 border-t border-neutral-50 pt-4 leading-relaxed", children: faq.answer })
+              }
+            ) })
           ]
         },
-        idx,
-        true,
-        {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 526,
-          columnNumber: 15
-        },
-        this
-      )) }, void 0, false, {
-        fileName: "/app/applet/src/App.tsx",
-        lineNumber: 524,
-        columnNumber: 11
-      }, this)
-    ] }, void 0, true, {
-      fileName: "/app/applet/src/App.tsx",
-      lineNumber: 518,
-      columnNumber: 9
-    }, this) }, void 0, false, {
-      fileName: "/app/applet/src/App.tsx",
-      lineNumber: 517,
-      columnNumber: 7
-    }, this),
-    /* @__PURE__ */ jsxDEV("section", { id: "contact", className: "py-24 bg-neutral-900 relative overflow-hidden", children: [
-      /* @__PURE__ */ jsxDEV("div", { className: "absolute top-0 right-0 w-1/3 h-full bg-brand-primary/10 -skew-x-12 translate-x-1/2" }, void 0, false, {
-        fileName: "/app/applet/src/App.tsx",
-        lineNumber: 560,
-        columnNumber: 9
-      }, this),
-      /* @__PURE__ */ jsxDEV("div", { className: "absolute bottom-0 left-0 w-64 h-64 bg-brand-accent/5 rounded-full -translate-x-1/2 translate-y-1/2 blur-3xl" }, void 0, false, {
-        fileName: "/app/applet/src/App.tsx",
-        lineNumber: 561,
-        columnNumber: 9
-      }, this),
-      /* @__PURE__ */ jsxDEV("div", { className: "max-w-7xl mx-auto px-4 relative z-10", children: /* @__PURE__ */ jsxDEV("div", { className: "grid grid-cols-1 lg:grid-cols-2 gap-16 items-start", children: [
-        /* @__PURE__ */ jsxDEV("div", { className: "text-white", children: [
-          /* @__PURE__ */ jsxDEV("h2", { className: "text-sm font-bold text-brand-accent tracking-[0.3em] mb-4", children: "联系我们" }, void 0, false, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 566,
-            columnNumber: 15
-          }, this),
-          /* @__PURE__ */ jsxDEV("h3", { className: "text-4xl md:text-5xl font-serif font-bold mb-8", children: "准备好为您的空间定制美学吗？" }, void 0, false, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 567,
-            columnNumber: 15
-          }, this),
-          /* @__PURE__ */ jsxDEV("p", { className: "text-neutral-400 mb-10 text-lg", children: "欢迎垂询，我们将竭诚为您提供专业的门类顾问服务与定制报价。" }, void 0, false, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 568,
-            columnNumber: 15
-          }, this),
-          /* @__PURE__ */ jsxDEV("div", { className: "space-y-8", children: [
-            /* @__PURE__ */ jsxDEV("div", { className: "flex gap-6", children: [
-              /* @__PURE__ */ jsxDEV("div", { className: "w-14 h-14 bg-white/5 rounded-full flex items-center justify-center shrink-0 border border-white/10 text-brand-accent", children: /* @__PURE__ */ jsxDEV(Phone, { size: 28 }, void 0, false, {
-                fileName: "/app/applet/src/App.tsx",
-                lineNumber: 575,
-                columnNumber: 21
-              }, this) }, void 0, false, {
-                fileName: "/app/applet/src/App.tsx",
-                lineNumber: 574,
-                columnNumber: 19
-              }, this),
-              /* @__PURE__ */ jsxDEV("div", { children: [
-                /* @__PURE__ */ jsxDEV("h5", { className: "font-bold text-lg mb-1", children: "咨询热线" }, void 0, false, {
-                  fileName: "/app/applet/src/App.tsx",
-                  lineNumber: 578,
-                  columnNumber: 21
-                }, this),
-                /* @__PURE__ */ jsxDEV("p", { className: "text-2xl font-sans font-bold text-white tracking-tight", children: COMPANY_INFO.phone }, void 0, false, {
-                  fileName: "/app/applet/src/App.tsx",
-                  lineNumber: 579,
-                  columnNumber: 21
-                }, this),
-                /* @__PURE__ */ jsxDEV("p", { className: "text-[10px] text-neutral-500 tracking-[0.2em] mt-1", children: "周一至周日 (8:30 - 18:00)" }, void 0, false, {
-                  fileName: "/app/applet/src/App.tsx",
-                  lineNumber: 580,
-                  columnNumber: 21
-                }, this)
-              ] }, void 0, true, {
-                fileName: "/app/applet/src/App.tsx",
-                lineNumber: 577,
-                columnNumber: 19
-              }, this)
-            ] }, void 0, true, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 573,
-              columnNumber: 17
-            }, this),
-            /* @__PURE__ */ jsxDEV("div", { className: "flex gap-6", children: [
-              /* @__PURE__ */ jsxDEV("div", { className: "w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center shrink-0 border border-white/10 text-brand-accent", children: /* @__PURE__ */ jsxDEV(MapPin, { size: 28 }, void 0, false, {
-                fileName: "/app/applet/src/App.tsx",
-                lineNumber: 586,
-                columnNumber: 21
-              }, this) }, void 0, false, {
-                fileName: "/app/applet/src/App.tsx",
-                lineNumber: 585,
-                columnNumber: 19
-              }, this),
-              /* @__PURE__ */ jsxDEV("div", { children: [
-                /* @__PURE__ */ jsxDEV("h5", { className: "font-bold text-lg mb-1", children: "展厅地址" }, void 0, false, {
-                  fileName: "/app/applet/src/App.tsx",
-                  lineNumber: 589,
-                  columnNumber: 21
-                }, this),
-                /* @__PURE__ */ jsxDEV("p", { className: "text-neutral-300", children: COMPANY_INFO.address }, void 0, false, {
-                  fileName: "/app/applet/src/App.tsx",
-                  lineNumber: 590,
-                  columnNumber: 21
-                }, this)
-              ] }, void 0, true, {
-                fileName: "/app/applet/src/App.tsx",
-                lineNumber: 588,
-                columnNumber: 19
-              }, this)
-            ] }, void 0, true, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 584,
-              columnNumber: 17
-            }, this),
-            /* @__PURE__ */ jsxDEV("div", { className: "flex gap-6", children: [
-              /* @__PURE__ */ jsxDEV("div", { className: "w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center shrink-0 border border-white/10 text-brand-accent", children: /* @__PURE__ */ jsxDEV(Factory, { size: 28 }, void 0, false, {
-                fileName: "/app/applet/src/App.tsx",
-                lineNumber: 596,
-                columnNumber: 21
-              }, this) }, void 0, false, {
-                fileName: "/app/applet/src/App.tsx",
-                lineNumber: 595,
-                columnNumber: 19
-              }, this),
-              /* @__PURE__ */ jsxDEV("div", { children: [
-                /* @__PURE__ */ jsxDEV("h5", { className: "font-bold text-lg mb-1", children: "生产基地" }, void 0, false, {
-                  fileName: "/app/applet/src/App.tsx",
-                  lineNumber: 599,
-                  columnNumber: 21
-                }, this),
-                /* @__PURE__ */ jsxDEV("p", { className: "text-neutral-300", children: COMPANY_INFO.factoryAddress }, void 0, false, {
-                  fileName: "/app/applet/src/App.tsx",
-                  lineNumber: 600,
-                  columnNumber: 21
-                }, this)
-              ] }, void 0, true, {
-                fileName: "/app/applet/src/App.tsx",
-                lineNumber: 598,
-                columnNumber: 19
-              }, this)
-            ] }, void 0, true, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 594,
-              columnNumber: 17
-            }, this)
-          ] }, void 0, true, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 572,
-            columnNumber: 15
-          }, this)
-        ] }, void 0, true, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 565,
-          columnNumber: 13
-        }, this),
-        /* @__PURE__ */ jsxDEV("div", { className: "bg-white rounded-3xl p-8 md:p-12 shadow-2xl relative flex flex-col items-center justify-center text-center", children: [
-          /* @__PURE__ */ jsxDEV("div", { className: "absolute top-0 right-0 w-32 h-32 bg-brand-primary/5 rounded-full blur-3xl -translate-y-8 translate-x-8 pointer-events-none" }, void 0, false, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 607,
-            columnNumber: 15
-          }, this),
-          /* @__PURE__ */ jsxDEV("div", { className: "absolute bottom-0 left-0 w-32 h-32 bg-brand-accent/5 rounded-full blur-3xl translate-y-8 -translate-x-8 pointer-events-none" }, void 0, false, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 608,
-            columnNumber: 15
-          }, this),
-          /* @__PURE__ */ jsxDEV("div", { className: "relative z-10 max-w-sm flex flex-col items-center", children: [
-            /* @__PURE__ */ jsxDEV("div", { className: "w-16 h-16 rounded-2xl bg-brand-primary/10 flex items-center justify-center mb-6 text-brand-primary", children: /* @__PURE__ */ jsxDEV(QrCode, { size: 32 }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 612,
-              columnNumber: 19
-            }, this) }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 611,
-              columnNumber: 17
-            }, this),
-            /* @__PURE__ */ jsxDEV("h4", { className: "text-2xl sm:text-3xl font-serif font-bold text-neutral-900 mb-3", children: "官方微信咨询" }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 614,
-              columnNumber: 17
-            }, this),
-            /* @__PURE__ */ jsxDEV("p", { className: "text-sm text-neutral-500 leading-relaxed mb-8", children: "欢迎扫描下方官方微信二维码，即可享受一对一专业专属顾问服务，获取免费定制报价与门类方案。" }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 615,
-              columnNumber: 17
-            }, this),
-            /* @__PURE__ */ jsxDEV("div", { className: "p-4 bg-white border border-neutral-100 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 relative group/card mb-6", children: /* @__PURE__ */ jsxDEV("div", { className: "w-48 h-48 bg-neutral-50 rounded-xl flex items-center justify-center relative overflow-hidden", children: /* @__PURE__ */ jsxDEV(
+        idx
+      )) })
+    ] }) }),
+    /* @__PURE__ */ jsxs("section", { id: "contact", className: "py-24 bg-neutral-900 relative overflow-hidden", children: [
+      /* @__PURE__ */ jsx("div", { className: "absolute top-0 right-0 w-1/3 h-full bg-brand-primary/10 -skew-x-12 translate-x-1/2" }),
+      /* @__PURE__ */ jsx("div", { className: "absolute bottom-0 left-0 w-64 h-64 bg-brand-accent/5 rounded-full -translate-x-1/2 translate-y-1/2 blur-3xl" }),
+      /* @__PURE__ */ jsx("div", { className: "max-w-7xl mx-auto px-4 relative z-10", children: /* @__PURE__ */ jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-2 gap-16 items-start", children: [
+        /* @__PURE__ */ jsxs("div", { className: "text-white", children: [
+          /* @__PURE__ */ jsx("h2", { className: "text-sm font-bold text-brand-accent tracking-[0.3em] mb-4", children: "联系我们" }),
+          /* @__PURE__ */ jsx("h3", { className: "text-4xl md:text-5xl font-serif font-bold mb-8", children: "准备好为您的空间定制美学吗？" }),
+          /* @__PURE__ */ jsx("p", { className: "text-neutral-400 mb-10 text-lg", children: "欢迎垂询，我们将竭诚为您提供专业的门类顾问服务与定制报价。" }),
+          /* @__PURE__ */ jsxs("div", { className: "space-y-8", children: [
+            /* @__PURE__ */ jsxs("div", { className: "flex gap-6", children: [
+              /* @__PURE__ */ jsx("div", { className: "w-14 h-14 bg-white/5 rounded-full flex items-center justify-center shrink-0 border border-white/10 text-brand-accent", children: /* @__PURE__ */ jsx(Phone, { size: 28 }) }),
+              /* @__PURE__ */ jsxs("div", { children: [
+                /* @__PURE__ */ jsx("h5", { className: "font-bold text-lg mb-1", children: "咨询热线" }),
+                /* @__PURE__ */ jsx("p", { className: "text-2xl font-sans font-bold text-white tracking-tight", children: COMPANY_INFO.phone }),
+                /* @__PURE__ */ jsx("p", { className: "text-[10px] text-neutral-500 tracking-[0.2em] mt-1", children: "周一至周日 (8:30 - 18:00)" })
+              ] })
+            ] }),
+            /* @__PURE__ */ jsxs("div", { className: "flex gap-6", children: [
+              /* @__PURE__ */ jsx("div", { className: "w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center shrink-0 border border-white/10 text-brand-accent", children: /* @__PURE__ */ jsx(MapPin, { size: 28 }) }),
+              /* @__PURE__ */ jsxs("div", { children: [
+                /* @__PURE__ */ jsx("h5", { className: "font-bold text-lg mb-1", children: "展厅地址" }),
+                /* @__PURE__ */ jsx("p", { className: "text-neutral-300", children: COMPANY_INFO.address })
+              ] })
+            ] }),
+            /* @__PURE__ */ jsxs("div", { className: "flex gap-6", children: [
+              /* @__PURE__ */ jsx("div", { className: "w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center shrink-0 border border-white/10 text-brand-accent", children: /* @__PURE__ */ jsx(Factory, { size: 28 }) }),
+              /* @__PURE__ */ jsxs("div", { children: [
+                /* @__PURE__ */ jsx("h5", { className: "font-bold text-lg mb-1", children: "生产基地" }),
+                /* @__PURE__ */ jsx("p", { className: "text-neutral-300", children: COMPANY_INFO.factoryAddress })
+              ] })
+            ] })
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxs("div", { className: "bg-white rounded-3xl p-8 md:p-12 shadow-2xl relative flex flex-col items-center justify-center text-center", children: [
+          /* @__PURE__ */ jsx("div", { className: "absolute top-0 right-0 w-32 h-32 bg-brand-primary/5 rounded-full blur-3xl -translate-y-8 translate-x-8 pointer-events-none" }),
+          /* @__PURE__ */ jsx("div", { className: "absolute bottom-0 left-0 w-32 h-32 bg-brand-accent/5 rounded-full blur-3xl translate-y-8 -translate-x-8 pointer-events-none" }),
+          /* @__PURE__ */ jsxs("div", { className: "relative z-10 max-w-sm flex flex-col items-center", children: [
+            /* @__PURE__ */ jsx("div", { className: "w-16 h-16 rounded-2xl bg-brand-primary/10 flex items-center justify-center mb-6 text-brand-primary", children: /* @__PURE__ */ jsx(QrCode, { size: 32 }) }),
+            /* @__PURE__ */ jsx("h4", { className: "text-2xl sm:text-3xl font-serif font-bold text-neutral-900 mb-3", children: "官方微信咨询" }),
+            /* @__PURE__ */ jsx("p", { className: "text-sm text-neutral-500 leading-relaxed mb-8", children: "欢迎扫描下方官方微信二维码，即可享受一对一专业专属顾问服务，获取免费定制报价与门类方案。" }),
+            /* @__PURE__ */ jsx("div", { className: "p-4 bg-white border border-neutral-100 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 relative group/card mb-6", children: /* @__PURE__ */ jsx("div", { className: "w-48 h-48 bg-neutral-50 rounded-xl flex items-center justify-center relative overflow-hidden", children: /* @__PURE__ */ jsx(
               "img",
               {
                 src: wechatQr,
                 alt: "微信二维码",
                 className: "absolute inset-0 w-full h-full object-contain p-2 group-hover/card:scale-105 transition-transform duration-300"
-              },
-              void 0,
-              false,
-              {
-                fileName: "/app/applet/src/App.tsx",
-                lineNumber: 622,
-                columnNumber: 21
-              },
-              this
-            ) }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 621,
-              columnNumber: 19
-            }, this) }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 620,
-              columnNumber: 17
-            }, this),
-            /* @__PURE__ */ jsxDEV("div", { className: "text-center", children: [
-              /* @__PURE__ */ jsxDEV("p", { className: "text-xs text-neutral-400", children: "长按识别或打开微信扫一扫" }, void 0, false, {
-                fileName: "/app/applet/src/App.tsx",
-                lineNumber: 631,
-                columnNumber: 19
-              }, this),
-              /* @__PURE__ */ jsxDEV("p", { className: "text-sm text-brand-primary font-bold mt-1", children: "惠州美创门业 · 官方微信" }, void 0, false, {
-                fileName: "/app/applet/src/App.tsx",
-                lineNumber: 632,
-                columnNumber: 19
-              }, this)
-            ] }, void 0, true, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 630,
-              columnNumber: 17
-            }, this)
-          ] }, void 0, true, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 610,
-            columnNumber: 15
-          }, this)
-        ] }, void 0, true, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 606,
-          columnNumber: 13
-        }, this)
-      ] }, void 0, true, {
-        fileName: "/app/applet/src/App.tsx",
-        lineNumber: 564,
-        columnNumber: 11
-      }, this) }, void 0, false, {
-        fileName: "/app/applet/src/App.tsx",
-        lineNumber: 563,
-        columnNumber: 9
-      }, this)
-    ] }, void 0, true, {
-      fileName: "/app/applet/src/App.tsx",
-      lineNumber: 558,
-      columnNumber: 7
-    }, this),
-    /* @__PURE__ */ jsxDEV("footer", { className: "bg-neutral-900 pt-16 pb-8 border-t border-white/5 relative z-10 text-white", children: /* @__PURE__ */ jsxDEV("div", { className: "max-w-7xl mx-auto px-4", children: [
-      /* @__PURE__ */ jsxDEV("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16", children: [
-        /* @__PURE__ */ jsxDEV("div", { className: "col-span-1 lg:col-span-1", children: [
-          /* @__PURE__ */ jsxDEV(Logo, { light: true, className: "mb-6" }, void 0, false, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 645,
-            columnNumber: 15
-          }, this),
-          /* @__PURE__ */ jsxDEV("p", { className: "text-sm text-neutral-400 leading-relaxed mb-8", children: [
+              }
+            ) }) }),
+            /* @__PURE__ */ jsxs("div", { className: "text-center", children: [
+              /* @__PURE__ */ jsx("p", { className: "text-xs text-neutral-400", children: "长按识别或打开微信扫一扫" }),
+              /* @__PURE__ */ jsx("p", { className: "text-sm text-brand-primary font-bold mt-1", children: "惠州美创门业 · 官方微信" })
+            ] })
+          ] })
+        ] })
+      ] }) })
+    ] }),
+    /* @__PURE__ */ jsx("footer", { className: "bg-neutral-900 pt-16 pb-8 border-t border-white/5 relative z-10 text-white", children: /* @__PURE__ */ jsxs("div", { className: "max-w-7xl mx-auto px-4", children: [
+      /* @__PURE__ */ jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16", children: [
+        /* @__PURE__ */ jsxs("div", { className: "col-span-1 lg:col-span-1", children: [
+          /* @__PURE__ */ jsx(Logo, { light: true, className: "mb-6" }),
+          /* @__PURE__ */ jsxs("p", { className: "text-sm text-neutral-400 leading-relaxed mb-8", children: [
             COMPANY_INFO.positioning,
             "。立足惠州，服务全国，以匠心成就每一扇好门。"
-          ] }, void 0, true, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 646,
-            columnNumber: 15
-          }, this),
-          /* @__PURE__ */ jsxDEV("div", { className: "flex gap-4", children: [
-            /* @__PURE__ */ jsxDEV(
+          ] }),
+          /* @__PURE__ */ jsxs("div", { className: "flex gap-4", children: [
+            /* @__PURE__ */ jsxs(
               "div",
               {
                 className: "relative group/qr",
@@ -2063,291 +1024,71 @@ function App() {
                 onMouseLeave: () => setShowQr(false),
                 onClick: () => setShowQr(!showQr),
                 children: [
-                  /* @__PURE__ */ jsxDEV("div", { className: "w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-primary transition-colors cursor-pointer", children: /* @__PURE__ */ jsxDEV(QrCode, { size: 18, title: "微信" }, void 0, false, {
-                    fileName: "/app/applet/src/App.tsx",
-                    lineNumber: 658,
-                    columnNumber: 21
-                  }, this) }, void 0, false, {
-                    fileName: "/app/applet/src/App.tsx",
-                    lineNumber: 657,
-                    columnNumber: 19
-                  }, this),
-                  /* @__PURE__ */ jsxDEV("div", { className: `absolute bottom-full left-1/2 -translate-x-1/2 mb-4 transition-all duration-300 transform z-50 ${showQr ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-2 pointer-events-none"}`, children: /* @__PURE__ */ jsxDEV("div", { className: "bg-white p-3 rounded-xl shadow-2xl border border-neutral-100", children: [
-                    /* @__PURE__ */ jsxDEV("div", { className: "w-40 h-40 bg-neutral-100 rounded-lg flex items-center justify-center relative overflow-hidden", children: [
-                      /* @__PURE__ */ jsxDEV("div", { className: "text-neutral-400 text-[10px] text-center px-4", children: [
-                        /* @__PURE__ */ jsxDEV(QrCode, { size: 40, className: "mx-auto mb-2 opacity-20" }, void 0, false, {
-                          fileName: "/app/applet/src/App.tsx",
-                          lineNumber: 674,
-                          columnNumber: 27
-                        }, this),
-                        /* @__PURE__ */ jsxDEV("p", { children: "微信二维码" }, void 0, false, {
-                          fileName: "/app/applet/src/App.tsx",
-                          lineNumber: 675,
-                          columnNumber: 27
-                        }, this)
-                      ] }, void 0, true, {
-                        fileName: "/app/applet/src/App.tsx",
-                        lineNumber: 673,
-                        columnNumber: 25
-                      }, this),
-                      /* @__PURE__ */ jsxDEV(
+                  /* @__PURE__ */ jsx("div", { className: "w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-primary transition-colors cursor-pointer", children: /* @__PURE__ */ jsx(QrCode, { size: 18, title: "微信" }) }),
+                  /* @__PURE__ */ jsx("div", { className: `absolute bottom-full left-1/2 -translate-x-1/2 mb-4 transition-all duration-300 transform z-50 ${showQr ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-2 pointer-events-none"}`, children: /* @__PURE__ */ jsxs("div", { className: "bg-white p-3 rounded-xl shadow-2xl border border-neutral-100", children: [
+                    /* @__PURE__ */ jsxs("div", { className: "w-40 h-40 bg-neutral-100 rounded-lg flex items-center justify-center relative overflow-hidden", children: [
+                      /* @__PURE__ */ jsxs("div", { className: "text-neutral-400 text-[10px] text-center px-4", children: [
+                        /* @__PURE__ */ jsx(QrCode, { size: 40, className: "mx-auto mb-2 opacity-20" }),
+                        /* @__PURE__ */ jsx("p", { children: "微信二维码" })
+                      ] }),
+                      /* @__PURE__ */ jsx(
                         "img",
                         {
                           src: wechatQr,
                           alt: "微信二维码",
                           className: "absolute inset-0 w-full h-full object-contain p-2"
-                        },
-                        void 0,
-                        false,
-                        {
-                          fileName: "/app/applet/src/App.tsx",
-                          lineNumber: 678,
-                          columnNumber: 25
-                        },
-                        this
+                        }
                       )
-                    ] }, void 0, true, {
-                      fileName: "/app/applet/src/App.tsx",
-                      lineNumber: 668,
-                      columnNumber: 23
-                    }, this),
-                    /* @__PURE__ */ jsxDEV("div", { className: "mt-2 text-center whitespace-nowrap", children: [
-                      /* @__PURE__ */ jsxDEV("p", { className: "text-[10px] text-neutral-900 font-bold", children: "扫一扫加我为朋友" }, void 0, false, {
-                        fileName: "/app/applet/src/App.tsx",
-                        lineNumber: 685,
-                        columnNumber: 25
-                      }, this),
-                      /* @__PURE__ */ jsxDEV("p", { className: "text-[8px] text-neutral-400", children: "惠州美创门业 · 官方微信" }, void 0, false, {
-                        fileName: "/app/applet/src/App.tsx",
-                        lineNumber: 686,
-                        columnNumber: 25
-                      }, this)
-                    ] }, void 0, true, {
-                      fileName: "/app/applet/src/App.tsx",
-                      lineNumber: 684,
-                      columnNumber: 23
-                    }, this),
-                    /* @__PURE__ */ jsxDEV("div", { className: "absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[6px] border-t-white" }, void 0, false, {
-                      fileName: "/app/applet/src/App.tsx",
-                      lineNumber: 688,
-                      columnNumber: 23
-                    }, this)
-                  ] }, void 0, true, {
-                    fileName: "/app/applet/src/App.tsx",
-                    lineNumber: 667,
-                    columnNumber: 21
-                  }, this) }, void 0, false, {
-                    fileName: "/app/applet/src/App.tsx",
-                    lineNumber: 662,
-                    columnNumber: 19
-                  }, this)
+                    ] }),
+                    /* @__PURE__ */ jsxs("div", { className: "mt-2 text-center whitespace-nowrap", children: [
+                      /* @__PURE__ */ jsx("p", { className: "text-[10px] text-neutral-900 font-bold", children: "扫一扫加我为朋友" }),
+                      /* @__PURE__ */ jsx("p", { className: "text-[8px] text-neutral-400", children: "惠州美创门业 · 官方微信" })
+                    ] }),
+                    /* @__PURE__ */ jsx("div", { className: "absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[6px] border-t-white" })
+                  ] }) })
                 ]
-              },
-              void 0,
-              true,
-              {
-                fileName: "/app/applet/src/App.tsx",
-                lineNumber: 651,
-                columnNumber: 17
-              },
-              this
+              }
             ),
-            /* @__PURE__ */ jsxDEV("a", { href: "https://www.douyin.com/user/MS4wLjABAAAA8EC38gY1OJDxvQZVDbVTvre35CZYi9mqjW3w2P3NQiM", target: "_blank", rel: "noopener noreferrer", "aria-label": "抖音", title: "抖音", children: /* @__PURE__ */ jsxDEV("div", { className: "w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-primary transition-colors cursor-pointer", children: /* @__PURE__ */ jsxDEV(Phone, { size: 18 }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 696,
-              columnNumber: 21
-            }, this) }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 695,
-              columnNumber: 19
-            }, this) }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 694,
-              columnNumber: 17
-            }, this),
-            /* @__PURE__ */ jsxDEV("a", { href: "https://www.xiaohongshu.com/user/profile/meichuangmenye", target: "_blank", rel: "noopener noreferrer", "aria-label": "小红书", title: "小红书", children: /* @__PURE__ */ jsxDEV("div", { className: "w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-primary transition-colors cursor-pointer", children: /* @__PURE__ */ jsxDEV(Building2, { size: 18 }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 701,
-              columnNumber: 21
-            }, this) }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 700,
-              columnNumber: 19
-            }, this) }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 699,
-              columnNumber: 17
-            }, this),
-            /* @__PURE__ */ jsxDEV("a", { href: "https://zhihu.com/org/meichuangmenye", target: "_blank", rel: "noopener noreferrer", "aria-label": "知乎", title: "知乎", children: /* @__PURE__ */ jsxDEV("div", { className: "w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-primary transition-colors cursor-pointer", children: /* @__PURE__ */ jsxDEV(Factory, { size: 18 }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 706,
-              columnNumber: 21
-            }, this) }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 705,
-              columnNumber: 19
-            }, this) }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 704,
-              columnNumber: 17
-            }, this)
-          ] }, void 0, true, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 649,
-            columnNumber: 15
-          }, this)
-        ] }, void 0, true, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 644,
-          columnNumber: 13
-        }, this),
-        /* @__PURE__ */ jsxDEV("div", { children: [
-          /* @__PURE__ */ jsxDEV("h5", { className: "font-bold mb-6 text-brand-accent tracking-widest uppercase text-xs", children: "快速链接" }, void 0, false, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 713,
-            columnNumber: 15
-          }, this),
-          /* @__PURE__ */ jsxDEV("ul", { className: "space-y-4 text-sm text-neutral-400", children: navLinks.slice(1).map((link) => /* @__PURE__ */ jsxDEV("li", { children: /* @__PURE__ */ jsxDEV("a", { href: link.href, className: "hover:text-white transition-colors", children: link.name }, void 0, false, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 716,
-            columnNumber: 39
-          }, this) }, link.href, false, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 716,
-            columnNumber: 19
-          }, this)) }, void 0, false, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 714,
-            columnNumber: 15
-          }, this)
-        ] }, void 0, true, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 712,
-          columnNumber: 13
-        }, this),
-        /* @__PURE__ */ jsxDEV("div", { children: [
-          /* @__PURE__ */ jsxDEV("h5", { className: "font-bold mb-6 text-brand-accent tracking-widest uppercase text-xs", children: "产品系列" }, void 0, false, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 722,
-            columnNumber: 15
-          }, this),
-          /* @__PURE__ */ jsxDEV("ul", { className: "space-y-4 text-sm text-neutral-400", children: PRODUCT_CATEGORIES.map((cat) => /* @__PURE__ */ jsxDEV("li", { children: /* @__PURE__ */ jsxDEV("a", { href: "#products", className: "hover:text-white transition-colors", children: cat.title }, void 0, false, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 725,
-            columnNumber: 36
-          }, this) }, cat.id, false, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 725,
-            columnNumber: 19
-          }, this)) }, void 0, false, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 723,
-            columnNumber: 15
-          }, this)
-        ] }, void 0, true, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 721,
-          columnNumber: 13
-        }, this),
-        /* @__PURE__ */ jsxDEV("div", { children: [
-          /* @__PURE__ */ jsxDEV("h5", { className: "font-bold mb-6 text-brand-accent tracking-widest uppercase text-xs", children: "企业资质" }, void 0, false, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 731,
-            columnNumber: 15
-          }, this),
-          /* @__PURE__ */ jsxDEV("div", { className: "space-y-4 text-xs text-neutral-400 leading-relaxed", children: [
-            /* @__PURE__ */ jsxDEV("p", { children: [
+            /* @__PURE__ */ jsx("a", { href: "https://www.douyin.com/user/MS4wLjABAAAA8EC38gY1OJDxvQZVDbVTvre35CZYi9mqjW3w2P3NQiM", target: "_blank", rel: "noopener noreferrer", "aria-label": "抖音", title: "抖音", children: /* @__PURE__ */ jsx("div", { className: "w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-primary transition-colors cursor-pointer", children: /* @__PURE__ */ jsx(Phone, { size: 18 }) }) }),
+            /* @__PURE__ */ jsx("a", { href: "https://www.xiaohongshu.com/user/profile/meichuangmenye", target: "_blank", rel: "noopener noreferrer", "aria-label": "小红书", title: "小红书", children: /* @__PURE__ */ jsx("div", { className: "w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-primary transition-colors cursor-pointer", children: /* @__PURE__ */ jsx(Building2, { size: 18 }) }) }),
+            /* @__PURE__ */ jsx("a", { href: "https://zhihu.com/org/meichuangmenye", target: "_blank", rel: "noopener noreferrer", "aria-label": "知乎", title: "知乎", children: /* @__PURE__ */ jsx("div", { className: "w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-primary transition-colors cursor-pointer", children: /* @__PURE__ */ jsx(Factory, { size: 18 }) }) })
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxs("div", { children: [
+          /* @__PURE__ */ jsx("h5", { className: "font-bold mb-6 text-brand-accent tracking-widest uppercase text-xs", children: "快速链接" }),
+          /* @__PURE__ */ jsx("ul", { className: "space-y-4 text-sm text-neutral-400", children: navLinks.slice(1).map((link) => /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx("a", { href: link.href, className: "hover:text-white transition-colors", children: link.name }) }, link.href)) })
+        ] }),
+        /* @__PURE__ */ jsxs("div", { children: [
+          /* @__PURE__ */ jsx("h5", { className: "font-bold mb-6 text-brand-accent tracking-widest uppercase text-xs", children: "产品系列" }),
+          /* @__PURE__ */ jsx("ul", { className: "space-y-4 text-sm text-neutral-400", children: PRODUCT_CATEGORIES.map((cat) => /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx("a", { href: "#products", className: "hover:text-white transition-colors", children: cat.title }) }, cat.id)) })
+        ] }),
+        /* @__PURE__ */ jsxs("div", { children: [
+          /* @__PURE__ */ jsx("h5", { className: "font-bold mb-6 text-brand-accent tracking-widest uppercase text-xs", children: "企业资质" }),
+          /* @__PURE__ */ jsxs("div", { className: "space-y-4 text-xs text-neutral-400 leading-relaxed", children: [
+            /* @__PURE__ */ jsxs("p", { children: [
               "统一社会信用代码：",
-              /* @__PURE__ */ jsxDEV("br", {}, void 0, false, {
-                fileName: "/app/applet/src/App.tsx",
-                lineNumber: 733,
-                columnNumber: 29
-              }, this),
+              /* @__PURE__ */ jsx("br", {}),
               COMPANY_INFO.unifiedCode
-            ] }, void 0, true, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 733,
-              columnNumber: 17
-            }, this),
-            /* @__PURE__ */ jsxDEV("p", { className: "mt-2", children: /* @__PURE__ */ jsxDEV("a", { href: "tel:" + COMPANY_INFO.phone, className: "hover:text-brand-primary transition-colors", children: [
+            ] }),
+            /* @__PURE__ */ jsx("p", { className: "mt-2", children: /* @__PURE__ */ jsxs("a", { href: "tel:" + COMPANY_INFO.phone, className: "hover:text-brand-primary transition-colors", children: [
               "咨询热线：",
               COMPANY_INFO.phone
-            ] }, void 0, true, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 735,
-              columnNumber: 19
-            }, this) }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 734,
-              columnNumber: 17
-            }, this),
-            /* @__PURE__ */ jsxDEV("p", { children: /* @__PURE__ */ jsxDEV("a", { href: "https://meichuangmenye.com", className: "hover:text-brand-primary transition-colors", children: "官方网站：meichuangmenye.com" }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 740,
-              columnNumber: 19
-            }, this) }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 739,
-              columnNumber: 17
-            }, this),
-            /* @__PURE__ */ jsxDEV("p", { children: [
+            ] }) }),
+            /* @__PURE__ */ jsx("p", { children: /* @__PURE__ */ jsx("a", { href: "https://meichuangmenye.com", className: "hover:text-brand-primary transition-colors", children: "官方网站：meichuangmenye.com" }) }),
+            /* @__PURE__ */ jsxs("p", { children: [
               "Copyright © ",
               (/* @__PURE__ */ new Date()).getFullYear(),
               " ",
               COMPANY_INFO.name,
               ". All Rights Reserved."
-            ] }, void 0, true, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 744,
-              columnNumber: 17
-            }, this),
-            /* @__PURE__ */ jsxDEV("p", { children: /* @__PURE__ */ jsxDEV("a", { href: "https://beian.miit.gov.cn/#/Integrated/index", target: "_blank", rel: "noopener noreferrer", className: "hover:text-white transition-colors", children: "粤ICP备2026061405号" }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 746,
-              columnNumber: 19
-            }, this) }, void 0, false, {
-              fileName: "/app/applet/src/App.tsx",
-              lineNumber: 745,
-              columnNumber: 17
-            }, this)
-          ] }, void 0, true, {
-            fileName: "/app/applet/src/App.tsx",
-            lineNumber: 732,
-            columnNumber: 15
-          }, this)
-        ] }, void 0, true, {
-          fileName: "/app/applet/src/App.tsx",
-          lineNumber: 730,
-          columnNumber: 13
-        }, this)
-      ] }, void 0, true, {
-        fileName: "/app/applet/src/App.tsx",
-        lineNumber: 643,
-        columnNumber: 11
-      }, this),
-      /* @__PURE__ */ jsxDEV("div", { className: "pt-8 border-t border-white/5 text-center text-xs text-neutral-500 font-medium", children: /* @__PURE__ */ jsxDEV("p", { children: "匠心营造 · 环保智造 · 高端定制 · 惠州美创门业" }, void 0, false, {
-        fileName: "/app/applet/src/App.tsx",
-        lineNumber: 755,
-        columnNumber: 13
-      }, this) }, void 0, false, {
-        fileName: "/app/applet/src/App.tsx",
-        lineNumber: 754,
-        columnNumber: 11
-      }, this)
-    ] }, void 0, true, {
-      fileName: "/app/applet/src/App.tsx",
-      lineNumber: 642,
-      columnNumber: 9
-    }, this) }, void 0, false, {
-      fileName: "/app/applet/src/App.tsx",
-      lineNumber: 641,
-      columnNumber: 7
-    }, this)
-  ] }, void 0, true, {
-    fileName: "/app/applet/src/App.tsx",
-    lineNumber: 69,
-    columnNumber: 5
-  }, this);
+            ] }),
+            /* @__PURE__ */ jsx("p", { children: /* @__PURE__ */ jsx("a", { href: "https://beian.miit.gov.cn/#/Integrated/index", target: "_blank", rel: "noopener noreferrer", className: "hover:text-white transition-colors", children: "粤ICP备2026061405号" }) })
+          ] })
+        ] })
+      ] }),
+      /* @__PURE__ */ jsx("div", { className: "pt-8 border-t border-white/5 text-center text-xs text-neutral-500 font-medium", children: /* @__PURE__ */ jsx("p", { children: "匠心营造 · 环保智造 · 高端定制 · 惠州美创门业" }) })
+    ] }) })
+  ] });
 }
 if (typeof global.window === "undefined") {
   global.window = {
