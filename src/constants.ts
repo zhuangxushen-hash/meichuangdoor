@@ -14,7 +14,7 @@ export const COMPANY_INFO = {
   aliases: ["美创门厂", "美创门业"],
   since: "2021年12月29日",
   address: "广东省惠州市仲恺高新区陈江街道观田村胜弘厂厂房1楼",
-  factoryAddress: "广东省惠州市仲恺高新区陈江街道观田村胜弘厂厂房1楼",  // 工厂与注册地址一致
+  factoryAddress: "广东省惠州市仲恺高新区潼湖新华大道牛墩路 19 号",
   phone: "13554866836",
   contactPerson: "13554866836",
   serviceHours: "周一至周日 8:30–18:00",
