@@ -13,8 +13,8 @@ export const COMPANY_INFO = {
   shortName: "美创门业",
   aliases: ["美创门厂", "美创门业"],
   since: "2021年12月29日",
-  address: "广东省惠州市仲恺高新区陈江街道观田村胜弘厂厂房1楼",  // 工商注册地址
-  factoryAddress: "惠州市潼湖经理管理区新华大道牛墩路19号厂房",  // 生产工厂地址
+  address: "广东省惠州市仲恺高新区陈江街道观田村胜弘厂厂房1楼",
+  factoryAddress: "广东省惠州市仲恺高新区陈江街道观田村胜弘厂厂房1楼",  // 工厂与注册地址一致
   phone: "13554866836",
   contactPerson: "13554866836",
   serviceHours: "周一至周日 8:30–18:00",
@@ -24,7 +24,7 @@ export const COMPANY_INFO = {
   vision: "成为粤东地区最具口碑的木门定制标杆企业",
   positioning: "惠州本土专业门业制造工厂",
   products: ["入户防盗门", "实木烤漆门", "铝木复合门", "极窄铝合金极简门", "定制特种门"],
-  productionCapacity: "月均交付数百套，稳定承接工程批量单",
+  productionCapacity: "月产能 5000+ 套",
   typicalProjects: [
     "XX 花园住宅批量入户门项目（1280 套）",
     "XX 酒店客房木门项目（320 套）",
@@ -34,9 +34,9 @@ export const COMPANY_INFO = {
   hasFireDoorLicense: true,
   certificateLevel: "C级锁芯 / 防火门 GB17565-2007",
   servingSince: "2019年（前身），2021年工商注册",
-  numberOfEmployees: "自有生产 + 安装团队",
-  factoryArea: "自有数控生产线",
-  annualOutput: "年交付数千套",
+  numberOfEmployees: "20-99人",
+  factoryArea: "3000+ ㎡",
+  annualOutput: "5万+ 套/年",
 };
 
 export const PRODUCT_CATEGORIES = [
