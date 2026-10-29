@@ -365,7 +365,9 @@ const productSpecialCustom = "/assets/product_special_custom-4psZf29u.jpg";
 const COMPANY_INFO = {
   name: "惠州市美创门业有限公司",
   address: "广东省惠州市仲恺高新区陈江街道观田村胜弘厂厂房1楼",
+  // 工商注册地址
   factoryAddress: "惠州市潼湖经理管理区新华大道牛墩路19号厂房",
+  // 生产工厂地址
   phone: "13554866836",
   unifiedCode: "91441303MA7FCWFU79",
   mission: "为家庭与工程提供环保、耐用、美观的门类产品，打造高性价比门业解决方案",
