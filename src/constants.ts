@@ -13,7 +13,7 @@ export const COMPANY_INFO = {
   shortName: "美创门业",
   aliases: ["美创门厂", "美创门业"],
   since: "2021年12月29日",
-  address: "广东省惠州市仲恺高新区潼湖新华大道牛墩路 19 号",
+  address: "广东省惠州市仲恺高新区潼侨镇新城山庄 A8 号",
   factoryAddress: "广东省惠州市仲恺高新区潼湖新华大道牛墩路 19 号",
   phone: "13554866836",
   contactPerson: "13554866836",
